@@ -8,8 +8,8 @@ create_proof phases:
   fft          - best_fft (FFT/NTT, domain conversion)
   lookup       - mv_lookup::/plonk::lookup:: (lookup argument construction)
   permutation  - plonk::permutation::prover (Z polynomial construction)
-  quotient     - evaluate_h / plonk::vanishing (gate constraint eval + h(X))
-  synthesize   - Circuit::synthesize (witness/circuit assignment)
+  quotient     - evaluate_h / h_poly / plonk::vanishing (gate constraint eval + h(X))
+  synthesize   - Circuit::synthesize / Layouter::assign_*/tract:: (witness/circuit assignment)
   other        - anything not matched by the above
 
 Each unique stack ("frame1;frame2;...;frameN count") is assigned to exactly
@@ -35,6 +35,7 @@ post-process the CSV yourself. Kept deliberately simple: one row per
 import re
 import sys
 import csv
+from collections import Counter
 from pathlib import Path
 
 PATTERNS = [
@@ -42,8 +43,8 @@ PATTERNS = [
     ("fft", re.compile(r"best_fft|halo2_proofs::fft::")),
     ("lookup", re.compile(r"mv_lookup::|plonk::lookup::")),
     ("permutation", re.compile(r"plonk::permutation::")),
-    ("quotient", re.compile(r"evaluate_h|plonk::vanishing::")),
-    ("synthesize", re.compile(r"synthesize")),
+    ("quotient", re.compile(r"evaluate_h|h_poly|plonk::vanishing::")),
+    ("synthesize", re.compile(r"synthesize|::assign|tract::")),
 ]
 CATEGORIES = [p[0] for p in PATTERNS] + ["other"]
 
@@ -58,7 +59,7 @@ def categorize_stack(frames):
 
 
 def parse_folded(path):
-    """Yields (category, count) for every stack line in a .folded file."""
+    """Yields (category, count, leaf) for every stack line in a .folded file."""
     with open(path, "r", errors="replace") as f:
         for line in f:
             line = line.rstrip("\n")
@@ -72,7 +73,7 @@ def parse_folded(path):
                 continue
             frames = stack_part.split(";")
             cat = categorize_stack(frames)
-            yield cat, count
+            yield cat, count, frames[-1]
 
 
 def main():
@@ -90,15 +91,19 @@ def main():
         entries.append((label, path))
 
     rows = []
+    other_top_lines = []
     for label, path in entries:
         if not Path(path).exists():
             print(f"WARNING: missing folded file for {label}: {path}", file=sys.stderr)
             continue
         totals = {c: 0 for c in CATEGORIES}
+        other_leaf_counts = Counter()
         grand_total = 0
-        for cat, count in parse_folded(path):
+        for cat, count, leaf in parse_folded(path):
             totals[cat] += count
             grand_total += count
+            if cat == "other":
+                other_leaf_counts[leaf] += count
 
         if grand_total == 0:
             print(f"WARNING: zero samples in {path} (run={label})", file=sys.stderr)
@@ -116,11 +121,27 @@ def main():
               " ".join(f"{c}={100.0*totals[c]/grand_total:.1f}%" for c in CATEGORIES),
               file=sys.stderr)
 
+        other_pct = 100.0 * totals["other"] / grand_total
+        if other_pct > 15.0:
+            print(f"  {label}: other={other_pct:.1f}% > 15%, top symbols in 'other':", file=sys.stderr)
+            for leaf, c in other_leaf_counts.most_common(15):
+                pct = 100.0 * c / grand_total
+                print(f"    {pct:5.2f}%  {leaf}", file=sys.stderr)
+                other_top_lines.append({"run": label, "pct_of_total": pct, "symbol": leaf})
+
     with open(out_csv, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=["run", "category", "samples", "total_samples", "pct"])
         writer.writeheader()
         writer.writerows(rows)
     print(f"wrote {out_csv}", file=sys.stderr)
+
+    if other_top_lines:
+        other_csv = str(Path(out_csv).with_name(Path(out_csv).stem + "_other_top_symbols.csv"))
+        with open(other_csv, "w", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=["run", "pct_of_total", "symbol"])
+            writer.writeheader()
+            writer.writerows(other_top_lines)
+        print(f"wrote {other_csv}", file=sys.stderr)
 
 
 if __name__ == "__main__":

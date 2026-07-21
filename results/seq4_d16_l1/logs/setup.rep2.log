@@ -1,0 +1,1328 @@
+[D] [2026-07-20 15:34:55:414, ezkl] - command: 
+ |   {
+ |    "Setup": {
+ |      "compiled_circuit": "/data/coding/ezkl/results/seq4_d16_l1/model.compiled",
+ |      "disable_selector_compression": false,
+ |      "pk_path": "/data/coding/ezkl/results/seq4_d16_l1/pk.key",
+ |      "srs_path": "/data/coding/ezkl/results/seq4_d16_l1/kzg.srs",
+ |      "vk_path": "/data/coding/ezkl/results/seq4_d16_l1/vk.key",
+ |      "witness": null
+ |    }
+ |  }
+[W] [2026-07-20 15:34:55:417, ezkl] - Artifact version is 0.0.0, skipping version check
+[D] [2026-07-20 15:34:55:417, ezkl::pfsys::srs] - loading srs from "/data/coding/ezkl/results/seq4_d16_l1/kzg.srs"
+[D] [2026-07-20 15:34:55:445, ezkl::graph::vars] - number of blinding factors: 5
+[D] [2026-07-20 15:34:55:445, ezkl::graph::vars] - model uses 6 advice blocks (size=2)
+[D] [2026-07-20 15:34:55:445, ezkl::graph::vars] - model uses 1 fixed columns
+[D] [2026-07-20 15:34:55:445, ezkl::graph::vars] - model uses [[1, 4, 16]] instance dims
+[D] [2026-07-20 15:34:55:445, ezkl::graph::model] - configuring model
+[D] [2026-07-20 15:34:55:445, ezkl::circuit::table] - table range: (-24642, 23866)
+[D] [2026-07-20 15:34:55:449, ezkl::circuit::ops::chip] - assigning lookup input
+[D] [2026-07-20 15:34:55:449, ezkl::circuit::ops::chip] - assigning lookup output
+[D] [2026-07-20 15:34:55:449, ezkl::circuit::ops::chip] - assigning lookup index
+[D] [2026-07-20 15:34:55:449, ezkl::circuit::table] - table range: (-24642, 23866)
+[D] [2026-07-20 15:34:55:449, ezkl::circuit::table] - range check range: (0, 16383)
+[D] [2026-07-20 15:34:55:449, ezkl::circuit::ops::chip] - assigning range check input
+[D] [2026-07-20 15:34:55:449, ezkl::circuit::ops::chip] - assigning range check index
+[D] [2026-07-20 15:34:55:449, ezkl::circuit::table] - range check range: (0, 1)
+[D] [2026-07-20 15:34:55:449, ezkl::circuit::table] - range check range: (-1, 1)
+[D] [2026-07-20 15:34:55:449, ezkl::circuit::ops::chip] - assigning shuffles output
+[D] [2026-07-20 15:34:55:449, ezkl::circuit::ops::chip] - assigning shuffles input
+[D] [2026-07-20 15:34:55:449, ezkl::graph::model] - configuring einsums...
+[D] [2026-07-20 15:34:55:451, ezkl::graph] - degree: 4, log2_ceil of degrees: 2.0
+[D] [2026-07-20 15:34:55:451, ezkl::graph] - circuit size: 
+ |   {
+ |    "logrows": 16,
+ |    "num_advice_columns": 21,
+ |    "num_challenges": 3,
+ |    "num_fixed": 7,
+ |    "num_instances": 1,
+ |    "num_selectors": 57
+ |  }
+[D] [2026-07-20 15:34:55:451, halo2_proofs::plonk::circuit] - max gate degree: 4
+[D] [2026-07-20 15:34:55:451, halo2_proofs::plonk::circuit] - max single lookup degree: 4
+[D] [2026-07-20 15:34:55:451, halo2_proofs::plonk::keygen] - Creating domain with degree 6
+[D] [2026-07-20 15:34:55:577, ezkl::circuit::modules::planner] - spawning module 2
+[*] [2026-07-20 15:34:55:577, ezkl::graph::model] - model layout...
+[D] [2026-07-20 15:34:55:577, ezkl::circuit::ops::chip] - laying out table for EXP(scale=8192, base=2.7182817)
+[*] [2026-07-20 15:34:55:577, ezkl::circuit::table] - Loading lookup table from cache: "/data/root-home/.ezkl/cache/exp_8192_2.7182817_-24642_40885"
+[D] [2026-07-20 15:34:55:601, ezkl::circuit::ops::chip] - laying out table for TANH(scale=8192)
+[*] [2026-07-20 15:34:55:602, ezkl::circuit::table] - Loading lookup table from cache: "/data/root-home/.ezkl/cache/tanh_8192_-24642_40885"
+[D] [2026-07-20 15:34:55:617, ezkl::circuit::ops::chip] - laying out range check for (-1, 1)
+[*] [2026-07-20 15:34:55:617, ezkl::circuit::table] - Loading range check table from cache: "/data/root-home/.ezkl/cache/rangecheck_-1_1"
+[D] [2026-07-20 15:34:55:617, ezkl::circuit::ops::chip] - laying out range check for (0, 1)
+[*] [2026-07-20 15:34:55:618, ezkl::circuit::table] - Loading range check table from cache: "/data/root-home/.ezkl/cache/rangecheck_0_1"
+[D] [2026-07-20 15:34:55:618, ezkl::circuit::ops::chip] - laying out range check for (0, 16383)
+[*] [2026-07-20 15:34:55:618, ezkl::circuit::table] - Loading range check table from cache: "/data/root-home/.ezkl/cache/rangecheck_0_16383"
+[D] [2026-07-20 15:34:55:621, ezkl::graph::model] - laying out 0: Input
+[D] [2026-07-20 15:34:55:621, ezkl::circuit::ops::region] - (rows=0, coord=0, constants=0, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=0, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:621, ezkl::circuit::ops] - constraining input to be decomp
+[D] [2026-07-20 15:34:55:629, ezkl::graph::model] - ------------ output node 0: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:629, ezkl::graph::model] - ------------ layout of 0 took 7.776402ms
+[D] [2026-07-20 15:34:55:629, ezkl::graph::model] - laying out 1: SUM (axes=[2])
+[D] [2026-07-20 15:34:55:629, ezkl::circuit::ops::region] - (rows=320, coord=640, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:630, ezkl::graph::model] - ------------ output node 1: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:630, ezkl::graph::model] - ------------ layout of 1 took 795.39µs
+[D] [2026-07-20 15:34:55:630, ezkl::graph::model] - laying out 3: IDENTITY (out_scale=Some(17))
+[D] [2026-07-20 15:34:55:630, ezkl::circuit::ops::region] - (rows=352, coord=704, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:630, ezkl::graph::model] - ------------ output node 3: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:630, ezkl::graph::model] - ------------ layout of 3 took 12.747µs
+[D] [2026-07-20 15:34:55:630, ezkl::graph::model] - laying out 4: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-20 15:34:55:630, ezkl::circuit::ops::region] - (rows=352, coord=704, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:656, ezkl::graph::model] - ------------ output node 4: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:656, ezkl::graph::model] - ------------ layout of 4 took 26.335573ms
+[D] [2026-07-20 15:34:55:656, ezkl::graph::model] - laying out 5: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-20 15:34:55:656, ezkl::circuit::ops::region] - (rows=1888, coord=3776, constants=4, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:665, ezkl::graph::model] - ------------ output node 5: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:665, ezkl::graph::model] - ------------ layout of 5 took 8.523227ms
+[D] [2026-07-20 15:34:55:665, ezkl::graph::model] - laying out 6: CONST (scale=13)
+[D] [2026-07-20 15:34:55:665, ezkl::circuit::ops::region] - (rows=2136, coord=4272, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:665, ezkl::circuit::ops] - constraining constant to be identity
+[D] [2026-07-20 15:34:55:665, ezkl::graph::model] - ------------ output node 6: "Tensor { inner: [], dims: [1, 1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:665, ezkl::graph::model] - ------------ layout of 6 took 17.002µs
+[D] [2026-07-20 15:34:55:665, ezkl::graph::model] - laying out 7: ADD
+[D] [2026-07-20 15:34:55:665, ezkl::circuit::ops::region] - (rows=2136, coord=4273, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:665, ezkl::graph::model] - ------------ output node 7: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:665, ezkl::graph::model] - ------------ layout of 7 took 44.491µs
+[D] [2026-07-20 15:34:55:665, ezkl::graph::model] - laying out 8: RSQRT (input_scale=8192, output_scale=8192, eps=0.0000000000000002220446049250313)
+[D] [2026-07-20 15:34:55:665, ezkl::circuit::ops::region] - (rows=2138, coord=4277, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:683, ezkl::graph::model] - ------------ output node 8: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:683, ezkl::graph::model] - ------------ layout of 8 took 18.245223ms
+[D] [2026-07-20 15:34:55:683, ezkl::graph::model] - laying out 9: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:55:683, ezkl::circuit::ops::region] - (rows=2587, coord=5174, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:709, ezkl::graph::model] - ------------ output node 9: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:709, ezkl::graph::model] - ------------ layout of 9 took 25.664585ms
+[D] [2026-07-20 15:34:55:709, ezkl::graph::model] - laying out 10: CONST (scale=13)
+[D] [2026-07-20 15:34:55:709, ezkl::circuit::ops::region] - (rows=4091, coord=8182, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:709, ezkl::graph::model] - node 10 is a constant with 1 use
+[D] [2026-07-20 15:34:55:709, ezkl::graph::model] - ------------ output node 10: "[1566, 1579, 1581, 1040, 628 ... -610, -1835, -411, -1916, -1950]"
+[D] [2026-07-20 15:34:55:709, ezkl::graph::model] - ------------ layout of 10 took 99.591µs
+[D] [2026-07-20 15:34:55:709, ezkl::graph::model] - laying out 11: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:34:55:709, ezkl::circuit::ops::region] - (rows=4091, coord=8182, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:735, ezkl::graph::model] - ------------ output node 11: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:735, ezkl::graph::model] - ------------ layout of 11 took 26.065022ms
+[D] [2026-07-20 15:34:55:735, ezkl::graph::model] - laying out 12: CONST (scale=13)
+[D] [2026-07-20 15:34:55:735, ezkl::circuit::ops::region] - (rows=5563, coord=11126, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:735, ezkl::graph::model] - node 12 is a constant with 1 use
+[D] [2026-07-20 15:34:55:735, ezkl::graph::model] - ------------ output node 12: "[-1318, 2024, 783, 822, -1225 ... -259, 284, -812, 533, 772]"
+[D] [2026-07-20 15:34:55:735, ezkl::graph::model] - ------------ layout of 12 took 30.158µs
+[D] [2026-07-20 15:34:55:735, ezkl::graph::model] - laying out 13: ADD
+[D] [2026-07-20 15:34:55:735, ezkl::circuit::ops::region] - (rows=5563, coord=11126, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:736, ezkl::graph::model] - ------------ output node 13: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:736, ezkl::graph::model] - ------------ layout of 13 took 305.798µs
+[D] [2026-07-20 15:34:55:736, ezkl::graph::model] - laying out 14: RESHAPE (shape=[4, 2, 8])
+[D] [2026-07-20 15:34:55:736, ezkl::circuit::ops::region] - (rows=5595, coord=11190, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:736, ezkl::graph::model] - ------------ output node 14: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:736, ezkl::graph::model] - ------------ layout of 14 took 31.296µs
+[D] [2026-07-20 15:34:55:736, ezkl::graph::model] - laying out 15: CONST (scale=13)
+[D] [2026-07-20 15:34:55:736, ezkl::circuit::ops::region] - (rows=5595, coord=11190, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:736, ezkl::graph::model] - node 15 is a constant with 1 use
+[D] [2026-07-20 15:34:55:736, ezkl::graph::model] - ------------ output node 15: "[1146, 1271, 1717, -1667, -1423 ... 1643, -1448, 430, 28, -1880]"
+[D] [2026-07-20 15:34:55:736, ezkl::graph::model] - ------------ layout of 15 took 118.284µs
+[D] [2026-07-20 15:34:55:736, ezkl::graph::model] - laying out 16: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:34:55:736, ezkl::circuit::ops::region] - (rows=5595, coord=11190, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:762, ezkl::graph::model] - ------------ output node 16: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:762, ezkl::graph::model] - ------------ layout of 16 took 25.746408ms
+[D] [2026-07-20 15:34:55:762, ezkl::graph::model] - laying out 17: CONST (scale=13)
+[D] [2026-07-20 15:34:55:762, ezkl::circuit::ops::region] - (rows=7067, coord=14134, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:762, ezkl::graph::model] - node 17 is a constant with 1 use
+[D] [2026-07-20 15:34:55:762, ezkl::graph::model] - ------------ output node 17: "[-1079, -2031, 1072, 489, -1042 ... -1883, -1135, -341, -1380, 2001]"
+[D] [2026-07-20 15:34:55:762, ezkl::graph::model] - ------------ layout of 17 took 29.421µs
+[D] [2026-07-20 15:34:55:762, ezkl::graph::model] - laying out 18: ADD
+[D] [2026-07-20 15:34:55:762, ezkl::circuit::ops::region] - (rows=7067, coord=14134, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:762, ezkl::graph::model] - ------------ output node 18: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:762, ezkl::graph::model] - ------------ layout of 18 took 318.562µs
+[D] [2026-07-20 15:34:55:762, ezkl::graph::model] - laying out 19: RESHAPE (shape=[4, 2, 8])
+[D] [2026-07-20 15:34:55:762, ezkl::circuit::ops::region] - (rows=7099, coord=14198, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:762, ezkl::graph::model] - ------------ output node 19: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:762, ezkl::graph::model] - ------------ layout of 19 took 17.935µs
+[D] [2026-07-20 15:34:55:762, ezkl::graph::model] - laying out 20: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM mbk,nbk->bmn)
+[D] [2026-07-20 15:34:55:762, ezkl::circuit::ops::region] - (rows=7099, coord=14198, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:785, ezkl::graph::model] - ------------ output node 20: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:785, ezkl::graph::model] - ------------ layout of 20 took 22.738155ms
+[D] [2026-07-20 15:34:55:785, ezkl::graph::model] - laying out 21: CONST (scale=13)
+[D] [2026-07-20 15:34:55:785, ezkl::circuit::ops::region] - (rows=7835, coord=15670, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:785, ezkl::graph::model] - node 21 is a constant with 1 use
+[D] [2026-07-20 15:34:55:785, ezkl::graph::model] - ------------ output node 21: "Tensor { inner: [2896], dims: [1, 1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:785, ezkl::graph::model] - ------------ layout of 21 took 13.723µs
+[D] [2026-07-20 15:34:55:785, ezkl::graph::model] - laying out 22: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:55:785, ezkl::circuit::ops::region] - (rows=7835, coord=15670, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:799, ezkl::graph::model] - ------------ output node 22: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:799, ezkl::graph::model] - ------------ layout of 22 took 14.159318ms
+[D] [2026-07-20 15:34:55:799, ezkl::graph::model] - laying out 23: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (SOFTMAX (input_scale=8192, output_scale=8192, axes=[2], eps=0.0000000000000002220446049250313))
+[D] [2026-07-20 15:34:55:799, ezkl::circuit::ops::region] - (rows=8587, coord=17174, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:55:837, ezkl::graph::model] - ------------ output node 23: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:837, ezkl::graph::model] - ------------ layout of 23 took 37.529106ms
+[D] [2026-07-20 15:34:55:837, ezkl::graph::model] - laying out 24: CONST (scale=13)
+[D] [2026-07-20 15:34:55:837, ezkl::circuit::ops::region] - (rows=10195, coord=20390, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:837, ezkl::graph::model] - node 24 is a constant with 1 use
+[D] [2026-07-20 15:34:55:837, ezkl::graph::model] - ------------ output node 24: "[637, 440, 1927, 1398, -596 ... -1718, -594, 1684, 662, -1918]"
+[D] [2026-07-20 15:34:55:837, ezkl::graph::model] - ------------ layout of 24 took 130.953µs
+[D] [2026-07-20 15:34:55:837, ezkl::graph::model] - laying out 25: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:34:55:837, ezkl::circuit::ops::region] - (rows=10195, coord=20390, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:861, ezkl::graph::model] - ------------ output node 25: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:861, ezkl::graph::model] - ------------ layout of 25 took 24.38424ms
+[D] [2026-07-20 15:34:55:861, ezkl::graph::model] - laying out 26: CONST (scale=13)
+[D] [2026-07-20 15:34:55:861, ezkl::circuit::ops::region] - (rows=11667, coord=23334, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:861, ezkl::graph::model] - node 26 is a constant with 1 use
+[D] [2026-07-20 15:34:55:861, ezkl::graph::model] - ------------ output node 26: "[-411, 813, -1829, 1179, -636 ... 394, 556, 787, 1124, -464]"
+[D] [2026-07-20 15:34:55:861, ezkl::graph::model] - ------------ layout of 26 took 26.69µs
+[D] [2026-07-20 15:34:55:861, ezkl::graph::model] - laying out 27: ADD
+[D] [2026-07-20 15:34:55:861, ezkl::circuit::ops::region] - (rows=11667, coord=23334, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:862, ezkl::graph::model] - ------------ output node 27: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:862, ezkl::graph::model] - ------------ layout of 27 took 298.54µs
+[D] [2026-07-20 15:34:55:862, ezkl::graph::model] - laying out 28: RESHAPE (shape=[4, 2, 8])
+[D] [2026-07-20 15:34:55:862, ezkl::circuit::ops::region] - (rows=11699, coord=23398, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:862, ezkl::graph::model] - ------------ output node 28: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:862, ezkl::graph::model] - ------------ layout of 28 took 11.582µs
+[D] [2026-07-20 15:34:55:862, ezkl::graph::model] - laying out 29: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM bmk,kbn->mbn)
+[D] [2026-07-20 15:34:55:862, ezkl::circuit::ops::region] - (rows=11699, coord=23398, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:888, ezkl::graph::model] - ------------ output node 29: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:888, ezkl::graph::model] - ------------ layout of 29 took 26.88504ms
+[D] [2026-07-20 15:34:55:888, ezkl::graph::model] - laying out 30: RESHAPE (shape=[4, 16])
+[D] [2026-07-20 15:34:55:888, ezkl::circuit::ops::region] - (rows=13171, coord=26342, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:889, ezkl::graph::model] - ------------ output node 30: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:889, ezkl::graph::model] - ------------ layout of 30 took 12.208µs
+[D] [2026-07-20 15:34:55:889, ezkl::graph::model] - laying out 31: CONST (scale=13)
+[D] [2026-07-20 15:34:55:889, ezkl::circuit::ops::region] - (rows=13171, coord=26342, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:889, ezkl::graph::model] - node 31 is a constant with 1 use
+[D] [2026-07-20 15:34:55:889, ezkl::graph::model] - ------------ output node 31: "[1138, -1794, 963, -967, 895 ... -769, -1296, -225, 0, 1281]"
+[D] [2026-07-20 15:34:55:889, ezkl::graph::model] - ------------ layout of 31 took 103.3µs
+[D] [2026-07-20 15:34:55:889, ezkl::graph::model] - laying out 32: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM mk,kn->amn)
+[D] [2026-07-20 15:34:55:889, ezkl::circuit::ops::region] - (rows=13171, coord=26342, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:917, ezkl::graph::model] - ------------ output node 32: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:917, ezkl::graph::model] - ------------ layout of 32 took 28.124718ms
+[D] [2026-07-20 15:34:55:917, ezkl::graph::model] - laying out 33: CONST (scale=13)
+[D] [2026-07-20 15:34:55:917, ezkl::circuit::ops::region] - (rows=14643, coord=29286, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:917, ezkl::graph::model] - node 33 is a constant with 1 use
+[D] [2026-07-20 15:34:55:917, ezkl::graph::model] - ------------ output node 33: "[40, 941, -733, 892, -658 ... -1842, 133, 1329, 1865, 1195]"
+[D] [2026-07-20 15:34:55:917, ezkl::graph::model] - ------------ layout of 33 took 27µs
+[D] [2026-07-20 15:34:55:917, ezkl::graph::model] - laying out 34: ADD
+[D] [2026-07-20 15:34:55:917, ezkl::circuit::ops::region] - (rows=14643, coord=29286, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:917, ezkl::graph::model] - ------------ output node 34: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:917, ezkl::graph::model] - ------------ layout of 34 took 310.391µs
+[D] [2026-07-20 15:34:55:917, ezkl::graph::model] - laying out 35: ADD
+[D] [2026-07-20 15:34:55:917, ezkl::circuit::ops::region] - (rows=14675, coord=29350, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:917, ezkl::graph::model] - ------------ output node 35: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:917, ezkl::graph::model] - ------------ layout of 35 took 285.332µs
+[D] [2026-07-20 15:34:55:917, ezkl::graph::model] - laying out 36: SUM (axes=[2])
+[D] [2026-07-20 15:34:55:917, ezkl::circuit::ops::region] - (rows=14707, coord=29414, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:918, ezkl::graph::model] - ------------ output node 36: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:918, ezkl::graph::model] - ------------ layout of 36 took 612.568µs
+[D] [2026-07-20 15:34:55:918, ezkl::graph::model] - laying out 37: IDENTITY (out_scale=Some(17))
+[D] [2026-07-20 15:34:55:918, ezkl::circuit::ops::region] - (rows=14739, coord=29478, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:918, ezkl::graph::model] - ------------ output node 37: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:918, ezkl::graph::model] - ------------ layout of 37 took 10.224µs
+[D] [2026-07-20 15:34:55:918, ezkl::graph::model] - laying out 38: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-20 15:34:55:918, ezkl::circuit::ops::region] - (rows=14739, coord=29478, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:945, ezkl::graph::model] - ------------ output node 38: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:945, ezkl::graph::model] - ------------ layout of 38 took 26.433122ms
+[D] [2026-07-20 15:34:55:945, ezkl::graph::model] - laying out 39: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-20 15:34:55:945, ezkl::circuit::ops::region] - (rows=16275, coord=32550, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:953, ezkl::graph::model] - ------------ output node 39: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:953, ezkl::graph::model] - ------------ layout of 39 took 8.410781ms
+[D] [2026-07-20 15:34:55:953, ezkl::graph::model] - laying out 40: ADD
+[D] [2026-07-20 15:34:55:953, ezkl::circuit::ops::region] - (rows=16523, coord=33046, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:953, ezkl::graph::model] - ------------ output node 40: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:953, ezkl::graph::model] - ------------ layout of 40 took 64.707µs
+[D] [2026-07-20 15:34:55:953, ezkl::graph::model] - laying out 41: RSQRT (input_scale=8192, output_scale=8192, eps=0.0000000000000002220446049250313)
+[D] [2026-07-20 15:34:55:953, ezkl::circuit::ops::region] - (rows=16525, coord=33050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:971, ezkl::graph::model] - ------------ output node 41: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:971, ezkl::graph::model] - ------------ layout of 41 took 17.640605ms
+[D] [2026-07-20 15:34:55:971, ezkl::graph::model] - laying out 42: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:55:971, ezkl::circuit::ops::region] - (rows=16973, coord=33946, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:995, ezkl::graph::model] - ------------ output node 42: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:55:995, ezkl::graph::model] - ------------ layout of 42 took 24.067329ms
+[D] [2026-07-20 15:34:55:995, ezkl::graph::model] - laying out 43: CONST (scale=13)
+[D] [2026-07-20 15:34:55:995, ezkl::circuit::ops::region] - (rows=18477, coord=36954, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:55:995, ezkl::graph::model] - node 43 is a constant with 1 use
+[D] [2026-07-20 15:34:55:995, ezkl::graph::model] - ------------ output node 43: "[-1062, -868, -1047, -145, 618 ... 1930, -563, 1303, -994, -53]"
+[D] [2026-07-20 15:34:55:995, ezkl::graph::model] - ------------ layout of 43 took 339.98µs
+[D] [2026-07-20 15:34:55:995, ezkl::graph::model] - laying out 44: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:34:55:995, ezkl::circuit::ops::region] - (rows=18477, coord=36954, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:082, ezkl::graph::model] - ------------ output node 44: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:082, ezkl::graph::model] - ------------ layout of 44 took 86.575508ms
+[D] [2026-07-20 15:34:56:082, ezkl::graph::model] - laying out 45: CONST (scale=13)
+[D] [2026-07-20 15:34:56:082, ezkl::circuit::ops::region] - (rows=24365, coord=48730, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:082, ezkl::graph::model] - node 45 is a constant with 1 use
+[D] [2026-07-20 15:34:56:082, ezkl::graph::model] - ------------ output node 45: "[-409, 684, 1615, 511, 1426 ... -601, -1912, -1100, 1068, -826]"
+[D] [2026-07-20 15:34:56:082, ezkl::graph::model] - ------------ layout of 45 took 67.868µs
+[D] [2026-07-20 15:34:56:082, ezkl::graph::model] - laying out 46: ADD
+[D] [2026-07-20 15:34:56:082, ezkl::circuit::ops::region] - (rows=24365, coord=48730, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:083, ezkl::graph::model] - ------------ output node 46: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:083, ezkl::graph::model] - ------------ layout of 46 took 742.777µs
+[D] [2026-07-20 15:34:56:083, ezkl::graph::model] - laying out 48: IDENTITY (out_scale=Some(14))
+[D] [2026-07-20 15:34:56:083, ezkl::circuit::ops::region] - (rows=24493, coord=48986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:083, ezkl::graph::model] - ------------ output node 48: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:083, ezkl::graph::model] - ------------ layout of 48 took 28.544µs
+[D] [2026-07-20 15:34:56:083, ezkl::graph::model] - laying out 49: CONST (scale=13)
+[D] [2026-07-20 15:34:56:083, ezkl::circuit::ops::region] - (rows=24493, coord=48986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:083, ezkl::graph::model] - node 49 is a constant with 1 use
+[D] [2026-07-20 15:34:56:083, ezkl::graph::model] - ------------ output node 49: "Tensor { inner: [366], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:083, ezkl::graph::model] - ------------ layout of 49 took 42.248µs
+[D] [2026-07-20 15:34:56:083, ezkl::graph::model] - laying out 50: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:56:083, ezkl::circuit::ops::region] - (rows=24493, coord=48986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:162, ezkl::graph::model] - ------------ output node 50: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:162, ezkl::graph::model] - ------------ layout of 50 took 79.11412ms
+[D] [2026-07-20 15:34:56:162, ezkl::graph::model] - laying out 51: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:56:162, ezkl::circuit::ops::region] - (rows=30509, coord=61018, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:244, ezkl::graph::model] - ------------ output node 51: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:244, ezkl::graph::model] - ------------ layout of 51 took 82.328618ms
+[D] [2026-07-20 15:34:56:244, ezkl::graph::model] - laying out 52: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:56:245, ezkl::circuit::ops::region] - (rows=36525, coord=73050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:324, ezkl::graph::model] - ------------ output node 52: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:324, ezkl::graph::model] - ------------ layout of 52 took 79.293519ms
+[D] [2026-07-20 15:34:56:324, ezkl::graph::model] - laying out 53: ADD
+[D] [2026-07-20 15:34:56:324, ezkl::circuit::ops::region] - (rows=42541, coord=85082, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:325, ezkl::graph::model] - ------------ output node 53: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:325, ezkl::graph::model] - ------------ layout of 53 took 681.065µs
+[D] [2026-07-20 15:34:56:325, ezkl::graph::model] - laying out 54: CONST (scale=13)
+[D] [2026-07-20 15:34:56:325, ezkl::circuit::ops::region] - (rows=42669, coord=85338, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:325, ezkl::graph::model] - node 54 is a constant with 1 use
+[D] [2026-07-20 15:34:56:325, ezkl::graph::model] - ------------ output node 54: "Tensor { inner: [6536], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:325, ezkl::graph::model] - ------------ layout of 54 took 29.164µs
+[D] [2026-07-20 15:34:56:325, ezkl::graph::model] - laying out 55: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:56:325, ezkl::circuit::ops::region] - (rows=42669, coord=85338, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:411, ezkl::graph::model] - ------------ output node 55: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:411, ezkl::graph::model] - ------------ layout of 55 took 86.379919ms
+[D] [2026-07-20 15:34:56:411, ezkl::graph::model] - laying out 56: TANH(scale=8192)
+[D] [2026-07-20 15:34:56:411, ezkl::circuit::ops::region] - (rows=48685, coord=97370, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:412, ezkl::graph::model] - ------------ output node 56: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:412, ezkl::graph::model] - ------------ layout of 56 took 1.099417ms
+[D] [2026-07-20 15:34:56:412, ezkl::graph::model] - laying out 57: CONST (scale=13)
+[D] [2026-07-20 15:34:56:412, ezkl::circuit::ops::region] - (rows=48813, coord=97626, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:412, ezkl::graph::model] - node 57 is a constant with 1 use
+[D] [2026-07-20 15:34:56:412, ezkl::graph::model] - ------------ output node 57: "Tensor { inner: [8192], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:412, ezkl::graph::model] - ------------ layout of 57 took 25.34µs
+[D] [2026-07-20 15:34:56:412, ezkl::graph::model] - laying out 58: ADD
+[D] [2026-07-20 15:34:56:412, ezkl::circuit::ops::region] - (rows=48813, coord=97626, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:413, ezkl::graph::model] - ------------ output node 58: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:413, ezkl::graph::model] - ------------ layout of 58 took 614.595µs
+[D] [2026-07-20 15:34:56:413, ezkl::graph::model] - laying out 59: REBASED (div=16384.0, rebasing_op=DIV (denom=16384)) (MULT)
+[D] [2026-07-20 15:34:56:413, ezkl::circuit::ops::region] - (rows=48941, coord=97882, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:495, ezkl::graph::model] - ------------ output node 59: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:495, ezkl::graph::model] - ------------ layout of 59 took 81.876107ms
+[D] [2026-07-20 15:34:56:495, ezkl::graph::model] - laying out 60: CONST (scale=13)
+[D] [2026-07-20 15:34:56:495, ezkl::circuit::ops::region] - (rows=54957, coord=109914, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:495, ezkl::graph::model] - node 60 is a constant with 1 use
+[D] [2026-07-20 15:34:56:495, ezkl::graph::model] - ------------ output node 60: "[490, 40, 108, -527, -841 ... 885, 785, 523, -483, 25]"
+[D] [2026-07-20 15:34:56:495, ezkl::graph::model] - ------------ layout of 60 took 277.202µs
+[D] [2026-07-20 15:34:56:495, ezkl::graph::model] - laying out 61: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM mk,kn->amn)
+[D] [2026-07-20 15:34:56:495, ezkl::circuit::ops::region] - (rows=54957, coord=109914, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:529, ezkl::graph::model] - ------------ output node 61: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:530, ezkl::graph::model] - ------------ layout of 61 took 34.324069ms
+[D] [2026-07-20 15:34:56:530, ezkl::graph::model] - laying out 62: CONST (scale=13)
+[D] [2026-07-20 15:34:56:530, ezkl::circuit::ops::region] - (rows=56429, coord=112858, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:530, ezkl::graph::model] - node 62 is a constant with 1 use
+[D] [2026-07-20 15:34:56:530, ezkl::graph::model] - ------------ output node 62: "[-782, 418, 580, 903, -975 ... 936, -392, -167, 801, 824]"
+[D] [2026-07-20 15:34:56:530, ezkl::graph::model] - ------------ layout of 62 took 40.686µs
+[D] [2026-07-20 15:34:56:530, ezkl::graph::model] - laying out 63: ADD
+[D] [2026-07-20 15:34:56:530, ezkl::circuit::ops::region] - (rows=56429, coord=112858, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:530, ezkl::graph::model] - ------------ output node 63: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:530, ezkl::graph::model] - ------------ layout of 63 took 436.173µs
+[D] [2026-07-20 15:34:56:530, ezkl::graph::model] - laying out 64: ADD
+[D] [2026-07-20 15:34:56:530, ezkl::circuit::ops::region] - (rows=56461, coord=112922, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:531, ezkl::graph::model] - ------------ output node 64: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:531, ezkl::graph::model] - ------------ layout of 64 took 440.853µs
+[D] [2026-07-20 15:34:56:531, ezkl::graph::model] - laying out 65: SUM (axes=[2])
+[D] [2026-07-20 15:34:56:531, ezkl::circuit::ops::region] - (rows=56493, coord=112986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:531, ezkl::graph::model] - ------------ output node 65: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:531, ezkl::graph::model] - ------------ layout of 65 took 670.23µs
+[D] [2026-07-20 15:34:56:531, ezkl::graph::model] - laying out 66: IDENTITY (out_scale=Some(17))
+[D] [2026-07-20 15:34:56:531, ezkl::circuit::ops::region] - (rows=56525, coord=113050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:531, ezkl::graph::model] - ------------ output node 66: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:531, ezkl::graph::model] - ------------ layout of 66 took 11.955µs
+[D] [2026-07-20 15:34:56:531, ezkl::graph::model] - laying out 67: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-20 15:34:56:531, ezkl::circuit::ops::region] - (rows=56525, coord=113050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:558, ezkl::graph::model] - ------------ output node 67: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:558, ezkl::graph::model] - ------------ layout of 67 took 26.172183ms
+[D] [2026-07-20 15:34:56:558, ezkl::graph::model] - laying out 68: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-20 15:34:56:558, ezkl::circuit::ops::region] - (rows=58061, coord=116122, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:567, ezkl::graph::model] - ------------ output node 68: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:567, ezkl::graph::model] - ------------ layout of 68 took 9.470297ms
+[D] [2026-07-20 15:34:56:567, ezkl::graph::model] - laying out 69: ADD
+[D] [2026-07-20 15:34:56:567, ezkl::circuit::ops::region] - (rows=58309, coord=116618, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:567, ezkl::graph::model] - ------------ output node 69: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:567, ezkl::graph::model] - ------------ layout of 69 took 80.614µs
+[D] [2026-07-20 15:34:56:567, ezkl::graph::model] - laying out 70: RSQRT (input_scale=8192, output_scale=8192, eps=0.0000000000000002220446049250313)
+[D] [2026-07-20 15:34:56:567, ezkl::circuit::ops::region] - (rows=58311, coord=116622, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:586, ezkl::graph::model] - ------------ output node 70: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:586, ezkl::graph::model] - ------------ layout of 70 took 19.293156ms
+[D] [2026-07-20 15:34:56:587, ezkl::graph::model] - laying out 71: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:56:587, ezkl::circuit::ops::region] - (rows=58759, coord=117518, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:611, ezkl::graph::model] - ------------ output node 71: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:611, ezkl::graph::model] - ------------ layout of 71 took 24.196583ms
+[D] [2026-07-20 15:34:56:611, ezkl::graph::model] - model outputs are nodes: [(71, 0)]
+[D] [2026-07-20 15:34:56:626, ezkl::circuit::ops::region] - (rows=60935, coord=121870, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:626, ezkl::graph::model] - laying out 0: Input
+[D] [2026-07-20 15:34:56:626, ezkl::circuit::ops::region] - (rows=0, coord=0, constants=0, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=0, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:626, ezkl::circuit::ops] - constraining input to be decomp
+[D] [2026-07-20 15:34:56:633, ezkl::graph::model] - ------------ output node 0: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:633, ezkl::graph::model] - ------------ layout of 0 took 7.295582ms
+[D] [2026-07-20 15:34:56:633, ezkl::graph::model] - laying out 1: SUM (axes=[2])
+[D] [2026-07-20 15:34:56:633, ezkl::circuit::ops::region] - (rows=320, coord=640, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:634, ezkl::graph::model] - ------------ output node 1: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:634, ezkl::graph::model] - ------------ layout of 1 took 812.693µs
+[D] [2026-07-20 15:34:56:634, ezkl::graph::model] - laying out 3: IDENTITY (out_scale=Some(17))
+[D] [2026-07-20 15:34:56:634, ezkl::circuit::ops::region] - (rows=352, coord=704, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:634, ezkl::graph::model] - ------------ output node 3: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:634, ezkl::graph::model] - ------------ layout of 3 took 11.463µs
+[D] [2026-07-20 15:34:56:634, ezkl::graph::model] - laying out 4: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-20 15:34:56:634, ezkl::circuit::ops::region] - (rows=352, coord=704, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:663, ezkl::graph::model] - ------------ output node 4: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:663, ezkl::graph::model] - ------------ layout of 4 took 29.061949ms
+[D] [2026-07-20 15:34:56:663, ezkl::graph::model] - laying out 5: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-20 15:34:56:663, ezkl::circuit::ops::region] - (rows=1888, coord=3776, constants=4, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:674, ezkl::graph::model] - ------------ output node 5: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:674, ezkl::graph::model] - ------------ layout of 5 took 10.661931ms
+[D] [2026-07-20 15:34:56:674, ezkl::graph::model] - laying out 6: CONST (scale=13)
+[D] [2026-07-20 15:34:56:674, ezkl::circuit::ops::region] - (rows=2136, coord=4272, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:674, ezkl::circuit::ops] - constraining constant to be identity
+[D] [2026-07-20 15:34:56:674, ezkl::graph::model] - ------------ output node 6: "Tensor { inner: [], dims: [1, 1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:674, ezkl::graph::model] - ------------ layout of 6 took 26.195µs
+[D] [2026-07-20 15:34:56:674, ezkl::graph::model] - laying out 7: ADD
+[D] [2026-07-20 15:34:56:674, ezkl::circuit::ops::region] - (rows=2136, coord=4273, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:674, ezkl::graph::model] - ------------ output node 7: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:674, ezkl::graph::model] - ------------ layout of 7 took 75.935µs
+[D] [2026-07-20 15:34:56:674, ezkl::graph::model] - laying out 8: RSQRT (input_scale=8192, output_scale=8192, eps=0.0000000000000002220446049250313)
+[D] [2026-07-20 15:34:56:674, ezkl::circuit::ops::region] - (rows=2138, coord=4277, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:695, ezkl::graph::model] - ------------ output node 8: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:695, ezkl::graph::model] - ------------ layout of 8 took 20.608054ms
+[D] [2026-07-20 15:34:56:695, ezkl::graph::model] - laying out 9: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:56:695, ezkl::circuit::ops::region] - (rows=2587, coord=5174, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:722, ezkl::graph::model] - ------------ output node 9: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:722, ezkl::graph::model] - ------------ layout of 9 took 27.176915ms
+[D] [2026-07-20 15:34:56:722, ezkl::graph::model] - laying out 10: CONST (scale=13)
+[D] [2026-07-20 15:34:56:722, ezkl::circuit::ops::region] - (rows=4091, coord=8182, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:722, ezkl::graph::model] - node 10 is a constant with 1 use
+[D] [2026-07-20 15:34:56:722, ezkl::graph::model] - ------------ output node 10: "[1566, 1579, 1581, 1040, 628 ... -610, -1835, -411, -1916, -1950]"
+[D] [2026-07-20 15:34:56:722, ezkl::graph::model] - ------------ layout of 10 took 153.353µs
+[D] [2026-07-20 15:34:56:722, ezkl::graph::model] - laying out 11: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:34:56:722, ezkl::circuit::ops::region] - (rows=4091, coord=8182, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:760, ezkl::graph::model] - ------------ output node 11: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:760, ezkl::graph::model] - ------------ layout of 11 took 38.058618ms
+[D] [2026-07-20 15:34:56:760, ezkl::graph::model] - laying out 12: CONST (scale=13)
+[D] [2026-07-20 15:34:56:760, ezkl::circuit::ops::region] - (rows=5563, coord=11126, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:760, ezkl::graph::model] - node 12 is a constant with 1 use
+[D] [2026-07-20 15:34:56:760, ezkl::graph::model] - ------------ output node 12: "[-1318, 2024, 783, 822, -1225 ... -259, 284, -812, 533, 772]"
+[D] [2026-07-20 15:34:56:760, ezkl::graph::model] - ------------ layout of 12 took 46.824µs
+[D] [2026-07-20 15:34:56:760, ezkl::graph::model] - laying out 13: ADD
+[D] [2026-07-20 15:34:56:760, ezkl::circuit::ops::region] - (rows=5563, coord=11126, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:761, ezkl::graph::model] - ------------ output node 13: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:761, ezkl::graph::model] - ------------ layout of 13 took 417.881µs
+[D] [2026-07-20 15:34:56:761, ezkl::graph::model] - laying out 14: RESHAPE (shape=[4, 2, 8])
+[D] [2026-07-20 15:34:56:761, ezkl::circuit::ops::region] - (rows=5595, coord=11190, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:761, ezkl::graph::model] - ------------ output node 14: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:761, ezkl::graph::model] - ------------ layout of 14 took 26.956µs
+[D] [2026-07-20 15:34:56:761, ezkl::graph::model] - laying out 15: CONST (scale=13)
+[D] [2026-07-20 15:34:56:761, ezkl::circuit::ops::region] - (rows=5595, coord=11190, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:761, ezkl::graph::model] - node 15 is a constant with 1 use
+[D] [2026-07-20 15:34:56:761, ezkl::graph::model] - ------------ output node 15: "[1146, 1271, 1717, -1667, -1423 ... 1643, -1448, 430, 28, -1880]"
+[D] [2026-07-20 15:34:56:761, ezkl::graph::model] - ------------ layout of 15 took 199.311µs
+[D] [2026-07-20 15:34:56:761, ezkl::graph::model] - laying out 16: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:34:56:761, ezkl::circuit::ops::region] - (rows=5595, coord=11190, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:792, ezkl::graph::model] - ------------ output node 16: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:792, ezkl::graph::model] - ------------ layout of 16 took 31.011141ms
+[D] [2026-07-20 15:34:56:792, ezkl::graph::model] - laying out 17: CONST (scale=13)
+[D] [2026-07-20 15:34:56:792, ezkl::circuit::ops::region] - (rows=7067, coord=14134, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:792, ezkl::graph::model] - node 17 is a constant with 1 use
+[D] [2026-07-20 15:34:56:792, ezkl::graph::model] - ------------ output node 17: "[-1079, -2031, 1072, 489, -1042 ... -1883, -1135, -341, -1380, 2001]"
+[D] [2026-07-20 15:34:56:792, ezkl::graph::model] - ------------ layout of 17 took 35.679µs
+[D] [2026-07-20 15:34:56:792, ezkl::graph::model] - laying out 18: ADD
+[D] [2026-07-20 15:34:56:792, ezkl::circuit::ops::region] - (rows=7067, coord=14134, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:793, ezkl::graph::model] - ------------ output node 18: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:793, ezkl::graph::model] - ------------ layout of 18 took 395.435µs
+[D] [2026-07-20 15:34:56:793, ezkl::graph::model] - laying out 19: RESHAPE (shape=[4, 2, 8])
+[D] [2026-07-20 15:34:56:793, ezkl::circuit::ops::region] - (rows=7099, coord=14198, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:793, ezkl::graph::model] - ------------ output node 19: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:793, ezkl::graph::model] - ------------ layout of 19 took 14.727µs
+[D] [2026-07-20 15:34:56:793, ezkl::graph::model] - laying out 20: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM mbk,nbk->bmn)
+[D] [2026-07-20 15:34:56:793, ezkl::circuit::ops::region] - (rows=7099, coord=14198, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:819, ezkl::graph::model] - ------------ output node 20: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:819, ezkl::graph::model] - ------------ layout of 20 took 26.434417ms
+[D] [2026-07-20 15:34:56:819, ezkl::graph::model] - laying out 21: CONST (scale=13)
+[D] [2026-07-20 15:34:56:819, ezkl::circuit::ops::region] - (rows=7835, coord=15670, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:819, ezkl::graph::model] - node 21 is a constant with 1 use
+[D] [2026-07-20 15:34:56:819, ezkl::graph::model] - ------------ output node 21: "Tensor { inner: [2896], dims: [1, 1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:819, ezkl::graph::model] - ------------ layout of 21 took 21.784µs
+[D] [2026-07-20 15:34:56:819, ezkl::graph::model] - laying out 22: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:56:819, ezkl::circuit::ops::region] - (rows=7835, coord=15670, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:835, ezkl::graph::model] - ------------ output node 22: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:835, ezkl::graph::model] - ------------ layout of 22 took 16.197267ms
+[D] [2026-07-20 15:34:56:835, ezkl::graph::model] - laying out 23: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (SOFTMAX (input_scale=8192, output_scale=8192, axes=[2], eps=0.0000000000000002220446049250313))
+[D] [2026-07-20 15:34:56:835, ezkl::circuit::ops::region] - (rows=8587, coord=17174, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:34:56:876, ezkl::graph::model] - ------------ output node 23: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:876, ezkl::graph::model] - ------------ layout of 23 took 40.323626ms
+[D] [2026-07-20 15:34:56:876, ezkl::graph::model] - laying out 24: CONST (scale=13)
+[D] [2026-07-20 15:34:56:876, ezkl::circuit::ops::region] - (rows=10195, coord=20390, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:876, ezkl::graph::model] - node 24 is a constant with 1 use
+[D] [2026-07-20 15:34:56:876, ezkl::graph::model] - ------------ output node 24: "[637, 440, 1927, 1398, -596 ... -1718, -594, 1684, 662, -1918]"
+[D] [2026-07-20 15:34:56:876, ezkl::graph::model] - ------------ layout of 24 took 123.141µs
+[D] [2026-07-20 15:34:56:876, ezkl::graph::model] - laying out 25: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:34:56:876, ezkl::circuit::ops::region] - (rows=10195, coord=20390, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:904, ezkl::graph::model] - ------------ output node 25: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:904, ezkl::graph::model] - ------------ layout of 25 took 28.249095ms
+[D] [2026-07-20 15:34:56:904, ezkl::graph::model] - laying out 26: CONST (scale=13)
+[D] [2026-07-20 15:34:56:904, ezkl::circuit::ops::region] - (rows=11667, coord=23334, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:904, ezkl::graph::model] - node 26 is a constant with 1 use
+[D] [2026-07-20 15:34:56:904, ezkl::graph::model] - ------------ output node 26: "[-411, 813, -1829, 1179, -636 ... 394, 556, 787, 1124, -464]"
+[D] [2026-07-20 15:34:56:904, ezkl::graph::model] - ------------ layout of 26 took 21.033µs
+[D] [2026-07-20 15:34:56:904, ezkl::graph::model] - laying out 27: ADD
+[D] [2026-07-20 15:34:56:904, ezkl::circuit::ops::region] - (rows=11667, coord=23334, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:905, ezkl::graph::model] - ------------ output node 27: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:905, ezkl::graph::model] - ------------ layout of 27 took 325.528µs
+[D] [2026-07-20 15:34:56:905, ezkl::graph::model] - laying out 28: RESHAPE (shape=[4, 2, 8])
+[D] [2026-07-20 15:34:56:905, ezkl::circuit::ops::region] - (rows=11699, coord=23398, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:905, ezkl::graph::model] - ------------ output node 28: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:905, ezkl::graph::model] - ------------ layout of 28 took 13.039µs
+[D] [2026-07-20 15:34:56:905, ezkl::graph::model] - laying out 29: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM bmk,kbn->mbn)
+[D] [2026-07-20 15:34:56:905, ezkl::circuit::ops::region] - (rows=11699, coord=23398, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:934, ezkl::graph::model] - ------------ output node 29: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:934, ezkl::graph::model] - ------------ layout of 29 took 29.111216ms
+[D] [2026-07-20 15:34:56:934, ezkl::graph::model] - laying out 30: RESHAPE (shape=[4, 16])
+[D] [2026-07-20 15:34:56:934, ezkl::circuit::ops::region] - (rows=13171, coord=26342, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:934, ezkl::graph::model] - ------------ output node 30: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:934, ezkl::graph::model] - ------------ layout of 30 took 15.164µs
+[D] [2026-07-20 15:34:56:934, ezkl::graph::model] - laying out 31: CONST (scale=13)
+[D] [2026-07-20 15:34:56:934, ezkl::circuit::ops::region] - (rows=13171, coord=26342, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:934, ezkl::graph::model] - node 31 is a constant with 1 use
+[D] [2026-07-20 15:34:56:934, ezkl::graph::model] - ------------ output node 31: "[1138, -1794, 963, -967, 895 ... -769, -1296, -225, 0, 1281]"
+[D] [2026-07-20 15:34:56:934, ezkl::graph::model] - ------------ layout of 31 took 159.92µs
+[D] [2026-07-20 15:34:56:934, ezkl::graph::model] - laying out 32: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM mk,kn->amn)
+[D] [2026-07-20 15:34:56:934, ezkl::circuit::ops::region] - (rows=13171, coord=26342, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:965, ezkl::graph::model] - ------------ output node 32: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:965, ezkl::graph::model] - ------------ layout of 32 took 31.185748ms
+[D] [2026-07-20 15:34:56:965, ezkl::graph::model] - laying out 33: CONST (scale=13)
+[D] [2026-07-20 15:34:56:965, ezkl::circuit::ops::region] - (rows=14643, coord=29286, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:965, ezkl::graph::model] - node 33 is a constant with 1 use
+[D] [2026-07-20 15:34:56:965, ezkl::graph::model] - ------------ output node 33: "[40, 941, -733, 892, -658 ... -1842, 133, 1329, 1865, 1195]"
+[D] [2026-07-20 15:34:56:965, ezkl::graph::model] - ------------ layout of 33 took 21.746µs
+[D] [2026-07-20 15:34:56:965, ezkl::graph::model] - laying out 34: ADD
+[D] [2026-07-20 15:34:56:965, ezkl::circuit::ops::region] - (rows=14643, coord=29286, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:966, ezkl::graph::model] - ------------ output node 34: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:966, ezkl::graph::model] - ------------ layout of 34 took 371.157µs
+[D] [2026-07-20 15:34:56:966, ezkl::graph::model] - laying out 35: ADD
+[D] [2026-07-20 15:34:56:966, ezkl::circuit::ops::region] - (rows=14675, coord=29350, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:966, ezkl::graph::model] - ------------ output node 35: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:966, ezkl::graph::model] - ------------ layout of 35 took 348.92µs
+[D] [2026-07-20 15:34:56:966, ezkl::graph::model] - laying out 36: SUM (axes=[2])
+[D] [2026-07-20 15:34:56:966, ezkl::circuit::ops::region] - (rows=14707, coord=29414, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:967, ezkl::graph::model] - ------------ output node 36: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:967, ezkl::graph::model] - ------------ layout of 36 took 672.684µs
+[D] [2026-07-20 15:34:56:967, ezkl::graph::model] - laying out 37: IDENTITY (out_scale=Some(17))
+[D] [2026-07-20 15:34:56:967, ezkl::circuit::ops::region] - (rows=14739, coord=29478, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:967, ezkl::graph::model] - ------------ output node 37: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:967, ezkl::graph::model] - ------------ layout of 37 took 11.014µs
+[D] [2026-07-20 15:34:56:967, ezkl::graph::model] - laying out 38: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-20 15:34:56:967, ezkl::circuit::ops::region] - (rows=14739, coord=29478, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:56:992, ezkl::graph::model] - ------------ output node 38: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:56:992, ezkl::graph::model] - ------------ layout of 38 took 25.389981ms
+[D] [2026-07-20 15:34:56:992, ezkl::graph::model] - laying out 39: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-20 15:34:56:992, ezkl::circuit::ops::region] - (rows=16275, coord=32550, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:001, ezkl::graph::model] - ------------ output node 39: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:001, ezkl::graph::model] - ------------ layout of 39 took 8.754153ms
+[D] [2026-07-20 15:34:57:001, ezkl::graph::model] - laying out 40: ADD
+[D] [2026-07-20 15:34:57:001, ezkl::circuit::ops::region] - (rows=16523, coord=33046, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:001, ezkl::graph::model] - ------------ output node 40: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:001, ezkl::graph::model] - ------------ layout of 40 took 66.202µs
+[D] [2026-07-20 15:34:57:001, ezkl::graph::model] - laying out 41: RSQRT (input_scale=8192, output_scale=8192, eps=0.0000000000000002220446049250313)
+[D] [2026-07-20 15:34:57:001, ezkl::circuit::ops::region] - (rows=16525, coord=33050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:019, ezkl::graph::model] - ------------ output node 41: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:019, ezkl::graph::model] - ------------ layout of 41 took 18.234269ms
+[D] [2026-07-20 15:34:57:019, ezkl::graph::model] - laying out 42: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:57:019, ezkl::circuit::ops::region] - (rows=16973, coord=33946, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:044, ezkl::graph::model] - ------------ output node 42: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:044, ezkl::graph::model] - ------------ layout of 42 took 24.771575ms
+[D] [2026-07-20 15:34:57:044, ezkl::graph::model] - laying out 43: CONST (scale=13)
+[D] [2026-07-20 15:34:57:044, ezkl::circuit::ops::region] - (rows=18477, coord=36954, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:044, ezkl::graph::model] - node 43 is a constant with 1 use
+[D] [2026-07-20 15:34:57:045, ezkl::graph::model] - ------------ output node 43: "[-1062, -868, -1047, -145, 618 ... 1930, -563, 1303, -994, -53]"
+[D] [2026-07-20 15:34:57:045, ezkl::graph::model] - ------------ layout of 43 took 368.474µs
+[D] [2026-07-20 15:34:57:045, ezkl::graph::model] - laying out 44: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:34:57:045, ezkl::circuit::ops::region] - (rows=18477, coord=36954, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:138, ezkl::graph::model] - ------------ output node 44: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:138, ezkl::graph::model] - ------------ layout of 44 took 93.538229ms
+[D] [2026-07-20 15:34:57:138, ezkl::graph::model] - laying out 45: CONST (scale=13)
+[D] [2026-07-20 15:34:57:138, ezkl::circuit::ops::region] - (rows=24365, coord=48730, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:138, ezkl::graph::model] - node 45 is a constant with 1 use
+[D] [2026-07-20 15:34:57:138, ezkl::graph::model] - ------------ output node 45: "[-409, 684, 1615, 511, 1426 ... -601, -1912, -1100, 1068, -826]"
+[D] [2026-07-20 15:34:57:138, ezkl::graph::model] - ------------ layout of 45 took 103.133µs
+[D] [2026-07-20 15:34:57:138, ezkl::graph::model] - laying out 46: ADD
+[D] [2026-07-20 15:34:57:138, ezkl::circuit::ops::region] - (rows=24365, coord=48730, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:139, ezkl::graph::model] - ------------ output node 46: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:139, ezkl::graph::model] - ------------ layout of 46 took 907.117µs
+[D] [2026-07-20 15:34:57:139, ezkl::graph::model] - laying out 48: IDENTITY (out_scale=Some(14))
+[D] [2026-07-20 15:34:57:139, ezkl::circuit::ops::region] - (rows=24493, coord=48986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:139, ezkl::graph::model] - ------------ output node 48: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:139, ezkl::graph::model] - ------------ layout of 48 took 74.699µs
+[D] [2026-07-20 15:34:57:139, ezkl::graph::model] - laying out 49: CONST (scale=13)
+[D] [2026-07-20 15:34:57:139, ezkl::circuit::ops::region] - (rows=24493, coord=48986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:139, ezkl::graph::model] - node 49 is a constant with 1 use
+[D] [2026-07-20 15:34:57:139, ezkl::graph::model] - ------------ output node 49: "Tensor { inner: [366], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:139, ezkl::graph::model] - ------------ layout of 49 took 19.744µs
+[D] [2026-07-20 15:34:57:139, ezkl::graph::model] - laying out 50: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:57:139, ezkl::circuit::ops::region] - (rows=24493, coord=48986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:228, ezkl::graph::model] - ------------ output node 50: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:229, ezkl::graph::model] - ------------ layout of 50 took 89.101258ms
+[D] [2026-07-20 15:34:57:229, ezkl::graph::model] - laying out 51: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:57:229, ezkl::circuit::ops::region] - (rows=30509, coord=61018, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:314, ezkl::graph::model] - ------------ output node 51: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:314, ezkl::graph::model] - ------------ layout of 51 took 84.988353ms
+[D] [2026-07-20 15:34:57:314, ezkl::graph::model] - laying out 52: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:57:314, ezkl::circuit::ops::region] - (rows=36525, coord=73050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:400, ezkl::graph::model] - ------------ output node 52: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:400, ezkl::graph::model] - ------------ layout of 52 took 86.849986ms
+[D] [2026-07-20 15:34:57:400, ezkl::graph::model] - laying out 53: ADD
+[D] [2026-07-20 15:34:57:400, ezkl::circuit::ops::region] - (rows=42541, coord=85082, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:402, ezkl::graph::model] - ------------ output node 53: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:402, ezkl::graph::model] - ------------ layout of 53 took 1.040529ms
+[D] [2026-07-20 15:34:57:402, ezkl::graph::model] - laying out 54: CONST (scale=13)
+[D] [2026-07-20 15:34:57:402, ezkl::circuit::ops::region] - (rows=42669, coord=85338, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:402, ezkl::graph::model] - node 54 is a constant with 1 use
+[D] [2026-07-20 15:34:57:402, ezkl::graph::model] - ------------ output node 54: "Tensor { inner: [6536], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:402, ezkl::graph::model] - ------------ layout of 54 took 22.786µs
+[D] [2026-07-20 15:34:57:402, ezkl::graph::model] - laying out 55: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:57:402, ezkl::circuit::ops::region] - (rows=42669, coord=85338, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:494, ezkl::graph::model] - ------------ output node 55: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:494, ezkl::graph::model] - ------------ layout of 55 took 92.666836ms
+[D] [2026-07-20 15:34:57:494, ezkl::graph::model] - laying out 56: TANH(scale=8192)
+[D] [2026-07-20 15:34:57:494, ezkl::circuit::ops::region] - (rows=48685, coord=97370, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:495, ezkl::graph::model] - ------------ output node 56: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:495, ezkl::graph::model] - ------------ layout of 56 took 1.103627ms
+[D] [2026-07-20 15:34:57:495, ezkl::graph::model] - laying out 57: CONST (scale=13)
+[D] [2026-07-20 15:34:57:495, ezkl::circuit::ops::region] - (rows=48813, coord=97626, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:495, ezkl::graph::model] - node 57 is a constant with 1 use
+[D] [2026-07-20 15:34:57:495, ezkl::graph::model] - ------------ output node 57: "Tensor { inner: [8192], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:495, ezkl::graph::model] - ------------ layout of 57 took 16.787µs
+[D] [2026-07-20 15:34:57:495, ezkl::graph::model] - laying out 58: ADD
+[D] [2026-07-20 15:34:57:496, ezkl::circuit::ops::region] - (rows=48813, coord=97626, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:496, ezkl::graph::model] - ------------ output node 58: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:496, ezkl::graph::model] - ------------ layout of 58 took 637.281µs
+[D] [2026-07-20 15:34:57:496, ezkl::graph::model] - laying out 59: REBASED (div=16384.0, rebasing_op=DIV (denom=16384)) (MULT)
+[D] [2026-07-20 15:34:57:496, ezkl::circuit::ops::region] - (rows=48941, coord=97882, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:586, ezkl::graph::model] - ------------ output node 59: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:587, ezkl::graph::model] - ------------ layout of 59 took 90.345603ms
+[D] [2026-07-20 15:34:57:587, ezkl::graph::model] - laying out 60: CONST (scale=13)
+[D] [2026-07-20 15:34:57:587, ezkl::circuit::ops::region] - (rows=54957, coord=109914, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:587, ezkl::graph::model] - node 60 is a constant with 1 use
+[D] [2026-07-20 15:34:57:587, ezkl::graph::model] - ------------ output node 60: "[490, 40, 108, -527, -841 ... 885, 785, 523, -483, 25]"
+[D] [2026-07-20 15:34:57:587, ezkl::graph::model] - ------------ layout of 60 took 444.347µs
+[D] [2026-07-20 15:34:57:587, ezkl::graph::model] - laying out 61: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM mk,kn->amn)
+[D] [2026-07-20 15:34:57:587, ezkl::circuit::ops::region] - (rows=54957, coord=109914, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:624, ezkl::graph::model] - ------------ output node 61: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:624, ezkl::graph::model] - ------------ layout of 61 took 37.095333ms
+[D] [2026-07-20 15:34:57:624, ezkl::graph::model] - laying out 62: CONST (scale=13)
+[D] [2026-07-20 15:34:57:624, ezkl::circuit::ops::region] - (rows=56429, coord=112858, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:624, ezkl::graph::model] - node 62 is a constant with 1 use
+[D] [2026-07-20 15:34:57:624, ezkl::graph::model] - ------------ output node 62: "[-782, 418, 580, 903, -975 ... 936, -392, -167, 801, 824]"
+[D] [2026-07-20 15:34:57:624, ezkl::graph::model] - ------------ layout of 62 took 54.424µs
+[D] [2026-07-20 15:34:57:624, ezkl::graph::model] - laying out 63: ADD
+[D] [2026-07-20 15:34:57:624, ezkl::circuit::ops::region] - (rows=56429, coord=112858, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:625, ezkl::graph::model] - ------------ output node 63: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:625, ezkl::graph::model] - ------------ layout of 63 took 353.761µs
+[D] [2026-07-20 15:34:57:625, ezkl::graph::model] - laying out 64: ADD
+[D] [2026-07-20 15:34:57:625, ezkl::circuit::ops::region] - (rows=56461, coord=112922, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:625, ezkl::graph::model] - ------------ output node 64: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:625, ezkl::graph::model] - ------------ layout of 64 took 369.024µs
+[D] [2026-07-20 15:34:57:625, ezkl::graph::model] - laying out 65: SUM (axes=[2])
+[D] [2026-07-20 15:34:57:625, ezkl::circuit::ops::region] - (rows=56493, coord=112986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:626, ezkl::graph::model] - ------------ output node 65: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:626, ezkl::graph::model] - ------------ layout of 65 took 713.059µs
+[D] [2026-07-20 15:34:57:626, ezkl::graph::model] - laying out 66: IDENTITY (out_scale=Some(17))
+[D] [2026-07-20 15:34:57:626, ezkl::circuit::ops::region] - (rows=56525, coord=113050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:626, ezkl::graph::model] - ------------ output node 66: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:626, ezkl::graph::model] - ------------ layout of 66 took 11.156µs
+[D] [2026-07-20 15:34:57:626, ezkl::graph::model] - laying out 67: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-20 15:34:57:626, ezkl::circuit::ops::region] - (rows=56525, coord=113050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:654, ezkl::graph::model] - ------------ output node 67: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:654, ezkl::graph::model] - ------------ layout of 67 took 28.41132ms
+[D] [2026-07-20 15:34:57:654, ezkl::graph::model] - laying out 68: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-20 15:34:57:654, ezkl::circuit::ops::region] - (rows=58061, coord=116122, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:665, ezkl::graph::model] - ------------ output node 68: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:665, ezkl::graph::model] - ------------ layout of 68 took 10.345257ms
+[D] [2026-07-20 15:34:57:665, ezkl::graph::model] - laying out 69: ADD
+[D] [2026-07-20 15:34:57:665, ezkl::circuit::ops::region] - (rows=58309, coord=116618, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:665, ezkl::graph::model] - ------------ output node 69: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:665, ezkl::graph::model] - ------------ layout of 69 took 86.895µs
+[D] [2026-07-20 15:34:57:665, ezkl::graph::model] - laying out 70: RSQRT (input_scale=8192, output_scale=8192, eps=0.0000000000000002220446049250313)
+[D] [2026-07-20 15:34:57:665, ezkl::circuit::ops::region] - (rows=58311, coord=116622, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:686, ezkl::graph::model] - ------------ output node 70: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:686, ezkl::graph::model] - ------------ layout of 70 took 21.178875ms
+[D] [2026-07-20 15:34:57:686, ezkl::graph::model] - laying out 71: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:34:57:686, ezkl::circuit::ops::region] - (rows=58759, coord=117518, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:34:57:714, ezkl::graph::model] - ------------ output node 71: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:34:57:714, ezkl::graph::model] - ------------ layout of 71 took 28.142423ms
+[D] [2026-07-20 15:34:57:714, ezkl::graph::model] - model outputs are nodes: [(71, 0)]
+[D] [2026-07-20 15:34:57:729, ezkl::circuit::ops::region] - (rows=60935, coord=121870, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[*] [2026-07-20 15:35:00:027, ezkl::pfsys] - VK took 4.582
+[D] [2026-07-20 15:35:00:028, ezkl::graph::vars] - number of blinding factors: 5
+[D] [2026-07-20 15:35:00:028, ezkl::graph::vars] - model uses 6 advice blocks (size=2)
+[D] [2026-07-20 15:35:00:028, ezkl::graph::vars] - model uses 1 fixed columns
+[D] [2026-07-20 15:35:00:028, ezkl::graph::vars] - model uses [[1, 4, 16]] instance dims
+[D] [2026-07-20 15:35:00:028, ezkl::graph::model] - configuring model
+[D] [2026-07-20 15:35:00:028, ezkl::circuit::table] - table range: (-24642, 23866)
+[D] [2026-07-20 15:35:00:028, ezkl::circuit::ops::chip] - assigning lookup input
+[D] [2026-07-20 15:35:00:028, ezkl::circuit::ops::chip] - assigning lookup output
+[D] [2026-07-20 15:35:00:028, ezkl::circuit::ops::chip] - assigning lookup index
+[D] [2026-07-20 15:35:00:028, ezkl::circuit::table] - table range: (-24642, 23866)
+[D] [2026-07-20 15:35:00:028, ezkl::circuit::table] - range check range: (0, 16383)
+[D] [2026-07-20 15:35:00:028, ezkl::circuit::ops::chip] - assigning range check input
+[D] [2026-07-20 15:35:00:028, ezkl::circuit::ops::chip] - assigning range check index
+[D] [2026-07-20 15:35:00:028, ezkl::circuit::table] - range check range: (0, 1)
+[D] [2026-07-20 15:35:00:028, ezkl::circuit::table] - range check range: (-1, 1)
+[D] [2026-07-20 15:35:00:028, ezkl::circuit::ops::chip] - assigning shuffles output
+[D] [2026-07-20 15:35:00:028, ezkl::circuit::ops::chip] - assigning shuffles input
+[D] [2026-07-20 15:35:00:028, ezkl::graph::model] - configuring einsums...
+[D] [2026-07-20 15:35:00:029, ezkl::graph] - degree: 4, log2_ceil of degrees: 2.0
+[D] [2026-07-20 15:35:00:029, ezkl::graph] - circuit size: 
+ |   {
+ |    "logrows": 16,
+ |    "num_advice_columns": 21,
+ |    "num_challenges": 3,
+ |    "num_fixed": 7,
+ |    "num_instances": 1,
+ |    "num_selectors": 57
+ |  }
+[D] [2026-07-20 15:35:00:029, halo2_proofs::plonk::circuit] - max gate degree: 4
+[D] [2026-07-20 15:35:00:029, halo2_proofs::plonk::circuit] - max single lookup degree: 4
+[D] [2026-07-20 15:35:00:077, ezkl::circuit::modules::planner] - spawning module 2
+[*] [2026-07-20 15:35:00:077, ezkl::graph::model] - model layout...
+[D] [2026-07-20 15:35:00:077, ezkl::circuit::ops::chip] - laying out table for EXP(scale=8192, base=2.7182817)
+[*] [2026-07-20 15:35:00:077, ezkl::circuit::table] - Loading lookup table from cache: "/data/root-home/.ezkl/cache/exp_8192_2.7182817_-24642_40885"
+[D] [2026-07-20 15:35:00:101, ezkl::circuit::ops::chip] - laying out table for TANH(scale=8192)
+[*] [2026-07-20 15:35:00:101, ezkl::circuit::table] - Loading lookup table from cache: "/data/root-home/.ezkl/cache/tanh_8192_-24642_40885"
+[D] [2026-07-20 15:35:00:117, ezkl::circuit::ops::chip] - laying out range check for (-1, 1)
+[*] [2026-07-20 15:35:00:117, ezkl::circuit::table] - Loading range check table from cache: "/data/root-home/.ezkl/cache/rangecheck_-1_1"
+[D] [2026-07-20 15:35:00:117, ezkl::circuit::ops::chip] - laying out range check for (0, 1)
+[*] [2026-07-20 15:35:00:117, ezkl::circuit::table] - Loading range check table from cache: "/data/root-home/.ezkl/cache/rangecheck_0_1"
+[D] [2026-07-20 15:35:00:118, ezkl::circuit::ops::chip] - laying out range check for (0, 16383)
+[*] [2026-07-20 15:35:00:118, ezkl::circuit::table] - Loading range check table from cache: "/data/root-home/.ezkl/cache/rangecheck_0_16383"
+[D] [2026-07-20 15:35:00:121, ezkl::graph::model] - laying out 0: Input
+[D] [2026-07-20 15:35:00:121, ezkl::circuit::ops::region] - (rows=0, coord=0, constants=0, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=0, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:121, ezkl::circuit::ops] - constraining input to be decomp
+[D] [2026-07-20 15:35:00:129, ezkl::graph::model] - ------------ output node 0: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:129, ezkl::graph::model] - ------------ layout of 0 took 7.65674ms
+[D] [2026-07-20 15:35:00:129, ezkl::graph::model] - laying out 1: SUM (axes=[2])
+[D] [2026-07-20 15:35:00:129, ezkl::circuit::ops::region] - (rows=320, coord=640, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:130, ezkl::graph::model] - ------------ output node 1: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:130, ezkl::graph::model] - ------------ layout of 1 took 803.5µs
+[D] [2026-07-20 15:35:00:130, ezkl::graph::model] - laying out 3: IDENTITY (out_scale=Some(17))
+[D] [2026-07-20 15:35:00:130, ezkl::circuit::ops::region] - (rows=352, coord=704, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:130, ezkl::graph::model] - ------------ output node 3: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:130, ezkl::graph::model] - ------------ layout of 3 took 11.79µs
+[D] [2026-07-20 15:35:00:130, ezkl::graph::model] - laying out 4: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-20 15:35:00:130, ezkl::circuit::ops::region] - (rows=352, coord=704, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:153, ezkl::graph::model] - ------------ output node 4: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:153, ezkl::graph::model] - ------------ layout of 4 took 23.382268ms
+[D] [2026-07-20 15:35:00:153, ezkl::graph::model] - laying out 5: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-20 15:35:00:153, ezkl::circuit::ops::region] - (rows=1888, coord=3776, constants=4, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:162, ezkl::graph::model] - ------------ output node 5: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:162, ezkl::graph::model] - ------------ layout of 5 took 8.350837ms
+[D] [2026-07-20 15:35:00:162, ezkl::graph::model] - laying out 6: CONST (scale=13)
+[D] [2026-07-20 15:35:00:162, ezkl::circuit::ops::region] - (rows=2136, coord=4272, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:162, ezkl::circuit::ops] - constraining constant to be identity
+[D] [2026-07-20 15:35:00:162, ezkl::graph::model] - ------------ output node 6: "Tensor { inner: [], dims: [1, 1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:162, ezkl::graph::model] - ------------ layout of 6 took 23.488µs
+[D] [2026-07-20 15:35:00:162, ezkl::graph::model] - laying out 7: ADD
+[D] [2026-07-20 15:35:00:162, ezkl::circuit::ops::region] - (rows=2136, coord=4273, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:162, ezkl::graph::model] - ------------ output node 7: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:162, ezkl::graph::model] - ------------ layout of 7 took 53.232µs
+[D] [2026-07-20 15:35:00:162, ezkl::graph::model] - laying out 8: RSQRT (input_scale=8192, output_scale=8192, eps=0.0000000000000002220446049250313)
+[D] [2026-07-20 15:35:00:162, ezkl::circuit::ops::region] - (rows=2138, coord=4277, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:178, ezkl::graph::model] - ------------ output node 8: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:178, ezkl::graph::model] - ------------ layout of 8 took 16.287145ms
+[D] [2026-07-20 15:35:00:178, ezkl::graph::model] - laying out 9: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:00:178, ezkl::circuit::ops::region] - (rows=2587, coord=5174, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:200, ezkl::graph::model] - ------------ output node 9: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:200, ezkl::graph::model] - ------------ layout of 9 took 22.041431ms
+[D] [2026-07-20 15:35:00:200, ezkl::graph::model] - laying out 10: CONST (scale=13)
+[D] [2026-07-20 15:35:00:200, ezkl::circuit::ops::region] - (rows=4091, coord=8182, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:200, ezkl::graph::model] - node 10 is a constant with 1 use
+[D] [2026-07-20 15:35:00:200, ezkl::graph::model] - ------------ output node 10: "[1566, 1579, 1581, 1040, 628 ... -610, -1835, -411, -1916, -1950]"
+[D] [2026-07-20 15:35:00:200, ezkl::graph::model] - ------------ layout of 10 took 104.99µs
+[D] [2026-07-20 15:35:00:200, ezkl::graph::model] - laying out 11: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:35:00:200, ezkl::circuit::ops::region] - (rows=4091, coord=8182, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - ------------ output node 11: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - ------------ layout of 11 took 24.377236ms
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - laying out 12: CONST (scale=13)
+[D] [2026-07-20 15:35:00:225, ezkl::circuit::ops::region] - (rows=5563, coord=11126, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - node 12 is a constant with 1 use
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - ------------ output node 12: "[-1318, 2024, 783, 822, -1225 ... -259, 284, -812, 533, 772]"
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - ------------ layout of 12 took 21.586µs
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - laying out 13: ADD
+[D] [2026-07-20 15:35:00:225, ezkl::circuit::ops::region] - (rows=5563, coord=11126, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - ------------ output node 13: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - ------------ layout of 13 took 267.823µs
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - laying out 14: RESHAPE (shape=[4, 2, 8])
+[D] [2026-07-20 15:35:00:225, ezkl::circuit::ops::region] - (rows=5595, coord=11190, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - ------------ output node 14: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - ------------ layout of 14 took 14.421µs
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - laying out 15: CONST (scale=13)
+[D] [2026-07-20 15:35:00:225, ezkl::circuit::ops::region] - (rows=5595, coord=11190, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - node 15 is a constant with 1 use
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - ------------ output node 15: "[1146, 1271, 1717, -1667, -1423 ... 1643, -1448, 430, 28, -1880]"
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - ------------ layout of 15 took 82.68µs
+[D] [2026-07-20 15:35:00:225, ezkl::graph::model] - laying out 16: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:35:00:225, ezkl::circuit::ops::region] - (rows=5595, coord=11190, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:249, ezkl::graph::model] - ------------ output node 16: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:249, ezkl::graph::model] - ------------ layout of 16 took 23.641485ms
+[D] [2026-07-20 15:35:00:249, ezkl::graph::model] - laying out 17: CONST (scale=13)
+[D] [2026-07-20 15:35:00:249, ezkl::circuit::ops::region] - (rows=7067, coord=14134, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:249, ezkl::graph::model] - node 17 is a constant with 1 use
+[D] [2026-07-20 15:35:00:249, ezkl::graph::model] - ------------ output node 17: "[-1079, -2031, 1072, 489, -1042 ... -1883, -1135, -341, -1380, 2001]"
+[D] [2026-07-20 15:35:00:249, ezkl::graph::model] - ------------ layout of 17 took 35.572µs
+[D] [2026-07-20 15:35:00:249, ezkl::graph::model] - laying out 18: ADD
+[D] [2026-07-20 15:35:00:249, ezkl::circuit::ops::region] - (rows=7067, coord=14134, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:249, ezkl::graph::model] - ------------ output node 18: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:249, ezkl::graph::model] - ------------ layout of 18 took 318.197µs
+[D] [2026-07-20 15:35:00:249, ezkl::graph::model] - laying out 19: RESHAPE (shape=[4, 2, 8])
+[D] [2026-07-20 15:35:00:249, ezkl::circuit::ops::region] - (rows=7099, coord=14198, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:249, ezkl::graph::model] - ------------ output node 19: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:249, ezkl::graph::model] - ------------ layout of 19 took 13.545µs
+[D] [2026-07-20 15:35:00:249, ezkl::graph::model] - laying out 20: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM mbk,nbk->bmn)
+[D] [2026-07-20 15:35:00:249, ezkl::circuit::ops::region] - (rows=7099, coord=14198, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:272, ezkl::graph::model] - ------------ output node 20: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:272, ezkl::graph::model] - ------------ layout of 20 took 22.429878ms
+[D] [2026-07-20 15:35:00:272, ezkl::graph::model] - laying out 21: CONST (scale=13)
+[D] [2026-07-20 15:35:00:272, ezkl::circuit::ops::region] - (rows=7835, coord=15670, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:272, ezkl::graph::model] - node 21 is a constant with 1 use
+[D] [2026-07-20 15:35:00:272, ezkl::graph::model] - ------------ output node 21: "Tensor { inner: [2896], dims: [1, 1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:272, ezkl::graph::model] - ------------ layout of 21 took 16.549µs
+[D] [2026-07-20 15:35:00:272, ezkl::graph::model] - laying out 22: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:00:272, ezkl::circuit::ops::region] - (rows=7835, coord=15670, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:285, ezkl::graph::model] - ------------ output node 22: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:285, ezkl::graph::model] - ------------ layout of 22 took 13.343571ms
+[D] [2026-07-20 15:35:00:285, ezkl::graph::model] - laying out 23: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (SOFTMAX (input_scale=8192, output_scale=8192, axes=[2], eps=0.0000000000000002220446049250313))
+[D] [2026-07-20 15:35:00:285, ezkl::circuit::ops::region] - (rows=8587, coord=17174, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:00:322, ezkl::graph::model] - ------------ output node 23: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:322, ezkl::graph::model] - ------------ layout of 23 took 36.790139ms
+[D] [2026-07-20 15:35:00:322, ezkl::graph::model] - laying out 24: CONST (scale=13)
+[D] [2026-07-20 15:35:00:322, ezkl::circuit::ops::region] - (rows=10195, coord=20390, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:322, ezkl::graph::model] - node 24 is a constant with 1 use
+[D] [2026-07-20 15:35:00:322, ezkl::graph::model] - ------------ output node 24: "[637, 440, 1927, 1398, -596 ... -1718, -594, 1684, 662, -1918]"
+[D] [2026-07-20 15:35:00:322, ezkl::graph::model] - ------------ layout of 24 took 159.504µs
+[D] [2026-07-20 15:35:00:322, ezkl::graph::model] - laying out 25: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:35:00:322, ezkl::circuit::ops::region] - (rows=10195, coord=20390, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:349, ezkl::graph::model] - ------------ output node 25: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:349, ezkl::graph::model] - ------------ layout of 25 took 26.733403ms
+[D] [2026-07-20 15:35:00:349, ezkl::graph::model] - laying out 26: CONST (scale=13)
+[D] [2026-07-20 15:35:00:349, ezkl::circuit::ops::region] - (rows=11667, coord=23334, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:349, ezkl::graph::model] - node 26 is a constant with 1 use
+[D] [2026-07-20 15:35:00:349, ezkl::graph::model] - ------------ output node 26: "[-411, 813, -1829, 1179, -636 ... 394, 556, 787, 1124, -464]"
+[D] [2026-07-20 15:35:00:349, ezkl::graph::model] - ------------ layout of 26 took 34.012µs
+[D] [2026-07-20 15:35:00:349, ezkl::graph::model] - laying out 27: ADD
+[D] [2026-07-20 15:35:00:349, ezkl::circuit::ops::region] - (rows=11667, coord=23334, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:349, ezkl::graph::model] - ------------ output node 27: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:349, ezkl::graph::model] - ------------ layout of 27 took 356.88µs
+[D] [2026-07-20 15:35:00:349, ezkl::graph::model] - laying out 28: RESHAPE (shape=[4, 2, 8])
+[D] [2026-07-20 15:35:00:349, ezkl::circuit::ops::region] - (rows=11699, coord=23398, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:349, ezkl::graph::model] - ------------ output node 28: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:349, ezkl::graph::model] - ------------ layout of 28 took 15.345µs
+[D] [2026-07-20 15:35:00:349, ezkl::graph::model] - laying out 29: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM bmk,kbn->mbn)
+[D] [2026-07-20 15:35:00:349, ezkl::circuit::ops::region] - (rows=11699, coord=23398, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:376, ezkl::graph::model] - ------------ output node 29: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:376, ezkl::graph::model] - ------------ layout of 29 took 26.325912ms
+[D] [2026-07-20 15:35:00:376, ezkl::graph::model] - laying out 30: RESHAPE (shape=[4, 16])
+[D] [2026-07-20 15:35:00:376, ezkl::circuit::ops::region] - (rows=13171, coord=26342, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:376, ezkl::graph::model] - ------------ output node 30: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:376, ezkl::graph::model] - ------------ layout of 30 took 29.668µs
+[D] [2026-07-20 15:35:00:376, ezkl::graph::model] - laying out 31: CONST (scale=13)
+[D] [2026-07-20 15:35:00:376, ezkl::circuit::ops::region] - (rows=13171, coord=26342, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:376, ezkl::graph::model] - node 31 is a constant with 1 use
+[D] [2026-07-20 15:35:00:376, ezkl::graph::model] - ------------ output node 31: "[1138, -1794, 963, -967, 895 ... -769, -1296, -225, 0, 1281]"
+[D] [2026-07-20 15:35:00:376, ezkl::graph::model] - ------------ layout of 31 took 140.386µs
+[D] [2026-07-20 15:35:00:376, ezkl::graph::model] - laying out 32: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM mk,kn->amn)
+[D] [2026-07-20 15:35:00:376, ezkl::circuit::ops::region] - (rows=13171, coord=26342, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:403, ezkl::graph::model] - ------------ output node 32: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:403, ezkl::graph::model] - ------------ layout of 32 took 27.023657ms
+[D] [2026-07-20 15:35:00:403, ezkl::graph::model] - laying out 33: CONST (scale=13)
+[D] [2026-07-20 15:35:00:403, ezkl::circuit::ops::region] - (rows=14643, coord=29286, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:403, ezkl::graph::model] - node 33 is a constant with 1 use
+[D] [2026-07-20 15:35:00:403, ezkl::graph::model] - ------------ output node 33: "[40, 941, -733, 892, -658 ... -1842, 133, 1329, 1865, 1195]"
+[D] [2026-07-20 15:35:00:403, ezkl::graph::model] - ------------ layout of 33 took 21.026µs
+[D] [2026-07-20 15:35:00:403, ezkl::graph::model] - laying out 34: ADD
+[D] [2026-07-20 15:35:00:403, ezkl::circuit::ops::region] - (rows=14643, coord=29286, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:403, ezkl::graph::model] - ------------ output node 34: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:403, ezkl::graph::model] - ------------ layout of 34 took 288.568µs
+[D] [2026-07-20 15:35:00:403, ezkl::graph::model] - laying out 35: ADD
+[D] [2026-07-20 15:35:00:403, ezkl::circuit::ops::region] - (rows=14675, coord=29350, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:404, ezkl::graph::model] - ------------ output node 35: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:404, ezkl::graph::model] - ------------ layout of 35 took 343.256µs
+[D] [2026-07-20 15:35:00:404, ezkl::graph::model] - laying out 36: SUM (axes=[2])
+[D] [2026-07-20 15:35:00:404, ezkl::circuit::ops::region] - (rows=14707, coord=29414, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:404, ezkl::graph::model] - ------------ output node 36: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:404, ezkl::graph::model] - ------------ layout of 36 took 618.254µs
+[D] [2026-07-20 15:35:00:404, ezkl::graph::model] - laying out 37: IDENTITY (out_scale=Some(17))
+[D] [2026-07-20 15:35:00:404, ezkl::circuit::ops::region] - (rows=14739, coord=29478, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:405, ezkl::graph::model] - ------------ output node 37: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:405, ezkl::graph::model] - ------------ layout of 37 took 17.628µs
+[D] [2026-07-20 15:35:00:405, ezkl::graph::model] - laying out 38: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-20 15:35:00:405, ezkl::circuit::ops::region] - (rows=14739, coord=29478, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:425, ezkl::graph::model] - ------------ output node 38: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:425, ezkl::graph::model] - ------------ layout of 38 took 20.753372ms
+[D] [2026-07-20 15:35:00:425, ezkl::graph::model] - laying out 39: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-20 15:35:00:425, ezkl::circuit::ops::region] - (rows=16275, coord=32550, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:434, ezkl::graph::model] - ------------ output node 39: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:434, ezkl::graph::model] - ------------ layout of 39 took 8.382868ms
+[D] [2026-07-20 15:35:00:434, ezkl::graph::model] - laying out 40: ADD
+[D] [2026-07-20 15:35:00:434, ezkl::circuit::ops::region] - (rows=16523, coord=33046, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:434, ezkl::graph::model] - ------------ output node 40: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:434, ezkl::graph::model] - ------------ layout of 40 took 60.203µs
+[D] [2026-07-20 15:35:00:434, ezkl::graph::model] - laying out 41: RSQRT (input_scale=8192, output_scale=8192, eps=0.0000000000000002220446049250313)
+[D] [2026-07-20 15:35:00:434, ezkl::circuit::ops::region] - (rows=16525, coord=33050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:453, ezkl::graph::model] - ------------ output node 41: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:453, ezkl::graph::model] - ------------ layout of 41 took 18.851947ms
+[D] [2026-07-20 15:35:00:453, ezkl::graph::model] - laying out 42: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:00:453, ezkl::circuit::ops::region] - (rows=16973, coord=33946, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:475, ezkl::graph::model] - ------------ output node 42: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:475, ezkl::graph::model] - ------------ layout of 42 took 22.56792ms
+[D] [2026-07-20 15:35:00:475, ezkl::graph::model] - laying out 43: CONST (scale=13)
+[D] [2026-07-20 15:35:00:475, ezkl::circuit::ops::region] - (rows=18477, coord=36954, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:475, ezkl::graph::model] - node 43 is a constant with 1 use
+[D] [2026-07-20 15:35:00:476, ezkl::graph::model] - ------------ output node 43: "[-1062, -868, -1047, -145, 618 ... 1930, -563, 1303, -994, -53]"
+[D] [2026-07-20 15:35:00:476, ezkl::graph::model] - ------------ layout of 43 took 380.336µs
+[D] [2026-07-20 15:35:00:476, ezkl::graph::model] - laying out 44: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:35:00:476, ezkl::circuit::ops::region] - (rows=18477, coord=36954, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:555, ezkl::graph::model] - ------------ output node 44: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:555, ezkl::graph::model] - ------------ layout of 44 took 76.756641ms
+[D] [2026-07-20 15:35:00:555, ezkl::graph::model] - laying out 45: CONST (scale=13)
+[D] [2026-07-20 15:35:00:555, ezkl::circuit::ops::region] - (rows=24365, coord=48730, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:555, ezkl::graph::model] - node 45 is a constant with 1 use
+[D] [2026-07-20 15:35:00:555, ezkl::graph::model] - ------------ output node 45: "[-409, 684, 1615, 511, 1426 ... -601, -1912, -1100, 1068, -826]"
+[D] [2026-07-20 15:35:00:555, ezkl::graph::model] - ------------ layout of 45 took 42.084µs
+[D] [2026-07-20 15:35:00:555, ezkl::graph::model] - laying out 46: ADD
+[D] [2026-07-20 15:35:00:555, ezkl::circuit::ops::region] - (rows=24365, coord=48730, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:556, ezkl::graph::model] - ------------ output node 46: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:556, ezkl::graph::model] - ------------ layout of 46 took 503.175µs
+[D] [2026-07-20 15:35:00:556, ezkl::graph::model] - laying out 48: IDENTITY (out_scale=Some(14))
+[D] [2026-07-20 15:35:00:556, ezkl::circuit::ops::region] - (rows=24493, coord=48986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:556, ezkl::graph::model] - ------------ output node 48: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:556, ezkl::graph::model] - ------------ layout of 48 took 17.8µs
+[D] [2026-07-20 15:35:00:556, ezkl::graph::model] - laying out 49: CONST (scale=13)
+[D] [2026-07-20 15:35:00:556, ezkl::circuit::ops::region] - (rows=24493, coord=48986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:556, ezkl::graph::model] - node 49 is a constant with 1 use
+[D] [2026-07-20 15:35:00:556, ezkl::graph::model] - ------------ output node 49: "Tensor { inner: [366], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:556, ezkl::graph::model] - ------------ layout of 49 took 12.527µs
+[D] [2026-07-20 15:35:00:556, ezkl::graph::model] - laying out 50: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:00:556, ezkl::circuit::ops::region] - (rows=24493, coord=48986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:626, ezkl::graph::model] - ------------ output node 50: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:626, ezkl::graph::model] - ------------ layout of 50 took 70.470813ms
+[D] [2026-07-20 15:35:00:626, ezkl::graph::model] - laying out 51: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:00:626, ezkl::circuit::ops::region] - (rows=30509, coord=61018, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:695, ezkl::graph::model] - ------------ output node 51: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:695, ezkl::graph::model] - ------------ layout of 51 took 68.490324ms
+[D] [2026-07-20 15:35:00:695, ezkl::graph::model] - laying out 52: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:00:695, ezkl::circuit::ops::region] - (rows=36525, coord=73050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:764, ezkl::graph::model] - ------------ output node 52: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:764, ezkl::graph::model] - ------------ layout of 52 took 69.520286ms
+[D] [2026-07-20 15:35:00:764, ezkl::graph::model] - laying out 53: ADD
+[D] [2026-07-20 15:35:00:764, ezkl::circuit::ops::region] - (rows=42541, coord=85082, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:765, ezkl::graph::model] - ------------ output node 53: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:765, ezkl::graph::model] - ------------ layout of 53 took 460.624µs
+[D] [2026-07-20 15:35:00:765, ezkl::graph::model] - laying out 54: CONST (scale=13)
+[D] [2026-07-20 15:35:00:765, ezkl::circuit::ops::region] - (rows=42669, coord=85338, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:765, ezkl::graph::model] - node 54 is a constant with 1 use
+[D] [2026-07-20 15:35:00:765, ezkl::graph::model] - ------------ output node 54: "Tensor { inner: [6536], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:765, ezkl::graph::model] - ------------ layout of 54 took 18.804µs
+[D] [2026-07-20 15:35:00:765, ezkl::graph::model] - laying out 55: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:00:765, ezkl::circuit::ops::region] - (rows=42669, coord=85338, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:837, ezkl::graph::model] - ------------ output node 55: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:837, ezkl::graph::model] - ------------ layout of 55 took 72.240087ms
+[D] [2026-07-20 15:35:00:837, ezkl::graph::model] - laying out 56: TANH(scale=8192)
+[D] [2026-07-20 15:35:00:837, ezkl::circuit::ops::region] - (rows=48685, coord=97370, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:838, ezkl::graph::model] - ------------ output node 56: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:838, ezkl::graph::model] - ------------ layout of 56 took 999.307µs
+[D] [2026-07-20 15:35:00:838, ezkl::graph::model] - laying out 57: CONST (scale=13)
+[D] [2026-07-20 15:35:00:838, ezkl::circuit::ops::region] - (rows=48813, coord=97626, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:838, ezkl::graph::model] - node 57 is a constant with 1 use
+[D] [2026-07-20 15:35:00:838, ezkl::graph::model] - ------------ output node 57: "Tensor { inner: [8192], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:838, ezkl::graph::model] - ------------ layout of 57 took 24.829µs
+[D] [2026-07-20 15:35:00:838, ezkl::graph::model] - laying out 58: ADD
+[D] [2026-07-20 15:35:00:838, ezkl::circuit::ops::region] - (rows=48813, coord=97626, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:839, ezkl::graph::model] - ------------ output node 58: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:839, ezkl::graph::model] - ------------ layout of 58 took 569.891µs
+[D] [2026-07-20 15:35:00:839, ezkl::graph::model] - laying out 59: REBASED (div=16384.0, rebasing_op=DIV (denom=16384)) (MULT)
+[D] [2026-07-20 15:35:00:839, ezkl::circuit::ops::region] - (rows=48941, coord=97882, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:914, ezkl::graph::model] - ------------ output node 59: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:914, ezkl::graph::model] - ------------ layout of 59 took 75.246388ms
+[D] [2026-07-20 15:35:00:914, ezkl::graph::model] - laying out 60: CONST (scale=13)
+[D] [2026-07-20 15:35:00:914, ezkl::circuit::ops::region] - (rows=54957, coord=109914, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:914, ezkl::graph::model] - node 60 is a constant with 1 use
+[D] [2026-07-20 15:35:00:915, ezkl::graph::model] - ------------ output node 60: "[490, 40, 108, -527, -841 ... 885, 785, 523, -483, 25]"
+[D] [2026-07-20 15:35:00:915, ezkl::graph::model] - ------------ layout of 60 took 370.488µs
+[D] [2026-07-20 15:35:00:915, ezkl::graph::model] - laying out 61: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM mk,kn->amn)
+[D] [2026-07-20 15:35:00:915, ezkl::circuit::ops::region] - (rows=54957, coord=109914, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:948, ezkl::graph::model] - ------------ output node 61: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:948, ezkl::graph::model] - ------------ layout of 61 took 32.94573ms
+[D] [2026-07-20 15:35:00:948, ezkl::graph::model] - laying out 62: CONST (scale=13)
+[D] [2026-07-20 15:35:00:948, ezkl::circuit::ops::region] - (rows=56429, coord=112858, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:948, ezkl::graph::model] - node 62 is a constant with 1 use
+[D] [2026-07-20 15:35:00:948, ezkl::graph::model] - ------------ output node 62: "[-782, 418, 580, 903, -975 ... 936, -392, -167, 801, 824]"
+[D] [2026-07-20 15:35:00:948, ezkl::graph::model] - ------------ layout of 62 took 30.403µs
+[D] [2026-07-20 15:35:00:948, ezkl::graph::model] - laying out 63: ADD
+[D] [2026-07-20 15:35:00:948, ezkl::circuit::ops::region] - (rows=56429, coord=112858, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:948, ezkl::graph::model] - ------------ output node 63: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:948, ezkl::graph::model] - ------------ layout of 63 took 332.783µs
+[D] [2026-07-20 15:35:00:948, ezkl::graph::model] - laying out 64: ADD
+[D] [2026-07-20 15:35:00:948, ezkl::circuit::ops::region] - (rows=56461, coord=112922, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:948, ezkl::graph::model] - ------------ output node 64: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:948, ezkl::graph::model] - ------------ layout of 64 took 325.274µs
+[D] [2026-07-20 15:35:00:948, ezkl::graph::model] - laying out 65: SUM (axes=[2])
+[D] [2026-07-20 15:35:00:949, ezkl::circuit::ops::region] - (rows=56493, coord=112986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:949, ezkl::graph::model] - ------------ output node 65: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:949, ezkl::graph::model] - ------------ layout of 65 took 574.706µs
+[D] [2026-07-20 15:35:00:949, ezkl::graph::model] - laying out 66: IDENTITY (out_scale=Some(17))
+[D] [2026-07-20 15:35:00:949, ezkl::circuit::ops::region] - (rows=56525, coord=113050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:949, ezkl::graph::model] - ------------ output node 66: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:949, ezkl::graph::model] - ------------ layout of 66 took 8.884µs
+[D] [2026-07-20 15:35:00:949, ezkl::graph::model] - laying out 67: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-20 15:35:00:949, ezkl::circuit::ops::region] - (rows=56525, coord=113050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:970, ezkl::graph::model] - ------------ output node 67: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:970, ezkl::graph::model] - ------------ layout of 67 took 21.106417ms
+[D] [2026-07-20 15:35:00:970, ezkl::graph::model] - laying out 68: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-20 15:35:00:970, ezkl::circuit::ops::region] - (rows=58061, coord=116122, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:978, ezkl::graph::model] - ------------ output node 68: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:978, ezkl::graph::model] - ------------ layout of 68 took 7.490254ms
+[D] [2026-07-20 15:35:00:978, ezkl::graph::model] - laying out 69: ADD
+[D] [2026-07-20 15:35:00:978, ezkl::circuit::ops::region] - (rows=58309, coord=116618, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:978, ezkl::graph::model] - ------------ output node 69: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:978, ezkl::graph::model] - ------------ layout of 69 took 147.886µs
+[D] [2026-07-20 15:35:00:978, ezkl::graph::model] - laying out 70: RSQRT (input_scale=8192, output_scale=8192, eps=0.0000000000000002220446049250313)
+[D] [2026-07-20 15:35:00:978, ezkl::circuit::ops::region] - (rows=58311, coord=116622, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:00:994, ezkl::graph::model] - ------------ output node 70: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:00:994, ezkl::graph::model] - ------------ layout of 70 took 16.341539ms
+[D] [2026-07-20 15:35:00:994, ezkl::graph::model] - laying out 71: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:00:994, ezkl::circuit::ops::region] - (rows=58759, coord=117518, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:017, ezkl::graph::model] - ------------ output node 71: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:017, ezkl::graph::model] - ------------ layout of 71 took 22.790112ms
+[D] [2026-07-20 15:35:01:017, ezkl::graph::model] - model outputs are nodes: [(71, 0)]
+[D] [2026-07-20 15:35:01:031, ezkl::circuit::ops::region] - (rows=60935, coord=121870, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:031, ezkl::graph::model] - laying out 0: Input
+[D] [2026-07-20 15:35:01:031, ezkl::circuit::ops::region] - (rows=0, coord=0, constants=0, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=0, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:031, ezkl::circuit::ops] - constraining input to be decomp
+[D] [2026-07-20 15:35:01:038, ezkl::graph::model] - ------------ output node 0: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:038, ezkl::graph::model] - ------------ layout of 0 took 6.856068ms
+[D] [2026-07-20 15:35:01:038, ezkl::graph::model] - laying out 1: SUM (axes=[2])
+[D] [2026-07-20 15:35:01:038, ezkl::circuit::ops::region] - (rows=320, coord=640, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:039, ezkl::graph::model] - ------------ output node 1: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:039, ezkl::graph::model] - ------------ layout of 1 took 723.3µs
+[D] [2026-07-20 15:35:01:039, ezkl::graph::model] - laying out 3: IDENTITY (out_scale=Some(17))
+[D] [2026-07-20 15:35:01:039, ezkl::circuit::ops::region] - (rows=352, coord=704, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:039, ezkl::graph::model] - ------------ output node 3: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:039, ezkl::graph::model] - ------------ layout of 3 took 17.424µs
+[D] [2026-07-20 15:35:01:039, ezkl::graph::model] - laying out 4: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-20 15:35:01:039, ezkl::circuit::ops::region] - (rows=352, coord=704, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:064, ezkl::graph::model] - ------------ output node 4: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:064, ezkl::graph::model] - ------------ layout of 4 took 25.327032ms
+[D] [2026-07-20 15:35:01:064, ezkl::graph::model] - laying out 5: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-20 15:35:01:064, ezkl::circuit::ops::region] - (rows=1888, coord=3776, constants=4, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:072, ezkl::graph::model] - ------------ output node 5: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:072, ezkl::graph::model] - ------------ layout of 5 took 8.229123ms
+[D] [2026-07-20 15:35:01:072, ezkl::graph::model] - laying out 6: CONST (scale=13)
+[D] [2026-07-20 15:35:01:072, ezkl::circuit::ops::region] - (rows=2136, coord=4272, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:072, ezkl::circuit::ops] - constraining constant to be identity
+[D] [2026-07-20 15:35:01:072, ezkl::graph::model] - ------------ output node 6: "Tensor { inner: [], dims: [1, 1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:072, ezkl::graph::model] - ------------ layout of 6 took 16.354µs
+[D] [2026-07-20 15:35:01:072, ezkl::graph::model] - laying out 7: ADD
+[D] [2026-07-20 15:35:01:072, ezkl::circuit::ops::region] - (rows=2136, coord=4273, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:072, ezkl::graph::model] - ------------ output node 7: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:072, ezkl::graph::model] - ------------ layout of 7 took 83.346µs
+[D] [2026-07-20 15:35:01:072, ezkl::graph::model] - laying out 8: RSQRT (input_scale=8192, output_scale=8192, eps=0.0000000000000002220446049250313)
+[D] [2026-07-20 15:35:01:072, ezkl::circuit::ops::region] - (rows=2138, coord=4277, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:089, ezkl::graph::model] - ------------ output node 8: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:089, ezkl::graph::model] - ------------ layout of 8 took 16.939935ms
+[D] [2026-07-20 15:35:01:089, ezkl::graph::model] - laying out 9: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:01:089, ezkl::circuit::ops::region] - (rows=2587, coord=5174, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:113, ezkl::graph::model] - ------------ output node 9: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:113, ezkl::graph::model] - ------------ layout of 9 took 23.238688ms
+[D] [2026-07-20 15:35:01:113, ezkl::graph::model] - laying out 10: CONST (scale=13)
+[D] [2026-07-20 15:35:01:113, ezkl::circuit::ops::region] - (rows=4091, coord=8182, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:113, ezkl::graph::model] - node 10 is a constant with 1 use
+[D] [2026-07-20 15:35:01:113, ezkl::graph::model] - ------------ output node 10: "[1566, 1579, 1581, 1040, 628 ... -610, -1835, -411, -1916, -1950]"
+[D] [2026-07-20 15:35:01:113, ezkl::graph::model] - ------------ layout of 10 took 112.366µs
+[D] [2026-07-20 15:35:01:113, ezkl::graph::model] - laying out 11: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:35:01:113, ezkl::circuit::ops::region] - (rows=4091, coord=8182, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:139, ezkl::graph::model] - ------------ output node 11: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:139, ezkl::graph::model] - ------------ layout of 11 took 26.689235ms
+[D] [2026-07-20 15:35:01:139, ezkl::graph::model] - laying out 12: CONST (scale=13)
+[D] [2026-07-20 15:35:01:139, ezkl::circuit::ops::region] - (rows=5563, coord=11126, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:139, ezkl::graph::model] - node 12 is a constant with 1 use
+[D] [2026-07-20 15:35:01:139, ezkl::graph::model] - ------------ output node 12: "[-1318, 2024, 783, 822, -1225 ... -259, 284, -812, 533, 772]"
+[D] [2026-07-20 15:35:01:139, ezkl::graph::model] - ------------ layout of 12 took 25.49µs
+[D] [2026-07-20 15:35:01:139, ezkl::graph::model] - laying out 13: ADD
+[D] [2026-07-20 15:35:01:139, ezkl::circuit::ops::region] - (rows=5563, coord=11126, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:140, ezkl::graph::model] - ------------ output node 13: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:140, ezkl::graph::model] - ------------ layout of 13 took 327.233µs
+[D] [2026-07-20 15:35:01:140, ezkl::graph::model] - laying out 14: RESHAPE (shape=[4, 2, 8])
+[D] [2026-07-20 15:35:01:140, ezkl::circuit::ops::region] - (rows=5595, coord=11190, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:140, ezkl::graph::model] - ------------ output node 14: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:140, ezkl::graph::model] - ------------ layout of 14 took 13.507µs
+[D] [2026-07-20 15:35:01:140, ezkl::graph::model] - laying out 15: CONST (scale=13)
+[D] [2026-07-20 15:35:01:140, ezkl::circuit::ops::region] - (rows=5595, coord=11190, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:140, ezkl::graph::model] - node 15 is a constant with 1 use
+[D] [2026-07-20 15:35:01:140, ezkl::graph::model] - ------------ output node 15: "[1146, 1271, 1717, -1667, -1423 ... 1643, -1448, 430, 28, -1880]"
+[D] [2026-07-20 15:35:01:140, ezkl::graph::model] - ------------ layout of 15 took 85.445µs
+[D] [2026-07-20 15:35:01:140, ezkl::graph::model] - laying out 16: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:35:01:140, ezkl::circuit::ops::region] - (rows=5595, coord=11190, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:169, ezkl::graph::model] - ------------ output node 16: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:169, ezkl::graph::model] - ------------ layout of 16 took 28.612247ms
+[D] [2026-07-20 15:35:01:169, ezkl::graph::model] - laying out 17: CONST (scale=13)
+[D] [2026-07-20 15:35:01:169, ezkl::circuit::ops::region] - (rows=7067, coord=14134, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:169, ezkl::graph::model] - node 17 is a constant with 1 use
+[D] [2026-07-20 15:35:01:169, ezkl::graph::model] - ------------ output node 17: "[-1079, -2031, 1072, 489, -1042 ... -1883, -1135, -341, -1380, 2001]"
+[D] [2026-07-20 15:35:01:169, ezkl::graph::model] - ------------ layout of 17 took 26.27µs
+[D] [2026-07-20 15:35:01:169, ezkl::graph::model] - laying out 18: ADD
+[D] [2026-07-20 15:35:01:169, ezkl::circuit::ops::region] - (rows=7067, coord=14134, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:169, ezkl::graph::model] - ------------ output node 18: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:169, ezkl::graph::model] - ------------ layout of 18 took 335.939µs
+[D] [2026-07-20 15:35:01:169, ezkl::graph::model] - laying out 19: RESHAPE (shape=[4, 2, 8])
+[D] [2026-07-20 15:35:01:169, ezkl::circuit::ops::region] - (rows=7099, coord=14198, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:169, ezkl::graph::model] - ------------ output node 19: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:169, ezkl::graph::model] - ------------ layout of 19 took 13.54µs
+[D] [2026-07-20 15:35:01:169, ezkl::graph::model] - laying out 20: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM mbk,nbk->bmn)
+[D] [2026-07-20 15:35:01:169, ezkl::circuit::ops::region] - (rows=7099, coord=14198, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:193, ezkl::graph::model] - ------------ output node 20: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:193, ezkl::graph::model] - ------------ layout of 20 took 23.56436ms
+[D] [2026-07-20 15:35:01:193, ezkl::graph::model] - laying out 21: CONST (scale=13)
+[D] [2026-07-20 15:35:01:193, ezkl::circuit::ops::region] - (rows=7835, coord=15670, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:193, ezkl::graph::model] - node 21 is a constant with 1 use
+[D] [2026-07-20 15:35:01:193, ezkl::graph::model] - ------------ output node 21: "Tensor { inner: [2896], dims: [1, 1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:193, ezkl::graph::model] - ------------ layout of 21 took 35.052µs
+[D] [2026-07-20 15:35:01:193, ezkl::graph::model] - laying out 22: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:01:193, ezkl::circuit::ops::region] - (rows=7835, coord=15670, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:208, ezkl::graph::model] - ------------ output node 22: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:208, ezkl::graph::model] - ------------ layout of 22 took 15.363381ms
+[D] [2026-07-20 15:35:01:208, ezkl::graph::model] - laying out 23: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (SOFTMAX (input_scale=8192, output_scale=8192, axes=[2], eps=0.0000000000000002220446049250313))
+[D] [2026-07-20 15:35:01:208, ezkl::circuit::ops::region] - (rows=8587, coord=17174, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-20 15:35:01:247, ezkl::graph::model] - ------------ output node 23: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:247, ezkl::graph::model] - ------------ layout of 23 took 38.604033ms
+[D] [2026-07-20 15:35:01:247, ezkl::graph::model] - laying out 24: CONST (scale=13)
+[D] [2026-07-20 15:35:01:247, ezkl::circuit::ops::region] - (rows=10195, coord=20390, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:247, ezkl::graph::model] - node 24 is a constant with 1 use
+[D] [2026-07-20 15:35:01:247, ezkl::graph::model] - ------------ output node 24: "[637, 440, 1927, 1398, -596 ... -1718, -594, 1684, 662, -1918]"
+[D] [2026-07-20 15:35:01:247, ezkl::graph::model] - ------------ layout of 24 took 106.902µs
+[D] [2026-07-20 15:35:01:247, ezkl::graph::model] - laying out 25: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:35:01:247, ezkl::circuit::ops::region] - (rows=10195, coord=20390, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:277, ezkl::graph::model] - ------------ output node 25: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:277, ezkl::graph::model] - ------------ layout of 25 took 30.040093ms
+[D] [2026-07-20 15:35:01:277, ezkl::graph::model] - laying out 26: CONST (scale=13)
+[D] [2026-07-20 15:35:01:277, ezkl::circuit::ops::region] - (rows=11667, coord=23334, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:277, ezkl::graph::model] - node 26 is a constant with 1 use
+[D] [2026-07-20 15:35:01:277, ezkl::graph::model] - ------------ output node 26: "[-411, 813, -1829, 1179, -636 ... 394, 556, 787, 1124, -464]"
+[D] [2026-07-20 15:35:01:277, ezkl::graph::model] - ------------ layout of 26 took 24.359µs
+[D] [2026-07-20 15:35:01:277, ezkl::graph::model] - laying out 27: ADD
+[D] [2026-07-20 15:35:01:277, ezkl::circuit::ops::region] - (rows=11667, coord=23334, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:277, ezkl::graph::model] - ------------ output node 27: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:277, ezkl::graph::model] - ------------ layout of 27 took 394.234µs
+[D] [2026-07-20 15:35:01:277, ezkl::graph::model] - laying out 28: RESHAPE (shape=[4, 2, 8])
+[D] [2026-07-20 15:35:01:277, ezkl::circuit::ops::region] - (rows=11699, coord=23398, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:277, ezkl::graph::model] - ------------ output node 28: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:277, ezkl::graph::model] - ------------ layout of 28 took 19.459µs
+[D] [2026-07-20 15:35:01:277, ezkl::graph::model] - laying out 29: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM bmk,kbn->mbn)
+[D] [2026-07-20 15:35:01:277, ezkl::circuit::ops::region] - (rows=11699, coord=23398, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:305, ezkl::graph::model] - ------------ output node 29: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:305, ezkl::graph::model] - ------------ layout of 29 took 27.203925ms
+[D] [2026-07-20 15:35:01:305, ezkl::graph::model] - laying out 30: RESHAPE (shape=[4, 16])
+[D] [2026-07-20 15:35:01:305, ezkl::circuit::ops::region] - (rows=13171, coord=26342, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:305, ezkl::graph::model] - ------------ output node 30: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:305, ezkl::graph::model] - ------------ layout of 30 took 10.237µs
+[D] [2026-07-20 15:35:01:305, ezkl::graph::model] - laying out 31: CONST (scale=13)
+[D] [2026-07-20 15:35:01:305, ezkl::circuit::ops::region] - (rows=13171, coord=26342, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:305, ezkl::graph::model] - node 31 is a constant with 1 use
+[D] [2026-07-20 15:35:01:305, ezkl::graph::model] - ------------ output node 31: "[1138, -1794, 963, -967, 895 ... -769, -1296, -225, 0, 1281]"
+[D] [2026-07-20 15:35:01:305, ezkl::graph::model] - ------------ layout of 31 took 91.964µs
+[D] [2026-07-20 15:35:01:305, ezkl::graph::model] - laying out 32: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM mk,kn->amn)
+[D] [2026-07-20 15:35:01:305, ezkl::circuit::ops::region] - (rows=13171, coord=26342, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:333, ezkl::graph::model] - ------------ output node 32: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:333, ezkl::graph::model] - ------------ layout of 32 took 28.618667ms
+[D] [2026-07-20 15:35:01:333, ezkl::graph::model] - laying out 33: CONST (scale=13)
+[D] [2026-07-20 15:35:01:333, ezkl::circuit::ops::region] - (rows=14643, coord=29286, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:333, ezkl::graph::model] - node 33 is a constant with 1 use
+[D] [2026-07-20 15:35:01:333, ezkl::graph::model] - ------------ output node 33: "[40, 941, -733, 892, -658 ... -1842, 133, 1329, 1865, 1195]"
+[D] [2026-07-20 15:35:01:333, ezkl::graph::model] - ------------ layout of 33 took 22.176µs
+[D] [2026-07-20 15:35:01:333, ezkl::graph::model] - laying out 34: ADD
+[D] [2026-07-20 15:35:01:333, ezkl::circuit::ops::region] - (rows=14643, coord=29286, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:334, ezkl::graph::model] - ------------ output node 34: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:334, ezkl::graph::model] - ------------ layout of 34 took 324.525µs
+[D] [2026-07-20 15:35:01:334, ezkl::graph::model] - laying out 35: ADD
+[D] [2026-07-20 15:35:01:334, ezkl::circuit::ops::region] - (rows=14675, coord=29350, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:334, ezkl::graph::model] - ------------ output node 35: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:334, ezkl::graph::model] - ------------ layout of 35 took 335.279µs
+[D] [2026-07-20 15:35:01:334, ezkl::graph::model] - laying out 36: SUM (axes=[2])
+[D] [2026-07-20 15:35:01:334, ezkl::circuit::ops::region] - (rows=14707, coord=29414, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:335, ezkl::graph::model] - ------------ output node 36: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:335, ezkl::graph::model] - ------------ layout of 36 took 572.487µs
+[D] [2026-07-20 15:35:01:335, ezkl::graph::model] - laying out 37: IDENTITY (out_scale=Some(17))
+[D] [2026-07-20 15:35:01:335, ezkl::circuit::ops::region] - (rows=14739, coord=29478, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:335, ezkl::graph::model] - ------------ output node 37: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:335, ezkl::graph::model] - ------------ layout of 37 took 10.999µs
+[D] [2026-07-20 15:35:01:335, ezkl::graph::model] - laying out 38: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-20 15:35:01:335, ezkl::circuit::ops::region] - (rows=14739, coord=29478, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:360, ezkl::graph::model] - ------------ output node 38: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:360, ezkl::graph::model] - ------------ layout of 38 took 24.71772ms
+[D] [2026-07-20 15:35:01:360, ezkl::graph::model] - laying out 39: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-20 15:35:01:360, ezkl::circuit::ops::region] - (rows=16275, coord=32550, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:368, ezkl::graph::model] - ------------ output node 39: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:368, ezkl::graph::model] - ------------ layout of 39 took 8.484093ms
+[D] [2026-07-20 15:35:01:368, ezkl::graph::model] - laying out 40: ADD
+[D] [2026-07-20 15:35:01:368, ezkl::circuit::ops::region] - (rows=16523, coord=33046, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:368, ezkl::graph::model] - ------------ output node 40: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:368, ezkl::graph::model] - ------------ layout of 40 took 64.924µs
+[D] [2026-07-20 15:35:01:368, ezkl::graph::model] - laying out 41: RSQRT (input_scale=8192, output_scale=8192, eps=0.0000000000000002220446049250313)
+[D] [2026-07-20 15:35:01:368, ezkl::circuit::ops::region] - (rows=16525, coord=33050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:386, ezkl::graph::model] - ------------ output node 41: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:386, ezkl::graph::model] - ------------ layout of 41 took 17.435084ms
+[D] [2026-07-20 15:35:01:386, ezkl::graph::model] - laying out 42: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:01:386, ezkl::circuit::ops::region] - (rows=16973, coord=33946, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:419, ezkl::graph::model] - ------------ output node 42: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:419, ezkl::graph::model] - ------------ layout of 42 took 33.700228ms
+[D] [2026-07-20 15:35:01:419, ezkl::graph::model] - laying out 43: CONST (scale=13)
+[D] [2026-07-20 15:35:01:419, ezkl::circuit::ops::region] - (rows=18477, coord=36954, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:419, ezkl::graph::model] - node 43 is a constant with 1 use
+[D] [2026-07-20 15:35:01:420, ezkl::graph::model] - ------------ output node 43: "[-1062, -868, -1047, -145, 618 ... 1930, -563, 1303, -994, -53]"
+[D] [2026-07-20 15:35:01:420, ezkl::graph::model] - ------------ layout of 43 took 818.268µs
+[D] [2026-07-20 15:35:01:420, ezkl::graph::model] - laying out 44: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM amk,kn->mn)
+[D] [2026-07-20 15:35:01:420, ezkl::circuit::ops::region] - (rows=18477, coord=36954, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:502, ezkl::graph::model] - ------------ output node 44: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:502, ezkl::graph::model] - ------------ layout of 44 took 81.757635ms
+[D] [2026-07-20 15:35:01:502, ezkl::graph::model] - laying out 45: CONST (scale=13)
+[D] [2026-07-20 15:35:01:502, ezkl::circuit::ops::region] - (rows=24365, coord=48730, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:502, ezkl::graph::model] - node 45 is a constant with 1 use
+[D] [2026-07-20 15:35:01:502, ezkl::graph::model] - ------------ output node 45: "[-409, 684, 1615, 511, 1426 ... -601, -1912, -1100, 1068, -826]"
+[D] [2026-07-20 15:35:01:502, ezkl::graph::model] - ------------ layout of 45 took 37.266µs
+[D] [2026-07-20 15:35:01:502, ezkl::graph::model] - laying out 46: ADD
+[D] [2026-07-20 15:35:01:502, ezkl::circuit::ops::region] - (rows=24365, coord=48730, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:503, ezkl::graph::model] - ------------ output node 46: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:503, ezkl::graph::model] - ------------ layout of 46 took 659.215µs
+[D] [2026-07-20 15:35:01:503, ezkl::graph::model] - laying out 48: IDENTITY (out_scale=Some(14))
+[D] [2026-07-20 15:35:01:503, ezkl::circuit::ops::region] - (rows=24493, coord=48986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:503, ezkl::graph::model] - ------------ output node 48: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:503, ezkl::graph::model] - ------------ layout of 48 took 17.534µs
+[D] [2026-07-20 15:35:01:503, ezkl::graph::model] - laying out 49: CONST (scale=13)
+[D] [2026-07-20 15:35:01:503, ezkl::circuit::ops::region] - (rows=24493, coord=48986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:503, ezkl::graph::model] - node 49 is a constant with 1 use
+[D] [2026-07-20 15:35:01:503, ezkl::graph::model] - ------------ output node 49: "Tensor { inner: [366], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:503, ezkl::graph::model] - ------------ layout of 49 took 20.411µs
+[D] [2026-07-20 15:35:01:503, ezkl::graph::model] - laying out 50: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:01:503, ezkl::circuit::ops::region] - (rows=24493, coord=48986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:582, ezkl::graph::model] - ------------ output node 50: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:582, ezkl::graph::model] - ------------ layout of 50 took 79.394598ms
+[D] [2026-07-20 15:35:01:582, ezkl::graph::model] - laying out 51: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:01:582, ezkl::circuit::ops::region] - (rows=30509, coord=61018, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:663, ezkl::graph::model] - ------------ output node 51: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:663, ezkl::graph::model] - ------------ layout of 51 took 80.681913ms
+[D] [2026-07-20 15:35:01:663, ezkl::graph::model] - laying out 52: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:01:663, ezkl::circuit::ops::region] - (rows=36525, coord=73050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:743, ezkl::graph::model] - ------------ output node 52: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:743, ezkl::graph::model] - ------------ layout of 52 took 79.733958ms
+[D] [2026-07-20 15:35:01:743, ezkl::graph::model] - laying out 53: ADD
+[D] [2026-07-20 15:35:01:743, ezkl::circuit::ops::region] - (rows=42541, coord=85082, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:744, ezkl::graph::model] - ------------ output node 53: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:744, ezkl::graph::model] - ------------ layout of 53 took 648.831µs
+[D] [2026-07-20 15:35:01:744, ezkl::graph::model] - laying out 54: CONST (scale=13)
+[D] [2026-07-20 15:35:01:744, ezkl::circuit::ops::region] - (rows=42669, coord=85338, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:744, ezkl::graph::model] - node 54 is a constant with 1 use
+[D] [2026-07-20 15:35:01:744, ezkl::graph::model] - ------------ output node 54: "Tensor { inner: [6536], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:744, ezkl::graph::model] - ------------ layout of 54 took 14.974µs
+[D] [2026-07-20 15:35:01:744, ezkl::graph::model] - laying out 55: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:01:744, ezkl::circuit::ops::region] - (rows=42669, coord=85338, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:820, ezkl::graph::model] - ------------ output node 55: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:820, ezkl::graph::model] - ------------ layout of 55 took 75.907191ms
+[D] [2026-07-20 15:35:01:820, ezkl::graph::model] - laying out 56: TANH(scale=8192)
+[D] [2026-07-20 15:35:01:820, ezkl::circuit::ops::region] - (rows=48685, coord=97370, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:821, ezkl::graph::model] - ------------ output node 56: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:821, ezkl::graph::model] - ------------ layout of 56 took 1.121392ms
+[D] [2026-07-20 15:35:01:821, ezkl::graph::model] - laying out 57: CONST (scale=13)
+[D] [2026-07-20 15:35:01:821, ezkl::circuit::ops::region] - (rows=48813, coord=97626, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:821, ezkl::graph::model] - node 57 is a constant with 1 use
+[D] [2026-07-20 15:35:01:821, ezkl::graph::model] - ------------ output node 57: "Tensor { inner: [8192], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:821, ezkl::graph::model] - ------------ layout of 57 took 16.208µs
+[D] [2026-07-20 15:35:01:821, ezkl::graph::model] - laying out 58: ADD
+[D] [2026-07-20 15:35:01:821, ezkl::circuit::ops::region] - (rows=48813, coord=97626, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:821, ezkl::graph::model] - ------------ output node 58: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:822, ezkl::graph::model] - ------------ layout of 58 took 734.29µs
+[D] [2026-07-20 15:35:01:822, ezkl::graph::model] - laying out 59: REBASED (div=16384.0, rebasing_op=DIV (denom=16384)) (MULT)
+[D] [2026-07-20 15:35:01:822, ezkl::circuit::ops::region] - (rows=48941, coord=97882, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:897, ezkl::graph::model] - ------------ output node 59: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:897, ezkl::graph::model] - ------------ layout of 59 took 75.010856ms
+[D] [2026-07-20 15:35:01:897, ezkl::graph::model] - laying out 60: CONST (scale=13)
+[D] [2026-07-20 15:35:01:897, ezkl::circuit::ops::region] - (rows=54957, coord=109914, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:897, ezkl::graph::model] - node 60 is a constant with 1 use
+[D] [2026-07-20 15:35:01:897, ezkl::graph::model] - ------------ output node 60: "[490, 40, 108, -527, -841 ... 885, 785, 523, -483, 25]"
+[D] [2026-07-20 15:35:01:897, ezkl::graph::model] - ------------ layout of 60 took 320.87µs
+[D] [2026-07-20 15:35:01:897, ezkl::graph::model] - laying out 61: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (EINSUM mk,kn->amn)
+[D] [2026-07-20 15:35:01:897, ezkl::circuit::ops::region] - (rows=54957, coord=109914, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:932, ezkl::graph::model] - ------------ output node 61: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:932, ezkl::graph::model] - ------------ layout of 61 took 35.101383ms
+[D] [2026-07-20 15:35:01:932, ezkl::graph::model] - laying out 62: CONST (scale=13)
+[D] [2026-07-20 15:35:01:932, ezkl::circuit::ops::region] - (rows=56429, coord=112858, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:932, ezkl::graph::model] - node 62 is a constant with 1 use
+[D] [2026-07-20 15:35:01:932, ezkl::graph::model] - ------------ output node 62: "[-782, 418, 580, 903, -975 ... 936, -392, -167, 801, 824]"
+[D] [2026-07-20 15:35:01:932, ezkl::graph::model] - ------------ layout of 62 took 27.632µs
+[D] [2026-07-20 15:35:01:932, ezkl::graph::model] - laying out 63: ADD
+[D] [2026-07-20 15:35:01:932, ezkl::circuit::ops::region] - (rows=56429, coord=112858, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:932, ezkl::graph::model] - ------------ output node 63: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:932, ezkl::graph::model] - ------------ layout of 63 took 361.378µs
+[D] [2026-07-20 15:35:01:932, ezkl::graph::model] - laying out 64: ADD
+[D] [2026-07-20 15:35:01:932, ezkl::circuit::ops::region] - (rows=56461, coord=112922, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:933, ezkl::graph::model] - ------------ output node 64: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:933, ezkl::graph::model] - ------------ layout of 64 took 386.6µs
+[D] [2026-07-20 15:35:01:933, ezkl::graph::model] - laying out 65: SUM (axes=[2])
+[D] [2026-07-20 15:35:01:933, ezkl::circuit::ops::region] - (rows=56493, coord=112986, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:934, ezkl::graph::model] - ------------ output node 65: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:934, ezkl::graph::model] - ------------ layout of 65 took 714.964µs
+[D] [2026-07-20 15:35:01:934, ezkl::graph::model] - laying out 66: IDENTITY (out_scale=Some(17))
+[D] [2026-07-20 15:35:01:934, ezkl::circuit::ops::region] - (rows=56525, coord=113050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:934, ezkl::graph::model] - ------------ output node 66: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:934, ezkl::graph::model] - ------------ layout of 66 took 8.55µs
+[D] [2026-07-20 15:35:01:934, ezkl::graph::model] - laying out 67: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-20 15:35:01:934, ezkl::circuit::ops::region] - (rows=56525, coord=113050, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:959, ezkl::graph::model] - ------------ output node 67: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:959, ezkl::graph::model] - ------------ layout of 67 took 25.301883ms
+[D] [2026-07-20 15:35:01:959, ezkl::graph::model] - laying out 68: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-20 15:35:01:959, ezkl::circuit::ops::region] - (rows=58061, coord=116122, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:967, ezkl::graph::model] - ------------ output node 68: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:967, ezkl::graph::model] - ------------ layout of 68 took 8.351657ms
+[D] [2026-07-20 15:35:01:967, ezkl::graph::model] - laying out 69: ADD
+[D] [2026-07-20 15:35:01:967, ezkl::circuit::ops::region] - (rows=58309, coord=116618, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:967, ezkl::graph::model] - ------------ output node 69: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:967, ezkl::graph::model] - ------------ layout of 69 took 54.396µs
+[D] [2026-07-20 15:35:01:967, ezkl::graph::model] - laying out 70: RSQRT (input_scale=8192, output_scale=8192, eps=0.0000000000000002220446049250313)
+[D] [2026-07-20 15:35:01:967, ezkl::circuit::ops::region] - (rows=58311, coord=116622, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:01:984, ezkl::graph::model] - ------------ output node 70: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:01:984, ezkl::graph::model] - ------------ layout of 70 took 16.731392ms
+[D] [2026-07-20 15:35:01:984, ezkl::graph::model] - laying out 71: REBASED (div=8192.0, rebasing_op=DIV (denom=8192)) (MULT)
+[D] [2026-07-20 15:35:01:984, ezkl::circuit::ops::region] - (rows=58759, coord=117518, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[D] [2026-07-20 15:35:02:008, ezkl::graph::model] - ------------ output node 71: "Tensor { inner: [], dims: [0], scale: None, visibility: None }"
+[D] [2026-07-20 15:35:02:008, ezkl::graph::model] - ------------ layout of 71 took 23.971141ms
+[D] [2026-07-20 15:35:02:008, ezkl::graph::model] - model outputs are nodes: [(71, 0)]
+[D] [2026-07-20 15:35:02:022, ezkl::circuit::ops::region] - (rows=60935, coord=121870, constants=13, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=32, max_dynamic_input_len=4)
+[*] [2026-07-20 15:35:06:329, ezkl::pfsys] - PK took 6.301
+[D] [2026-07-20 15:35:06:329, ezkl::pfsys] - saving verification key 💾
+[*] [2026-07-20 15:35:06:334, ezkl::pfsys] - done saving verification key ✅
+[D] [2026-07-20 15:35:06:334, ezkl::pfsys] - saving proving key 💾
+[*] [2026-07-20 15:35:08:434, ezkl::pfsys] - done saving proving key ✅
+[*] [2026-07-20 15:35:08:936, ezkl] - succeeded
+	Command being timed: "/data/coding/ezkl/target/release/ezkl setup -M /data/coding/ezkl/results/seq4_d16_l1/model.compiled --srs-path /data/coding/ezkl/results/seq4_d16_l1/kzg.srs --vk-path /data/coding/ezkl/results/seq4_d16_l1/vk.key --pk-path /data/coding/ezkl/results/seq4_d16_l1/pk.key"
+	User time (seconds): 212.74
+	System time (seconds): 21.25
+	Percent of CPU this job got: 1726%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.55
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2147024
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 4
+	Minor (reclaiming a frame) page faults: 884063
+	Voluntary context switches: 663168
+	Involuntary context switches: 28032
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2353304
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

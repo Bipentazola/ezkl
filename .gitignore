@@ -65,3 +65,20 @@ out
 /scaling_runs/*
 !/scaling_runs/results/
 !/scaling_runs/results/*.csv
+
+# bench_stages.py / gen_models.py transformer-scaling benchmark + parse_ledger.py:
+# results/<config>/{pk,vk}.key and kzg.srs are regenerable via bench_stages.py
+# from settings.json + the pinned ezkl binary (see results/README.md), and are
+# far too large for git (~100GB across the full sweep + quantization-scale
+# variants -- pk.key alone reaches 36GB for the largest config). *.key is
+# already excluded above; kzg.srs needs its own pattern since nothing else
+# catches ".srs". Raw pprof .folded dumps (results/pprof/*.folded, ~380MB) are
+# likewise regenerable (see results/PPROF_README.md) and not tracked.
+# The blanket "*.csv" rule above would otherwise also hide the actual
+# analysis output (summary.csv, op_ledger*.csv, prove_breakdown*.csv,
+# models/MANIFEST.csv) -- re-included explicitly.
+*.srs
+results/pprof/*.folded
+!results/*.csv
+!results/**/*.csv
+!models/MANIFEST.csv

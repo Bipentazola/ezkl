@@ -1,0 +1,1143 @@
+[D] [2026-07-21 16:41:56:114, ezkl] - command: 
+ |   {
+ |    "GenWitness": {
+ |      "compiled_circuit": "/data/coding/ezkl/results/seq8_d16_l1_scale10/model.compiled",
+ |      "data": "/data/coding/ezkl/models/seq8_d16_l1/input.json",
+ |      "output": "/data/coding/ezkl/results/seq8_d16_l1_scale10/witness.json",
+ |      "srs_path": null,
+ |      "vk_path": null
+ |    }
+ |  }
+[W] [2026-07-21 16:41:56:116, ezkl] - Artifact version is 0.0.0, skipping version check
+[D] [2026-07-21 16:41:56:121, ezkl::graph::model] - calculating num of constraints using dummy model layout...
+[D] [2026-07-21 16:41:56:121, ezkl::graph::model] - laying out 0: Input
+[D] [2026-07-21 16:41:56:121, ezkl::circuit::ops::region] - (rows=0, coord=0, constants=0, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=0, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:121, ezkl::circuit::ops] - constraining input to be decomp
+[D] [2026-07-21 16:41:56:131, ezkl::graph::model] - ------------ output node 0: "[-1780, 1775, 751, 1018, 8 ... -487, 370, -593, -743, 1414]"
+[D] [2026-07-21 16:41:56:131, ezkl::graph::model] - ------------ layout of 0 took 10.193102ms
+[D] [2026-07-21 16:41:56:131, ezkl::graph::model] - laying out 1: SUM (axes=[2])
+[D] [2026-07-21 16:41:56:131, ezkl::circuit::ops::region] - (rows=640, coord=1280, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:132, ezkl::graph::model] - ------------ output node 1: "Tensor { inner: [2116, -1694, 2341, 1575, -6833, -954, 788, -1678], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:132, ezkl::graph::model] - ------------ layout of 1 took 461.543µs
+[D] [2026-07-21 16:41:56:132, ezkl::graph::model] - laying out 3: IDENTITY (out_scale=Some(14))
+[D] [2026-07-21 16:41:56:132, ezkl::circuit::ops::region] - (rows=704, coord=1408, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:132, ezkl::graph::model] - ------------ output node 3: "Tensor { inner: [2116, -1694, 2341, 1575, -6833, -954, 788, -1678], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:132, ezkl::graph::model] - ------------ layout of 3 took 148.077µs
+[D] [2026-07-21 16:41:56:132, ezkl::graph::model] - laying out 4: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-21 16:41:56:132, ezkl::circuit::ops::region] - (rows=708, coord=1416, constants=2, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:152, ezkl::graph::model] - ------------ output node 4: "[-1912, 1643, 619, 886, -124 ... -382, 475, -488, -638, 1519]"
+[D] [2026-07-21 16:41:56:152, ezkl::graph::model] - ------------ layout of 4 took 20.192852ms
+[D] [2026-07-21 16:41:56:152, ezkl::graph::model] - laying out 5: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-21 16:41:56:152, ezkl::circuit::ops::region] - (rows=3780, coord=7560, constants=4, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:168, ezkl::graph::model] - ------------ output node 5: "Tensor { inner: [958, 1230, 970, 832, 939, 516, 712, 1348], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:168, ezkl::graph::model] - ------------ layout of 5 took 15.906382ms
+[D] [2026-07-21 16:41:56:168, ezkl::graph::model] - laying out 6: CONST (scale=10)
+[D] [2026-07-21 16:41:56:168, ezkl::circuit::ops::region] - (rows=4276, coord=8552, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:168, ezkl::circuit::ops] - constraining constant to be identity
+[D] [2026-07-21 16:41:56:168, ezkl::graph::model] - ------------ output node 6: "Tensor { inner: [0], dims: [1, 1, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:168, ezkl::graph::model] - ------------ layout of 6 took 42.006µs
+[D] [2026-07-21 16:41:56:168, ezkl::graph::model] - laying out 7: ADD
+[D] [2026-07-21 16:41:56:168, ezkl::circuit::ops::region] - (rows=4276, coord=8553, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:169, ezkl::graph::model] - ------------ output node 7: "Tensor { inner: [958, 1230, 970, 832, 939, 516, 712, 1348], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:169, ezkl::graph::model] - ------------ layout of 7 took 341.83µs
+[D] [2026-07-21 16:41:56:169, ezkl::graph::model] - laying out 8: RSQRT (input_scale=1024, output_scale=1024, eps=0.0000000000000002220446049250313)
+[D] [2026-07-21 16:41:56:169, ezkl::circuit::ops::region] - (rows=4280, coord=8561, constants=5, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:209, ezkl::graph::model] - ------------ output node 8: "Tensor { inner: [1059, 935, 1052, 1136, 1069, 1442, 1228, 892], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:209, ezkl::graph::model] - ------------ layout of 8 took 40.486302ms
+[D] [2026-07-21 16:41:56:209, ezkl::graph::model] - laying out 9: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (MULT)
+[D] [2026-07-21 16:41:56:209, ezkl::circuit::ops::region] - (rows=5177, coord=10354, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:226, ezkl::graph::model] - ------------ output node 9: "[-1977, 1699, 640, 916, -128 ... -333, 414, -425, -556, 1323]"
+[D] [2026-07-21 16:41:56:226, ezkl::graph::model] - ------------ layout of 9 took 17.099983ms
+[D] [2026-07-21 16:41:56:226, ezkl::graph::model] - laying out 10: CONST (scale=10)
+[D] [2026-07-21 16:41:56:226, ezkl::circuit::ops::region] - (rows=8185, coord=16370, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:226, ezkl::graph::model] - node 10 is a constant with 1 use
+[D] [2026-07-21 16:41:56:227, ezkl::graph::model] - ------------ output node 10: "[196, 197, 198, 130, 78 ... -76, -229, -51, -239, -244]"
+[D] [2026-07-21 16:41:56:227, ezkl::graph::model] - ------------ layout of 10 took 84.49µs
+[D] [2026-07-21 16:41:56:227, ezkl::graph::model] - laying out 11: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (EINSUM amk,kn->mn)
+[D] [2026-07-21 16:41:56:227, ezkl::circuit::ops::region] - (rows=8185, coord=16370, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:251, ezkl::graph::model] - ------------ output node 11: "[297, 183, 12, -461, -685 ... -408, 1034, 71, -118, -27]"
+[D] [2026-07-21 16:41:56:251, ezkl::graph::model] - ------------ layout of 11 took 24.778201ms
+[D] [2026-07-21 16:41:56:251, ezkl::graph::model] - laying out 12: CONST (scale=10)
+[D] [2026-07-21 16:41:56:251, ezkl::circuit::ops::region] - (rows=11129, coord=22258, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:251, ezkl::graph::model] - node 12 is a constant with 1 use
+[D] [2026-07-21 16:41:56:251, ezkl::graph::model] - ------------ output node 12: "[-165, 253, 98, 103, -153 ... -32, 35, -101, 67, 97]"
+[D] [2026-07-21 16:41:56:251, ezkl::graph::model] - ------------ layout of 12 took 22.091µs
+[D] [2026-07-21 16:41:56:251, ezkl::graph::model] - laying out 13: ADD
+[D] [2026-07-21 16:41:56:251, ezkl::circuit::ops::region] - (rows=11129, coord=22258, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:252, ezkl::graph::model] - ------------ output node 13: "[132, 436, 110, -358, -838 ... -440, 1069, -30, -51, 70]"
+[D] [2026-07-21 16:41:56:252, ezkl::graph::model] - ------------ layout of 13 took 534.646µs
+[D] [2026-07-21 16:41:56:252, ezkl::graph::model] - laying out 14: RESHAPE (shape=[8, 2, 8])
+[D] [2026-07-21 16:41:56:252, ezkl::circuit::ops::region] - (rows=11193, coord=22386, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:252, ezkl::graph::model] - ------------ output node 14: "[132, 436, 110, -358, -838 ... -440, 1069, -30, -51, 70]"
+[D] [2026-07-21 16:41:56:252, ezkl::graph::model] - ------------ layout of 14 took 43.022µs
+[D] [2026-07-21 16:41:56:252, ezkl::graph::model] - laying out 15: CONST (scale=10)
+[D] [2026-07-21 16:41:56:252, ezkl::circuit::ops::region] - (rows=11193, coord=22386, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:252, ezkl::graph::model] - node 15 is a constant with 1 use
+[D] [2026-07-21 16:41:56:252, ezkl::graph::model] - ------------ output node 15: "[143, 159, 215, -208, -178 ... 205, -181, 54, 4, -235]"
+[D] [2026-07-21 16:41:56:252, ezkl::graph::model] - ------------ layout of 15 took 83.573µs
+[D] [2026-07-21 16:41:56:252, ezkl::graph::model] - laying out 16: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (EINSUM amk,kn->mn)
+[D] [2026-07-21 16:41:56:252, ezkl::circuit::ops::region] - (rows=11193, coord=22386, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:283, ezkl::graph::model] - ------------ output node 16: "[228, -154, -572, -22, 1055 ... 740, 276, -980, -8, -1041]"
+[D] [2026-07-21 16:41:56:283, ezkl::graph::model] - ------------ layout of 16 took 31.214937ms
+[D] [2026-07-21 16:41:56:283, ezkl::graph::model] - laying out 17: CONST (scale=10)
+[D] [2026-07-21 16:41:56:283, ezkl::circuit::ops::region] - (rows=14137, coord=28274, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:283, ezkl::graph::model] - node 17 is a constant with 1 use
+[D] [2026-07-21 16:41:56:283, ezkl::graph::model] - ------------ output node 17: "[-135, -254, 134, 61, -130 ... -235, -142, -43, -173, 250]"
+[D] [2026-07-21 16:41:56:283, ezkl::graph::model] - ------------ layout of 17 took 21.318µs
+[D] [2026-07-21 16:41:56:283, ezkl::graph::model] - laying out 18: ADD
+[D] [2026-07-21 16:41:56:283, ezkl::circuit::ops::region] - (rows=14137, coord=28274, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:284, ezkl::graph::model] - ------------ output node 18: "[93, -408, -438, 39, 925 ... 505, 134, -1023, -181, -791]"
+[D] [2026-07-21 16:41:56:284, ezkl::graph::model] - ------------ layout of 18 took 514.061µs
+[D] [2026-07-21 16:41:56:284, ezkl::graph::model] - laying out 19: RESHAPE (shape=[8, 2, 8])
+[D] [2026-07-21 16:41:56:284, ezkl::circuit::ops::region] - (rows=14201, coord=28402, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:284, ezkl::graph::model] - ------------ output node 19: "[93, -408, -438, 39, 925 ... 505, 134, -1023, -181, -791]"
+[D] [2026-07-21 16:41:56:284, ezkl::graph::model] - ------------ layout of 19 took 68.417µs
+[D] [2026-07-21 16:41:56:284, ezkl::graph::model] - laying out 20: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (EINSUM mbk,nbk->bmn)
+[D] [2026-07-21 16:41:56:284, ezkl::circuit::ops::region] - (rows=14201, coord=28402, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:350, ezkl::graph::model] - ------------ output node 20: "[-1791, 793, -1110, -374, -950 ... -211, 208, -284, 576, 10]"
+[D] [2026-07-21 16:41:56:350, ezkl::graph::model] - ------------ layout of 20 took 66.196257ms
+[D] [2026-07-21 16:41:56:350, ezkl::graph::model] - laying out 21: CONST (scale=10)
+[D] [2026-07-21 16:41:56:350, ezkl::circuit::ops::region] - (rows=17145, coord=34290, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:350, ezkl::graph::model] - node 21 is a constant with 1 use
+[D] [2026-07-21 16:41:56:350, ezkl::graph::model] - ------------ output node 21: "Tensor { inner: [362], dims: [1, 1, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:350, ezkl::graph::model] - ------------ layout of 21 took 17.64µs
+[D] [2026-07-21 16:41:56:350, ezkl::graph::model] - laying out 22: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (MULT)
+[D] [2026-07-21 16:41:56:350, ezkl::circuit::ops::region] - (rows=17145, coord=34290, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:368, ezkl::graph::model] - ------------ output node 22: "[-633, 280, -392, -132, -336 ... -75, 74, -100, 204, 4]"
+[D] [2026-07-21 16:41:56:368, ezkl::graph::model] - ------------ layout of 22 took 17.443927ms
+[D] [2026-07-21 16:41:56:368, ezkl::graph::model] - laying out 23: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (SOFTMAX (input_scale=1024, output_scale=1024, axes=[2], eps=0.0000000000000002220446049250313))
+[D] [2026-07-21 16:41:56:368, ezkl::circuit::ops::region] - (rows=20153, coord=40306, constants=7, max_lookup_inputs=0, min_lookup_inputs=0, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=0, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:390, ezkl::graph::model] - ------------ output node 23: "[81, 198, 103, 132, 108 ... 114, 131, 111, 149, 123]"
+[D] [2026-07-21 16:41:56:390, ezkl::graph::model] - ------------ layout of 23 took 22.243096ms
+[D] [2026-07-21 16:41:56:390, ezkl::graph::model] - laying out 24: CONST (scale=10)
+[D] [2026-07-21 16:41:56:390, ezkl::circuit::ops::region] - (rows=25929, coord=51858, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:390, ezkl::graph::model] - node 24 is a constant with 1 use
+[D] [2026-07-21 16:41:56:390, ezkl::graph::model] - ------------ output node 24: "[80, 55, 241, 175, -74 ... -215, -74, 211, 83, -240]"
+[D] [2026-07-21 16:41:56:390, ezkl::graph::model] - ------------ layout of 24 took 89.978µs
+[D] [2026-07-21 16:41:56:390, ezkl::graph::model] - laying out 25: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (EINSUM amk,kn->mn)
+[D] [2026-07-21 16:41:56:390, ezkl::circuit::ops::region] - (rows=25929, coord=51858, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:415, ezkl::graph::model] - ------------ output node 25: "[-214, -765, 155, -107, 208 ... -1357, 182, 1245, 384, -629]"
+[D] [2026-07-21 16:41:56:415, ezkl::graph::model] - ------------ layout of 25 took 25.078527ms
+[D] [2026-07-21 16:41:56:415, ezkl::graph::model] - laying out 26: CONST (scale=10)
+[D] [2026-07-21 16:41:56:415, ezkl::circuit::ops::region] - (rows=28873, coord=57746, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:415, ezkl::graph::model] - node 26 is a constant with 1 use
+[D] [2026-07-21 16:41:56:415, ezkl::graph::model] - ------------ output node 26: "[-51, 102, -229, 147, -80 ... 49, 69, 98, 141, -58]"
+[D] [2026-07-21 16:41:56:415, ezkl::graph::model] - ------------ layout of 26 took 32.496µs
+[D] [2026-07-21 16:41:56:415, ezkl::graph::model] - laying out 27: ADD
+[D] [2026-07-21 16:41:56:415, ezkl::circuit::ops::region] - (rows=28873, coord=57746, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:416, ezkl::graph::model] - ------------ output node 27: "[-265, -663, -74, 40, 128 ... -1308, 251, 1343, 525, -687]"
+[D] [2026-07-21 16:41:56:416, ezkl::graph::model] - ------------ layout of 27 took 513.337µs
+[D] [2026-07-21 16:41:56:416, ezkl::graph::model] - laying out 28: RESHAPE (shape=[8, 2, 8])
+[D] [2026-07-21 16:41:56:416, ezkl::circuit::ops::region] - (rows=28937, coord=57874, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:416, ezkl::graph::model] - ------------ output node 28: "[-265, -663, -74, 40, 128 ... -1308, 251, 1343, 525, -687]"
+[D] [2026-07-21 16:41:56:416, ezkl::graph::model] - ------------ layout of 28 took 37.284µs
+[D] [2026-07-21 16:41:56:416, ezkl::graph::model] - laying out 29: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (EINSUM bmk,kbn->mbn)
+[D] [2026-07-21 16:41:56:416, ezkl::circuit::ops::region] - (rows=28937, coord=57874, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:442, ezkl::graph::model] - ------------ output node 29: "[578, 44, -231, -283, -140 ... -112, 428, -31, 267, -76]"
+[D] [2026-07-21 16:41:56:442, ezkl::graph::model] - ------------ layout of 29 took 26.263899ms
+[D] [2026-07-21 16:41:56:442, ezkl::graph::model] - laying out 30: RESHAPE (shape=[8, 16])
+[D] [2026-07-21 16:41:56:442, ezkl::circuit::ops::region] - (rows=31881, coord=63762, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:442, ezkl::graph::model] - ------------ output node 30: "[578, 44, -231, -283, -140 ... -112, 428, -31, 267, -76]"
+[D] [2026-07-21 16:41:56:442, ezkl::graph::model] - ------------ layout of 30 took 67.354µs
+[D] [2026-07-21 16:41:56:442, ezkl::graph::model] - laying out 31: CONST (scale=10)
+[D] [2026-07-21 16:41:56:442, ezkl::circuit::ops::region] - (rows=31881, coord=63762, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:442, ezkl::graph::model] - node 31 is a constant with 1 use
+[D] [2026-07-21 16:41:56:442, ezkl::graph::model] - ------------ output node 31: "[142, -224, 120, -121, 112 ... -96, -162, -28, 0, 160]"
+[D] [2026-07-21 16:41:56:442, ezkl::graph::model] - ------------ layout of 31 took 111.286µs
+[D] [2026-07-21 16:41:56:442, ezkl::graph::model] - laying out 32: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (EINSUM mk,kn->amn)
+[D] [2026-07-21 16:41:56:442, ezkl::circuit::ops::region] - (rows=31881, coord=63762, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:468, ezkl::graph::model] - ------------ output node 32: "[-3, -25, 230, 120, -186 ... -14, -390, -10, -192, 81]"
+[D] [2026-07-21 16:41:56:468, ezkl::graph::model] - ------------ layout of 32 took 25.09934ms
+[D] [2026-07-21 16:41:56:468, ezkl::graph::model] - laying out 33: CONST (scale=10)
+[D] [2026-07-21 16:41:56:468, ezkl::circuit::ops::region] - (rows=34825, coord=69650, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:468, ezkl::graph::model] - node 33 is a constant with 1 use
+[D] [2026-07-21 16:41:56:468, ezkl::graph::model] - ------------ output node 33: "[5, 118, -92, 111, -82 ... -230, 17, 166, 233, 149]"
+[D] [2026-07-21 16:41:56:468, ezkl::graph::model] - ------------ layout of 33 took 22.106µs
+[D] [2026-07-21 16:41:56:468, ezkl::graph::model] - laying out 34: ADD
+[D] [2026-07-21 16:41:56:468, ezkl::circuit::ops::region] - (rows=34825, coord=69650, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:468, ezkl::graph::model] - ------------ output node 34: "[2, 93, 138, 231, -268 ... -244, -373, 156, 41, 230]"
+[D] [2026-07-21 16:41:56:468, ezkl::graph::model] - ------------ layout of 34 took 487.544µs
+[D] [2026-07-21 16:41:56:468, ezkl::graph::model] - laying out 35: ADD
+[D] [2026-07-21 16:41:56:468, ezkl::circuit::ops::region] - (rows=34889, coord=69778, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:469, ezkl::graph::model] - ------------ output node 35: "[-1778, 1868, 889, 1249, -260 ... -731, -3, -437, -702, 1644]"
+[D] [2026-07-21 16:41:56:469, ezkl::graph::model] - ------------ layout of 35 took 410.214µs
+[D] [2026-07-21 16:41:56:469, ezkl::graph::model] - laying out 36: SUM (axes=[2])
+[D] [2026-07-21 16:41:56:469, ezkl::circuit::ops::region] - (rows=34953, coord=69906, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:469, ezkl::graph::model] - ------------ output node 36: "Tensor { inner: [1331, -2479, 1874, 938, -7451, -1613, 199, -2339], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:469, ezkl::graph::model] - ------------ layout of 36 took 425.234µs
+[D] [2026-07-21 16:41:56:469, ezkl::graph::model] - laying out 37: IDENTITY (out_scale=Some(14))
+[D] [2026-07-21 16:41:56:469, ezkl::circuit::ops::region] - (rows=35017, coord=70034, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:469, ezkl::graph::model] - ------------ output node 37: "Tensor { inner: [1331, -2479, 1874, 938, -7451, -1613, 199, -2339], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:469, ezkl::graph::model] - ------------ layout of 37 took 82.511µs
+[D] [2026-07-21 16:41:56:469, ezkl::graph::model] - laying out 38: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-21 16:41:56:469, ezkl::circuit::ops::region] - (rows=35021, coord=70042, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:487, ezkl::graph::model] - ------------ output node 38: "[-1861, 1785, 806, 1166, -343 ... -585, 143, -291, -556, 1790]"
+[D] [2026-07-21 16:41:56:487, ezkl::graph::model] - ------------ layout of 38 took 17.679236ms
+[D] [2026-07-21 16:41:56:487, ezkl::graph::model] - laying out 39: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-21 16:41:56:487, ezkl::circuit::ops::region] - (rows=38093, coord=76186, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:504, ezkl::graph::model] - ------------ output node 39: "Tensor { inner: [1001, 1121, 977, 707, 793, 427, 741, 1407], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:504, ezkl::graph::model] - ------------ layout of 39 took 17.403999ms
+[D] [2026-07-21 16:41:56:504, ezkl::graph::model] - laying out 40: ADD
+[D] [2026-07-21 16:41:56:504, ezkl::circuit::ops::region] - (rows=38589, coord=77178, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:505, ezkl::graph::model] - ------------ output node 40: "Tensor { inner: [1001, 1121, 977, 707, 793, 427, 741, 1407], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:505, ezkl::graph::model] - ------------ layout of 40 took 248.785µs
+[D] [2026-07-21 16:41:56:505, ezkl::graph::model] - laying out 41: RSQRT (input_scale=1024, output_scale=1024, eps=0.0000000000000002220446049250313)
+[D] [2026-07-21 16:41:56:505, ezkl::circuit::ops::region] - (rows=38593, coord=77186, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:549, ezkl::graph::model] - ------------ output node 41: "Tensor { inner: [1036, 979, 1049, 1232, 1164, 1586, 1204, 874], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:549, ezkl::graph::model] - ------------ layout of 41 took 44.710093ms
+[D] [2026-07-21 16:41:56:549, ezkl::graph::model] - laying out 42: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (MULT)
+[D] [2026-07-21 16:41:56:549, ezkl::circuit::ops::region] - (rows=39489, coord=78978, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:568, ezkl::graph::model] - ------------ output node 42: "[-1883, 1806, 815, 1180, -347 ... -499, 122, -248, -475, 1528]"
+[D] [2026-07-21 16:41:56:571, ezkl::graph::model] - ------------ layout of 42 took 21.251804ms
+[D] [2026-07-21 16:41:56:571, ezkl::graph::model] - laying out 43: CONST (scale=10)
+[D] [2026-07-21 16:41:56:571, ezkl::circuit::ops::region] - (rows=42497, coord=84994, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:571, ezkl::graph::model] - node 43 is a constant with 1 use
+[D] [2026-07-21 16:41:56:571, ezkl::graph::model] - ------------ output node 43: "[-133, -108, -131, -18, 77 ... 241, -70, 163, -124, -7]"
+[D] [2026-07-21 16:41:56:571, ezkl::graph::model] - ------------ layout of 43 took 364.584µs
+[D] [2026-07-21 16:41:56:571, ezkl::graph::model] - laying out 44: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (EINSUM amk,kn->mn)
+[D] [2026-07-21 16:41:56:571, ezkl::circuit::ops::region] - (rows=42497, coord=84994, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:618, ezkl::graph::model] - ------------ output node 44: "[-519, 826, -50, 192, -849 ... -304, -384, 832, -548, -103]"
+[D] [2026-07-21 16:41:56:618, ezkl::graph::model] - ------------ layout of 44 took 47.277053ms
+[D] [2026-07-21 16:41:56:618, ezkl::graph::model] - laying out 45: CONST (scale=10)
+[D] [2026-07-21 16:41:56:618, ezkl::circuit::ops::region] - (rows=54273, coord=108546, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:618, ezkl::graph::model] - node 45 is a constant with 1 use
+[D] [2026-07-21 16:41:56:618, ezkl::graph::model] - ------------ output node 45: "[-51, 86, 202, 64, 178 ... -75, -239, -138, 133, -103]"
+[D] [2026-07-21 16:41:56:618, ezkl::graph::model] - ------------ layout of 45 took 36.458µs
+[D] [2026-07-21 16:41:56:618, ezkl::graph::model] - laying out 46: ADD
+[D] [2026-07-21 16:41:56:618, ezkl::circuit::ops::region] - (rows=54273, coord=108546, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:619, ezkl::graph::model] - ------------ output node 46: "[-570, 912, 152, 256, -671 ... -379, -623, 694, -415, -206]"
+[D] [2026-07-21 16:41:56:619, ezkl::graph::model] - ------------ layout of 46 took 894.825µs
+[D] [2026-07-21 16:41:56:619, ezkl::graph::model] - laying out 48: IDENTITY (out_scale=Some(11))
+[D] [2026-07-21 16:41:56:619, ezkl::circuit::ops::region] - (rows=54529, coord=109058, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:620, ezkl::graph::model] - ------------ output node 48: "[-570, 912, 152, 256, -671 ... -379, -623, 694, -415, -206]"
+[D] [2026-07-21 16:41:56:620, ezkl::graph::model] - ------------ layout of 48 took 391.927µs
+[D] [2026-07-21 16:41:56:620, ezkl::graph::model] - laying out 49: CONST (scale=10)
+[D] [2026-07-21 16:41:56:620, ezkl::circuit::ops::region] - (rows=54785, coord=109570, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:620, ezkl::graph::model] - node 49 is a constant with 1 use
+[D] [2026-07-21 16:41:56:620, ezkl::graph::model] - ------------ output node 49: "Tensor { inner: [46], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:620, ezkl::graph::model] - ------------ layout of 49 took 12.318µs
+[D] [2026-07-21 16:41:56:620, ezkl::graph::model] - laying out 50: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (MULT)
+[D] [2026-07-21 16:41:56:620, ezkl::circuit::ops::region] - (rows=54785, coord=109570, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:658, ezkl::graph::model] - ------------ output node 50: "[-26, 41, 7, 12, -30 ... -17, -28, 31, -19, -9]"
+[D] [2026-07-21 16:41:56:658, ezkl::graph::model] - ------------ layout of 50 took 38.177663ms
+[D] [2026-07-21 16:41:56:658, ezkl::graph::model] - laying out 51: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (MULT)
+[D] [2026-07-21 16:41:56:658, ezkl::circuit::ops::region] - (rows=66817, coord=133634, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:695, ezkl::graph::model] - ------------ output node 51: "[14, 37, 1, 3, 20 ... 6, 17, 21, 8, 2]"
+[D] [2026-07-21 16:41:56:695, ezkl::graph::model] - ------------ layout of 51 took 37.164236ms
+[D] [2026-07-21 16:41:56:695, ezkl::graph::model] - laying out 52: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (MULT)
+[D] [2026-07-21 16:41:56:695, ezkl::circuit::ops::region] - (rows=78849, coord=157698, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:733, ezkl::graph::model] - ------------ output node 52: "[-8, 33, 0, 1, -13 ... -2, -10, 14, -3, 0]"
+[D] [2026-07-21 16:41:56:733, ezkl::graph::model] - ------------ layout of 52 took 37.58837ms
+[D] [2026-07-21 16:41:56:733, ezkl::graph::model] - laying out 53: ADD
+[D] [2026-07-21 16:41:56:733, ezkl::circuit::ops::region] - (rows=90881, coord=181762, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:734, ezkl::graph::model] - ------------ output node 53: "[-578, 945, 152, 257, -684 ... -381, -633, 708, -418, -206]"
+[D] [2026-07-21 16:41:56:734, ezkl::graph::model] - ------------ layout of 53 took 821.297µs
+[D] [2026-07-21 16:41:56:734, ezkl::graph::model] - laying out 54: CONST (scale=10)
+[D] [2026-07-21 16:41:56:734, ezkl::circuit::ops::region] - (rows=91137, coord=182274, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:734, ezkl::graph::model] - node 54 is a constant with 1 use
+[D] [2026-07-21 16:41:56:734, ezkl::graph::model] - ------------ output node 54: "Tensor { inner: [817], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:734, ezkl::graph::model] - ------------ layout of 54 took 20.586µs
+[D] [2026-07-21 16:41:56:734, ezkl::graph::model] - laying out 55: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (MULT)
+[D] [2026-07-21 16:41:56:734, ezkl::circuit::ops::region] - (rows=91137, coord=182274, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:774, ezkl::graph::model] - ------------ output node 55: "[-461, 754, 121, 205, -546 ... -304, -505, 565, -334, -164]"
+[D] [2026-07-21 16:41:56:774, ezkl::graph::model] - ------------ layout of 55 took 39.980932ms
+[D] [2026-07-21 16:41:56:774, ezkl::graph::model] - laying out 56: TANH(scale=1024)
+[D] [2026-07-21 16:41:56:774, ezkl::circuit::ops::region] - (rows=103169, coord=206338, constants=13, max_lookup_inputs=0, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:776, ezkl::graph::model] - ------------ output node 56: "[-432, 642, 120, 202, -500 ... -295, -468, 514, -323, -163]"
+[D] [2026-07-21 16:41:56:776, ezkl::graph::model] - ------------ layout of 56 took 1.903546ms
+[D] [2026-07-21 16:41:56:776, ezkl::graph::model] - laying out 57: CONST (scale=10)
+[D] [2026-07-21 16:41:56:776, ezkl::circuit::ops::region] - (rows=103425, coord=206850, constants=13, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:776, ezkl::graph::model] - node 57 is a constant with 1 use
+[D] [2026-07-21 16:41:56:776, ezkl::graph::model] - ------------ output node 57: "Tensor { inner: [1024], dims: [1, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:776, ezkl::graph::model] - ------------ layout of 57 took 13.436µs
+[D] [2026-07-21 16:41:56:776, ezkl::graph::model] - laying out 58: ADD
+[D] [2026-07-21 16:41:56:776, ezkl::circuit::ops::region] - (rows=103425, coord=206850, constants=13, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:777, ezkl::graph::model] - ------------ output node 58: "[592, 1666, 1144, 1226, 524 ... 729, 556, 1538, 701, 861]"
+[D] [2026-07-21 16:41:56:777, ezkl::graph::model] - ------------ layout of 58 took 919.215µs
+[D] [2026-07-21 16:41:56:777, ezkl::graph::model] - laying out 59: REBASED (div=2048.0, rebasing_op=DIV (denom=2048)) (MULT)
+[D] [2026-07-21 16:41:56:777, ezkl::circuit::ops::region] - (rows=103681, coord=207362, constants=13, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:814, ezkl::graph::model] - ------------ output node 59: "[-165, 742, 85, 153, -172 ... -135, -169, 521, -142, -87]"
+[D] [2026-07-21 16:41:56:814, ezkl::graph::model] - ------------ layout of 59 took 37.682727ms
+[D] [2026-07-21 16:41:56:814, ezkl::graph::model] - laying out 60: CONST (scale=10)
+[D] [2026-07-21 16:41:56:814, ezkl::circuit::ops::region] - (rows=115713, coord=231426, constants=14, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:814, ezkl::graph::model] - node 60 is a constant with 1 use
+[D] [2026-07-21 16:41:56:815, ezkl::graph::model] - ------------ output node 60: "[61, 5, 13, -66, -105 ... 111, 98, 65, -60, 3]"
+[D] [2026-07-21 16:41:56:815, ezkl::graph::model] - ------------ layout of 60 took 275.439µs
+[D] [2026-07-21 16:41:56:815, ezkl::graph::model] - laying out 61: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (EINSUM mk,kn->amn)
+[D] [2026-07-21 16:41:56:815, ezkl::circuit::ops::region] - (rows=115713, coord=231426, constants=14, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:860, ezkl::graph::model] - ------------ output node 61: "[43, 8, -201, 132, 351 ... -38, -169, -153, -350, -169]"
+[D] [2026-07-21 16:41:56:860, ezkl::graph::model] - ------------ layout of 61 took 45.44989ms
+[D] [2026-07-21 16:41:56:860, ezkl::graph::model] - laying out 62: CONST (scale=10)
+[D] [2026-07-21 16:41:56:860, ezkl::circuit::ops::region] - (rows=118657, coord=237314, constants=14, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:860, ezkl::graph::model] - node 62 is a constant with 1 use
+[D] [2026-07-21 16:41:56:860, ezkl::graph::model] - ------------ output node 62: "[-98, 52, 72, 113, -122 ... 117, -49, -21, 100, 103]"
+[D] [2026-07-21 16:41:56:860, ezkl::graph::model] - ------------ layout of 62 took 23.089µs
+[D] [2026-07-21 16:41:56:860, ezkl::graph::model] - laying out 63: ADD
+[D] [2026-07-21 16:41:56:860, ezkl::circuit::ops::region] - (rows=118657, coord=237314, constants=14, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:861, ezkl::graph::model] - ------------ output node 63: "[-55, 60, -129, 245, 229 ... 79, -218, -174, -250, -66]"
+[D] [2026-07-21 16:41:56:861, ezkl::graph::model] - ------------ layout of 63 took 517.288µs
+[D] [2026-07-21 16:41:56:861, ezkl::graph::model] - laying out 64: ADD
+[D] [2026-07-21 16:41:56:861, ezkl::circuit::ops::region] - (rows=118721, coord=237442, constants=14, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:862, ezkl::graph::model] - ------------ output node 64: "[-1833, 1928, 760, 1494, -31 ... -652, -221, -611, -952, 1578]"
+[D] [2026-07-21 16:41:56:862, ezkl::graph::model] - ------------ layout of 64 took 754.285µs
+[D] [2026-07-21 16:41:56:862, ezkl::graph::model] - laying out 65: SUM (axes=[2])
+[D] [2026-07-21 16:41:56:862, ezkl::circuit::ops::region] - (rows=118785, coord=237570, constants=14, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:862, ezkl::graph::model] - ------------ output node 65: "Tensor { inner: [2229, -1486, 1583, 2862, -5406, -3171, -331, -2361], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:862, ezkl::graph::model] - ------------ layout of 65 took 371.036µs
+[D] [2026-07-21 16:41:56:862, ezkl::graph::model] - laying out 66: IDENTITY (out_scale=Some(14))
+[D] [2026-07-21 16:41:56:862, ezkl::circuit::ops::region] - (rows=118849, coord=237698, constants=14, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:862, ezkl::graph::model] - ------------ output node 66: "Tensor { inner: [2229, -1486, 1583, 2862, -5406, -3171, -331, -2361], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:862, ezkl::graph::model] - ------------ layout of 66 took 122.27µs
+[D] [2026-07-21 16:41:56:862, ezkl::graph::model] - laying out 67: REBASED (div=16.0, rebasing_op=DIV (denom=16)) (RESCALED INPUT (SUB))
+[D] [2026-07-21 16:41:56:862, ezkl::circuit::ops::region] - (rows=118853, coord=237706, constants=14, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:880, ezkl::graph::model] - ------------ output node 67: "[-1972, 1789, 621, 1355, -170 ... -504, -73, -463, -804, 1726]"
+[D] [2026-07-21 16:41:56:880, ezkl::graph::model] - ------------ layout of 67 took 17.62487ms
+[D] [2026-07-21 16:41:56:880, ezkl::graph::model] - laying out 68: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (MEANOFSQUARES (axes=[2]))
+[D] [2026-07-21 16:41:56:880, ezkl::circuit::ops::region] - (rows=121925, coord=243850, constants=14, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:899, ezkl::graph::model] - ------------ output node 68: "Tensor { inner: [1102, 998, 1040, 825, 766, 669, 864, 1494], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:899, ezkl::graph::model] - ------------ layout of 68 took 18.774906ms
+[D] [2026-07-21 16:41:56:899, ezkl::graph::model] - laying out 69: ADD
+[D] [2026-07-21 16:41:56:899, ezkl::circuit::ops::region] - (rows=122421, coord=244842, constants=14, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:899, ezkl::graph::model] - ------------ output node 69: "Tensor { inner: [1102, 998, 1040, 825, 766, 669, 864, 1494], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:899, ezkl::graph::model] - ------------ layout of 69 took 249.993µs
+[D] [2026-07-21 16:41:56:899, ezkl::graph::model] - laying out 70: RSQRT (input_scale=1024, output_scale=1024, eps=0.0000000000000002220446049250313)
+[D] [2026-07-21 16:41:56:899, ezkl::circuit::ops::region] - (rows=122425, coord=244850, constants=14, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:946, ezkl::graph::model] - ------------ output node 70: "Tensor { inner: [987, 1037, 1016, 1141, 1183, 1266, 1114, 848], dims: [1, 8, 1], scale: None, visibility: None }"
+[D] [2026-07-21 16:41:56:946, ezkl::graph::model] - ------------ layout of 70 took 46.939632ms
+[D] [2026-07-21 16:41:56:946, ezkl::graph::model] - laying out 71: REBASED (div=1024.0, rebasing_op=DIV (denom=1024)) (MULT)
+[D] [2026-07-21 16:41:56:946, ezkl::circuit::ops::region] - (rows=123321, coord=246642, constants=14, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:962, ezkl::graph::model] - ------------ output node 71: "[-1901, 1724, 599, 1306, -164 ... -417, -60, -383, -666, 1429]"
+[D] [2026-07-21 16:41:56:962, ezkl::graph::model] - ------------ layout of 71 took 16.079034ms
+[D] [2026-07-21 16:41:56:962, ezkl::graph::model] - model outputs are nodes: [(71, 0)]
+[D] [2026-07-21 16:41:56:969, ezkl::circuit::ops::region] - (rows=127673, coord=255346, constants=14, max_lookup_inputs=1632, min_lookup_inputs=-1566, max_range_size=16383, dynamic_lookup_col_coord=0, shuffle_col_coord=128, max_dynamic_input_len=0)
+[D] [2026-07-21 16:41:56:970, ezkl::execute] - witness: 
+ |   {
+ |    "inputs": [
+ |      [
+ |        "0df9ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "ef06000000000000000000000000000000000000000000000000000000000000",
+ |        "ef02000000000000000000000000000000000000000000000000000000000000",
+ |        "fa03000000000000000000000000000000000000000000000000000000000000",
+ |        "0800000000000000000000000000000000000000000000000000000000000000",
+ |        "dffeffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "b8fbffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "6cfeffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "e502000000000000000000000000000000000000000000000000000000000000",
+ |        "8a04000000000000000000000000000000000000000000000000000000000000",
+ |        "8d00000000000000000000000000000000000000000000000000000000000000",
+ |        "dffeffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "6103000000000000000000000000000000000000000000000000000000000000",
+ |        "58f9ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "9b03000000000000000000000000000000000000000000000000000000000000",
+ |        "2b01000000000000000000000000000000000000000000000000000000000000",
+ |        "ef03000000000000000000000000000000000000000000000000000000000000",
+ |        "67f9ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "a0fcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "e5f8ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "b806000000000000000000000000000000000000000000000000000000000000",
+ |        "c6feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "b600000000000000000000000000000000000000000000000000000000000000",
+ |        "3901000000000000000000000000000000000000000000000000000000000000",
+ |        "9702000000000000000000000000000000000000000000000000000000000000",
+ |        "3305000000000000000000000000000000000000000000000000000000000000",
+ |        "9302000000000000000000000000000000000000000000000000000000000000",
+ |        "bafaffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "bafdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "68f8ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "0201000000000000000000000000000000000000000000000000000000000000",
+ |        "e602000000000000000000000000000000000000000000000000000000000000",
+ |        "f6ffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "4e01000000000000000000000000000000000000000000000000000000000000",
+ |        "68feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "d2fdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "35fcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "acfdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "6f02000000000000000000000000000000000000000000000000000000000000",
+ |        "6f07000000000000000000000000000000000000000000000000000000000000",
+ |        "cef7ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "e204000000000000000000000000000000000000000000000000000000000000",
+ |        "8005000000000000000000000000000000000000000000000000000000000000",
+ |        "fd01000000000000000000000000000000000000000000000000000000000000",
+ |        "fcfdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "3e05000000000000000000000000000000000000000000000000000000000000",
+ |        "acffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "dd00000000000000000000000000000000000000000000000000000000000000",
+ |        "7100000000000000000000000000000000000000000000000000000000000000",
+ |        "02feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "a405000000000000000000000000000000000000000000000000000000000000",
+ |        "a403000000000000000000000000000000000000000000000000000000000000",
+ |        "5803000000000000000000000000000000000000000000000000000000000000",
+ |        "2ffeffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "6effffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "7000000000000000000000000000000000000000000000000000000000000000",
+ |        "c402000000000000000000000000000000000000000000000000000000000000",
+ |        "bc01000000000000000000000000000000000000000000000000000000000000",
+ |        "a900000000000000000000000000000000000000000000000000000000000000",
+ |        "b803000000000000000000000000000000000000000000000000000000000000",
+ |        "b901000000000000000000000000000000000000000000000000000000000000",
+ |        "0bf7ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "6401000000000000000000000000000000000000000000000000000000000000",
+ |        "03faffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "2901000000000000000000000000000000000000000000000000000000000000",
+ |        "dffeffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "02fdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "4dfaffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "b4feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "ff00000000000000000000000000000000000000000000000000000000000000",
+ |        "62faffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "0700000000000000000000000000000000000000000000000000000000000000",
+ |        "5dfdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "4afcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "2a04000000000000000000000000000000000000000000000000000000000000",
+ |        "ec06000000000000000000000000000000000000000000000000000000000000",
+ |        "6bfcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "02f9ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "f400000000000000000000000000000000000000000000000000000000000000",
+ |        "c8f8ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "59feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "29f9ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "7501000000000000000000000000000000000000000000000000000000000000",
+ |        "affdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "2afdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "e9feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "7d03000000000000000000000000000000000000000000000000000000000000",
+ |        "dd00000000000000000000000000000000000000000000000000000000000000",
+ |        "1602000000000000000000000000000000000000000000000000000000000000",
+ |        "5d01000000000000000000000000000000000000000000000000000000000000",
+ |        "0b04000000000000000000000000000000000000000000000000000000000000",
+ |        "d1ffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "3201000000000000000000000000000000000000000000000000000000000000",
+ |        "52feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "dafbffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "8e02000000000000000000000000000000000000000000000000000000000000",
+ |        "1800000000000000000000000000000000000000000000000000000000000000",
+ |        "dcfbffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "c402000000000000000000000000000000000000000000000000000000000000",
+ |        "4afdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "4efcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "c3feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "c900000000000000000000000000000000000000000000000000000000000000",
+ |        "8602000000000000000000000000000000000000000000000000000000000000",
+ |        "1df9ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "ebfdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "3e00000000000000000000000000000000000000000000000000000000000000",
+ |        "af01000000000000000000000000000000000000000000000000000000000000",
+ |        "3b04000000000000000000000000000000000000000000000000000000000000",
+ |        "4d05000000000000000000000000000000000000000000000000000000000000",
+ |        "8804000000000000000000000000000000000000000000000000000000000000",
+ |        "b301000000000000000000000000000000000000000000000000000000000000",
+ |        "1803000000000000000000000000000000000000000000000000000000000000",
+ |        "9000000000000000000000000000000000000000000000000000000000000000",
+ |        "e5feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "1000000000000000000000000000000000000000000000000000000000000000",
+ |        "61fcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "97fdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "3500000000000000000000000000000000000000000000000000000000000000",
+ |        "9bfdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "e3f3ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "0c01000000000000000000000000000000000000000000000000000000000000",
+ |        "4a0a000000000000000000000000000000000000000000000000000000000000",
+ |        "1afeffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "7201000000000000000000000000000000000000000000000000000000000000",
+ |        "b0fdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "1afdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "8605000000000000000000000000000000000000000000000000000000000000"
+ |      ]
+ |    ],
+ |    "max_lookup_inputs": 1632,
+ |    "max_range_size": 16383,
+ |    "min_lookup_inputs": -1566,
+ |    "outputs": [
+ |      [
+ |        "94f8ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "bc06000000000000000000000000000000000000000000000000000000000000",
+ |        "5702000000000000000000000000000000000000000000000000000000000000",
+ |        "1a05000000000000000000000000000000000000000000000000000000000000",
+ |        "5dffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "3300000000000000000000000000000000000000000000000000000000000000",
+ |        "d8fbffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "fbfcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "e102000000000000000000000000000000000000000000000000000000000000",
+ |        "da01000000000000000000000000000000000000000000000000000000000000",
+ |        "87ffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "59fdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "8400000000000000000000000000000000000000000000000000000000000000",
+ |        "6df8ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "fe02000000000000000000000000000000000000000000000000000000000000",
+ |        "5d03000000000000000000000000000000000000000000000000000000000000",
+ |        "2e03000000000000000000000000000000000000000000000000000000000000",
+ |        "d3f9ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "e1fcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "5efaffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "d305000000000000000000000000000000000000000000000000000000000000",
+ |        "f6ffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "8f01000000000000000000000000000000000000000000000000000000000000",
+ |        "cf00000000000000000000000000000000000000000000000000000000000000",
+ |        "da03000000000000000000000000000000000000000000000000000000000000",
+ |        "f203000000000000000000000000000000000000000000000000000000000000",
+ |        "c402000000000000000000000000000000000000000000000000000000000000",
+ |        "81fbffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "e1fcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "f5f9ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "7902000000000000000000000000000000000000000000000000000000000000",
+ |        "4404000000000000000000000000000000000000000000000000000000000000",
+ |        "f1feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "2101000000000000000000000000000000000000000000000000000000000000",
+ |        "7ffeffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "55fdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "42faffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "09ffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "8503000000000000000000000000000000000000000000000000000000000000",
+ |        "bc03000000000000000000000000000000000000000000000000000000000000",
+ |        "2df7ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "1b05000000000000000000000000000000000000000000000000000000000000",
+ |        "fe03000000000000000000000000000000000000000000000000000000000000",
+ |        "ae00000000000000000000000000000000000000000000000000000000000000",
+ |        "b5fbffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "7006000000000000000000000000000000000000000000000000000000000000",
+ |        "eefeffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "8f01000000000000000000000000000000000000000000000000000000000000",
+ |        "66feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "87fdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "0007000000000000000000000000000000000000000000000000000000000000",
+ |        "a905000000000000000000000000000000000000000000000000000000000000",
+ |        "ec00000000000000000000000000000000000000000000000000000000000000",
+ |        "09feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "7effffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "47feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "a703000000000000000000000000000000000000000000000000000000000000",
+ |        "3dffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "d3feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "ae03000000000000000000000000000000000000000000000000000000000000",
+ |        "6201000000000000000000000000000000000000000000000000000000000000",
+ |        "c8f5ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "5c02000000000000000000000000000000000000000000000000000000000000",
+ |        "cefbffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "b601000000000000000000000000000000000000000000000000000000000000",
+ |        "4302000000000000000000000000000000000000000000000000000000000000",
+ |        "04feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "f4faffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "71ffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "2702000000000000000000000000000000000000000000000000000000000000",
+ |        "9afdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "7c01000000000000000000000000000000000000000000000000000000000000",
+ |        "6f01000000000000000000000000000000000000000000000000000000000000",
+ |        "0afdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "7b05000000000000000000000000000000000000000000000000000000000000",
+ |        "ed08000000000000000000000000000000000000000000000000000000000000",
+ |        "6efbffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "07faffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "c903000000000000000000000000000000000000000000000000000000000000",
+ |        "4dfcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "2dfcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "4bf8ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "cc02000000000000000000000000000000000000000000000000000000000000",
+ |        "3afeffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "79faffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "1600000000000000000000000000000000000000000000000000000000000000",
+ |        "e706000000000000000000000000000000000000000000000000000000000000",
+ |        "a7feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "5603000000000000000000000000000000000000000000000000000000000000",
+ |        "a902000000000000000000000000000000000000000000000000000000000000",
+ |        "6c06000000000000000000000000000000000000000000000000000000000000",
+ |        "6bffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "adffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "88feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "6dfcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "f203000000000000000000000000000000000000000000000000000000000000",
+ |        "cbffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "d4fbffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "0103000000000000000000000000000000000000000000000000000000000000",
+ |        "84fcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "a0f9ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "aeffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "4f02000000000000000000000000000000000000000000000000000000000000",
+ |        "f5ffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "77f8ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "e9fdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "ccffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "7100000000000000000000000000000000000000000000000000000000000000",
+ |        "fb01000000000000000000000000000000000000000000000000000000000000",
+ |        "0e08000000000000000000000000000000000000000000000000000000000000",
+ |        "8c05000000000000000000000000000000000000000000000000000000000000",
+ |        "2803000000000000000000000000000000000000000000000000000000000000",
+ |        "8e02000000000000000000000000000000000000000000000000000000000000",
+ |        "1902000000000000000000000000000000000000000000000000000000000000",
+ |        "c3ffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "5901000000000000000000000000000000000000000000000000000000000000",
+ |        "d5fcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "b9feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "1101000000000000000000000000000000000000000000000000000000000000",
+ |        "87fcffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "b6f6ffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "7a01000000000000000000000000000000000000000000000000000000000000",
+ |        "5309000000000000000000000000000000000000000000000000000000000000",
+ |        "60feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "c5ffffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "82feffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "67fdffef93f5e1439170b97948e833285d588181b64550b829a031e1724e6430",
+ |        "9505000000000000000000000000000000000000000000000000000000000000"
+ |      ]
+ |    ],
+ |    "pretty_elements": {
+ |      "inputs": [
+ |        [
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff90d",
+ |          "0x00000000000000000000000000000000000000000000000000000000000006ef",
+ |          "0x00000000000000000000000000000000000000000000000000000000000002ef",
+ |          "0x00000000000000000000000000000000000000000000000000000000000003fa",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000008",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffedf",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffbb8",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe6c",
+ |          "0x00000000000000000000000000000000000000000000000000000000000002e5",
+ |          "0x000000000000000000000000000000000000000000000000000000000000048a",
+ |          "0x000000000000000000000000000000000000000000000000000000000000008d",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffedf",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000361",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff958",
+ |          "0x000000000000000000000000000000000000000000000000000000000000039b",
+ |          "0x000000000000000000000000000000000000000000000000000000000000012b",
+ |          "0x00000000000000000000000000000000000000000000000000000000000003ef",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff967",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffca0",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff8e5",
+ |          "0x00000000000000000000000000000000000000000000000000000000000006b8",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffec6",
+ |          "0x00000000000000000000000000000000000000000000000000000000000000b6",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000139",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000297",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000533",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000293",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffaba",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffdba",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff868",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000102",
+ |          "0x00000000000000000000000000000000000000000000000000000000000002e6",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffff6",
+ |          "0x000000000000000000000000000000000000000000000000000000000000014e",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe68",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffdd2",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffc35",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffdac",
+ |          "0x000000000000000000000000000000000000000000000000000000000000026f",
+ |          "0x000000000000000000000000000000000000000000000000000000000000076f",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff7ce",
+ |          "0x00000000000000000000000000000000000000000000000000000000000004e2",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000580",
+ |          "0x00000000000000000000000000000000000000000000000000000000000001fd",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffdfc",
+ |          "0x000000000000000000000000000000000000000000000000000000000000053e",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffffac",
+ |          "0x00000000000000000000000000000000000000000000000000000000000000dd",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000071",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe02",
+ |          "0x00000000000000000000000000000000000000000000000000000000000005a4",
+ |          "0x00000000000000000000000000000000000000000000000000000000000003a4",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000358",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe2f",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffff6e",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000070",
+ |          "0x00000000000000000000000000000000000000000000000000000000000002c4",
+ |          "0x00000000000000000000000000000000000000000000000000000000000001bc",
+ |          "0x00000000000000000000000000000000000000000000000000000000000000a9",
+ |          "0x00000000000000000000000000000000000000000000000000000000000003b8",
+ |          "0x00000000000000000000000000000000000000000000000000000000000001b9",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff70b",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000164",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffa03",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000129",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffedf",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffd02",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffa4d",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffeb4",
+ |          "0x00000000000000000000000000000000000000000000000000000000000000ff",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffa62",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000007",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffd5d",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffc4a",
+ |          "0x000000000000000000000000000000000000000000000000000000000000042a",
+ |          "0x00000000000000000000000000000000000000000000000000000000000006ec",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffc6b",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff902",
+ |          "0x00000000000000000000000000000000000000000000000000000000000000f4",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff8c8",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe59",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff929",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000175",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffdaf",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffd2a",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffee9",
+ |          "0x000000000000000000000000000000000000000000000000000000000000037d",
+ |          "0x00000000000000000000000000000000000000000000000000000000000000dd",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000216",
+ |          "0x000000000000000000000000000000000000000000000000000000000000015d",
+ |          "0x000000000000000000000000000000000000000000000000000000000000040b",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffffd1",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000132",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe52",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffbda",
+ |          "0x000000000000000000000000000000000000000000000000000000000000028e",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000018",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffbdc",
+ |          "0x00000000000000000000000000000000000000000000000000000000000002c4",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffd4a",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffc4e",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffec3",
+ |          "0x00000000000000000000000000000000000000000000000000000000000000c9",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000286",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff91d",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffdeb",
+ |          "0x000000000000000000000000000000000000000000000000000000000000003e",
+ |          "0x00000000000000000000000000000000000000000000000000000000000001af",
+ |          "0x000000000000000000000000000000000000000000000000000000000000043b",
+ |          "0x000000000000000000000000000000000000000000000000000000000000054d",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000488",
+ |          "0x00000000000000000000000000000000000000000000000000000000000001b3",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000318",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000090",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffee5",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000010",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffc61",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffd97",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000035",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffd9b",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff3e3",
+ |          "0x000000000000000000000000000000000000000000000000000000000000010c",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000a4a",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe1a",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000172",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffdb0",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffd1a",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000586"
+ |        ]
+ |      ],
+ |      "outputs": [
+ |        [
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff894",
+ |          "0x00000000000000000000000000000000000000000000000000000000000006bc",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000257",
+ |          "0x000000000000000000000000000000000000000000000000000000000000051a",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffff5d",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000033",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffbd8",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffcfb",
+ |          "0x00000000000000000000000000000000000000000000000000000000000002e1",
+ |          "0x00000000000000000000000000000000000000000000000000000000000001da",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffff87",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffd59",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000084",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff86d",
+ |          "0x00000000000000000000000000000000000000000000000000000000000002fe",
+ |          "0x000000000000000000000000000000000000000000000000000000000000035d",
+ |          "0x000000000000000000000000000000000000000000000000000000000000032e",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff9d3",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffce1",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffa5e",
+ |          "0x00000000000000000000000000000000000000000000000000000000000005d3",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffff6",
+ |          "0x000000000000000000000000000000000000000000000000000000000000018f",
+ |          "0x00000000000000000000000000000000000000000000000000000000000000cf",
+ |          "0x00000000000000000000000000000000000000000000000000000000000003da",
+ |          "0x00000000000000000000000000000000000000000000000000000000000003f2",
+ |          "0x00000000000000000000000000000000000000000000000000000000000002c4",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffb81",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffce1",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff9f5",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000279",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000444",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffef1",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000121",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe7f",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffd55",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffa42",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffff09",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000385",
+ |          "0x00000000000000000000000000000000000000000000000000000000000003bc",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff72d",
+ |          "0x000000000000000000000000000000000000000000000000000000000000051b",
+ |          "0x00000000000000000000000000000000000000000000000000000000000003fe",
+ |          "0x00000000000000000000000000000000000000000000000000000000000000ae",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffbb5",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000670",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffeee",
+ |          "0x000000000000000000000000000000000000000000000000000000000000018f",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe66",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffd87",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000700",
+ |          "0x00000000000000000000000000000000000000000000000000000000000005a9",
+ |          "0x00000000000000000000000000000000000000000000000000000000000000ec",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe09",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffff7e",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe47",
+ |          "0x00000000000000000000000000000000000000000000000000000000000003a7",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffff3d",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffed3",
+ |          "0x00000000000000000000000000000000000000000000000000000000000003ae",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000162",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff5c8",
+ |          "0x000000000000000000000000000000000000000000000000000000000000025c",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffbce",
+ |          "0x00000000000000000000000000000000000000000000000000000000000001b6",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000243",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe04",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffaf4",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffff71",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000227",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffd9a",
+ |          "0x000000000000000000000000000000000000000000000000000000000000017c",
+ |          "0x000000000000000000000000000000000000000000000000000000000000016f",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffd0a",
+ |          "0x000000000000000000000000000000000000000000000000000000000000057b",
+ |          "0x00000000000000000000000000000000000000000000000000000000000008ed",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffb6e",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffa07",
+ |          "0x00000000000000000000000000000000000000000000000000000000000003c9",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffc4d",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffc2d",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff84b",
+ |          "0x00000000000000000000000000000000000000000000000000000000000002cc",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe3a",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffa79",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000016",
+ |          "0x00000000000000000000000000000000000000000000000000000000000006e7",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffea7",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000356",
+ |          "0x00000000000000000000000000000000000000000000000000000000000002a9",
+ |          "0x000000000000000000000000000000000000000000000000000000000000066c",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffff6b",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffffad",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe88",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffc6d",
+ |          "0x00000000000000000000000000000000000000000000000000000000000003f2",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffffcb",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffbd4",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000301",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffc84",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff9a0",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffffae",
+ |          "0x000000000000000000000000000000000000000000000000000000000000024f",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffff5",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff877",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffde9",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffffcc",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000071",
+ |          "0x00000000000000000000000000000000000000000000000000000000000001fb",
+ |          "0x000000000000000000000000000000000000000000000000000000000000080e",
+ |          "0x000000000000000000000000000000000000000000000000000000000000058c",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000328",
+ |          "0x000000000000000000000000000000000000000000000000000000000000028e",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000219",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffffc3",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000159",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffcd5",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffeb9",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000111",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffc87",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effff6b6",
+ |          "0x000000000000000000000000000000000000000000000000000000000000017a",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000953",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe60",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593efffffc5",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffe82",
+ |          "0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effffd67",
+ |          "0x0000000000000000000000000000000000000000000000000000000000000595"
+ |        ]
+ |      ],
+ |      "processed_inputs": [],
+ |      "processed_outputs": [],
+ |      "processed_params": [],
+ |      "rescaled_inputs": [
+ |        [
+ |          "-1.73828125",
+ |          "1.7333984375",
+ |          "0.7333984375",
+ |          "0.994140625",
+ |          "0.0078125",
+ |          "-0.283203125",
+ |          "-1.0712890625",
+ |          "-0.3955078125",
+ |          "0.7236328125",
+ |          "1.134765625",
+ |          "0.1376953125",
+ |          "-0.283203125",
+ |          "0.8447265625",
+ |          "-1.6650390625",
+ |          "0.9013671875",
+ |          "0.2919921875",
+ |          "0.9833984375",
+ |          "-1.650390625",
+ |          "-0.8447265625",
+ |          "-1.77734375",
+ |          "1.6796875",
+ |          "-0.3076171875",
+ |          "0.177734375",
+ |          "0.3056640625",
+ |          "0.6474609375",
+ |          "1.2998046875",
+ |          "0.6435546875",
+ |          "-1.3193359375",
+ |          "-0.5693359375",
+ |          "-1.8994140625",
+ |          "0.251953125",
+ |          "0.724609375",
+ |          "-0.0107421875",
+ |          "0.326171875",
+ |          "-0.3994140625",
+ |          "-0.5458984375",
+ |          "-0.94921875",
+ |          "-0.5830078125",
+ |          "0.6083984375",
+ |          "1.8583984375",
+ |          "-2.0498046875",
+ |          "1.220703125",
+ |          "1.375",
+ |          "0.4970703125",
+ |          "-0.5048828125",
+ |          "1.310546875",
+ |          "-0.0830078125",
+ |          "0.2158203125",
+ |          "0.1103515625",
+ |          "-0.4990234375",
+ |          "1.41015625",
+ |          "0.91015625",
+ |          "0.8359375",
+ |          "-0.455078125",
+ |          "-0.1435546875",
+ |          "0.109375",
+ |          "0.69140625",
+ |          "0.43359375",
+ |          "0.1650390625",
+ |          "0.9296875",
+ |          "0.4306640625",
+ |          "-2.240234375",
+ |          "0.34765625",
+ |          "-1.498046875",
+ |          "0.2900390625",
+ |          "-0.283203125",
+ |          "-0.7490234375",
+ |          "-1.42578125",
+ |          "-0.3251953125",
+ |          "0.2490234375",
+ |          "-1.4052734375",
+ |          "0.0068359375",
+ |          "-0.66015625",
+ |          "-0.9287109375",
+ |          "1.041015625",
+ |          "1.73046875",
+ |          "-0.896484375",
+ |          "-1.7490234375",
+ |          "0.23828125",
+ |          "-1.8056640625",
+ |          "-0.4140625",
+ |          "-1.7109375",
+ |          "0.3642578125",
+ |          "-0.580078125",
+ |          "-0.7099609375",
+ |          "-0.2734375",
+ |          "0.8720703125",
+ |          "0.2158203125",
+ |          "0.521484375",
+ |          "0.3408203125",
+ |          "1.0107421875",
+ |          "-0.046875",
+ |          "0.298828125",
+ |          "-0.4208984375",
+ |          "-1.0380859375",
+ |          "0.638671875",
+ |          "0.0234375",
+ |          "-1.0361328125",
+ |          "0.69140625",
+ |          "-0.6787109375",
+ |          "-0.9248046875",
+ |          "-0.310546875",
+ |          "0.1962890625",
+ |          "0.630859375",
+ |          "-1.72265625",
+ |          "-0.521484375",
+ |          "0.060546875",
+ |          "0.4208984375",
+ |          "1.0576171875",
+ |          "1.3251953125",
+ |          "1.1328125",
+ |          "0.4248046875",
+ |          "0.7734375",
+ |          "0.140625",
+ |          "-0.27734375",
+ |          "0.015625",
+ |          "-0.90625",
+ |          "-0.603515625",
+ |          "0.0517578125",
+ |          "-0.599609375",
+ |          "-3.029296875",
+ |          "0.26171875",
+ |          "2.572265625",
+ |          "-0.4755859375",
+ |          "0.361328125",
+ |          "-0.5791015625",
+ |          "-0.7255859375",
+ |          "1.380859375"
+ |        ]
+ |      ],
+ |      "rescaled_outputs": [
+ |        [
+ |          "-1.8564453125",
+ |          "1.68359375",
+ |          "0.5849609375",
+ |          "1.275390625",
+ |          "-0.16015625",
+ |          "0.0498046875",
+ |          "-1.0400390625",
+ |          "-0.755859375",
+ |          "0.7197265625",
+ |          "0.462890625",
+ |          "-0.119140625",
+ |          "-0.6640625",
+ |          "0.12890625",
+ |          "-1.89453125",
+ |          "0.748046875",
+ |          "0.8408203125",
+ |          "0.794921875",
+ |          "-1.544921875",
+ |          "-0.78125",
+ |          "-1.4091796875",
+ |          "1.4560546875",
+ |          "-0.0107421875",
+ |          "0.3896484375",
+ |          "0.2021484375",
+ |          "0.962890625",
+ |          "0.986328125",
+ |          "0.69140625",
+ |          "-1.125",
+ |          "-0.78125",
+ |          "-1.51171875",
+ |          "0.6181640625",
+ |          "1.06640625",
+ |          "-0.265625",
+ |          "0.2822265625",
+ |          "-0.376953125",
+ |          "-0.66796875",
+ |          "-1.4365234375",
+ |          "-0.2421875",
+ |          "0.8798828125",
+ |          "0.93359375",
+ |          "-2.20703125",
+ |          "1.2763671875",
+ |          "0.998046875",
+ |          "0.169921875",
+ |          "-1.07421875",
+ |          "1.609375",
+ |          "-0.2685546875",
+ |          "0.3896484375",
+ |          "-0.4013671875",
+ |          "-0.619140625",
+ |          "1.75",
+ |          "1.4150390625",
+ |          "0.23046875",
+ |          "-0.4921875",
+ |          "-0.1279296875",
+ |          "-0.431640625",
+ |          "0.9130859375",
+ |          "-0.19140625",
+ |          "-0.294921875",
+ |          "0.919921875",
+ |          "0.345703125",
+ |          "-2.5556640625",
+ |          "0.58984375",
+ |          "-1.0498046875",
+ |          "0.427734375",
+ |          "0.5654296875",
+ |          "-0.4970703125",
+ |          "-1.2626953125",
+ |          "-0.140625",
+ |          "0.5380859375",
+ |          "-0.6005859375",
+ |          "0.37109375",
+ |          "0.3583984375",
+ |          "-0.7412109375",
+ |          "1.3701171875",
+ |          "2.2314453125",
+ |          "-1.1435546875",
+ |          "-1.494140625",
+ |          "0.9462890625",
+ |          "-0.92578125",
+ |          "-0.95703125",
+ |          "-1.927734375",
+ |          "0.69921875",
+ |          "-0.4443359375",
+ |          "-1.3828125",
+ |          "0.021484375",
+ |          "1.7255859375",
+ |          "-0.337890625",
+ |          "0.833984375",
+ |          "0.6650390625",
+ |          "1.60546875",
+ |          "-0.146484375",
+ |          "-0.08203125",
+ |          "-0.3681640625",
+ |          "-0.89453125",
+ |          "0.986328125",
+ |          "-0.052734375",
+ |          "-1.0439453125",
+ |          "0.7509765625",
+ |          "-0.8720703125",
+ |          "-1.5947265625",
+ |          "-0.0810546875",
+ |          "0.5771484375",
+ |          "-0.01171875",
+ |          "-1.884765625",
+ |          "-0.5234375",
+ |          "-0.0517578125",
+ |          "0.1103515625",
+ |          "0.4951171875",
+ |          "2.013671875",
+ |          "1.38671875",
+ |          "0.7890625",
+ |          "0.638671875",
+ |          "0.5244140625",
+ |          "-0.060546875",
+ |          "0.3369140625",
+ |          "-0.79296875",
+ |          "-0.3203125",
+ |          "0.2666015625",
+ |          "-0.869140625",
+ |          "-2.3232421875",
+ |          "0.369140625",
+ |          "2.3310546875",
+ |          "-0.4072265625",
+ |          "-0.05859375",
+ |          "-0.3740234375",
+ |          "-0.650390625",
+ |          "1.3955078125"
+ |        ]
+ |      ]
+ |    },
+ |    "processed_inputs": null,
+ |    "processed_outputs": null,
+ |    "processed_params": null,
+ |    "version": "source - no compatibility guaranteed"
+ |  }
+[*] [2026-07-21 16:41:56:970, ezkl] - succeeded
+	Command being timed: "/data/coding/ezkl/target/release/ezkl gen-witness -D /data/coding/ezkl/models/seq8_d16_l1/input.json -M /data/coding/ezkl/results/seq8_d16_l1_scale10/model.compiled -O /data/coding/ezkl/results/seq8_d16_l1_scale10/witness.json"
+	User time (seconds): 24.66
+	System time (seconds): 3.50
+	Percent of CPU this job got: 3264%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.86
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 18452
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 51
+	Minor (reclaiming a frame) page faults: 3707
+	Voluntary context switches: 129544
+	Involuntary context switches: 56141
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 264
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
