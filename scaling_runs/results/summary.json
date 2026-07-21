@@ -1,0 +1,153 @@
+{
+  "categories": [
+    "msm",
+    "fft",
+    "lookup",
+    "permutation",
+    "quotient",
+    "synthesize",
+    "other"
+  ],
+  "configs": [
+    {
+      "config": "baseline",
+      "label": "baseline (all params at minimum)",
+      "params": {
+        "num_layers": 1,
+        "hidden_size": 8,
+        "num_heads": 1,
+        "intermediate_size": 8,
+        "vocab_size": 8,
+        "seq_len": 4
+      },
+      "logrows": 15,
+      "input_scale": 0,
+      "param_scale": 12,
+      "n_reps": 3,
+      "prove_time_s_rep1": 13.03,
+      "categories_pct_mean": {
+        "msm": 19.934,
+        "fft": 31.12,
+        "lookup": 2.548,
+        "permutation": 1.5,
+        "quotient": 26.489,
+        "synthesize": 1.361,
+        "other": 17.049
+      },
+      "categories_pct_std": {
+        "msm": 0.125,
+        "fft": 0.521,
+        "lookup": 0.105,
+        "permutation": 0.144,
+        "quotient": 0.459,
+        "synthesize": 0.332,
+        "other": 0.392
+      }
+    },
+    {
+      "config": "large_n",
+      "label": "large-n (seq_len 4\u219264, arch@min)",
+      "params": {
+        "num_layers": 1,
+        "hidden_size": 8,
+        "num_heads": 1,
+        "intermediate_size": 8,
+        "vocab_size": 8,
+        "seq_len": 64
+      },
+      "logrows": 20,
+      "input_scale": 0,
+      "param_scale": 12,
+      "n_reps": 3,
+      "prove_time_s_rep1": 307.7,
+      "categories_pct_mean": {
+        "msm": 14.966,
+        "fft": 40.509,
+        "lookup": 3.609,
+        "permutation": 1.544,
+        "quotient": 24.646,
+        "synthesize": 1.809,
+        "other": 12.916
+      },
+      "categories_pct_std": {
+        "msm": 0.097,
+        "fft": 0.231,
+        "lookup": 0.109,
+        "permutation": 0.025,
+        "quotient": 0.213,
+        "synthesize": 0.058,
+        "other": 0.411
+      }
+    },
+    {
+      "config": "large_d",
+      "label": "large-d (hidden 8\u2192128, arch@min)",
+      "params": {
+        "num_layers": 1,
+        "hidden_size": 128,
+        "num_heads": 1,
+        "intermediate_size": 8,
+        "vocab_size": 8,
+        "seq_len": 4
+      },
+      "logrows": 18,
+      "input_scale": 0,
+      "param_scale": 13,
+      "n_reps": 3,
+      "prove_time_s_rep1": 89.29,
+      "categories_pct_mean": {
+        "msm": 15.433,
+        "fft": 36.91,
+        "lookup": 3.109,
+        "permutation": 1.375,
+        "quotient": 27.073,
+        "synthesize": 2.246,
+        "other": 13.855
+      },
+      "categories_pct_std": {
+        "msm": 0.687,
+        "fft": 1.663,
+        "lookup": 0.138,
+        "permutation": 0.041,
+        "quotient": 1.692,
+        "synthesize": 0.146,
+        "other": 0.726
+      }
+    },
+    {
+      "config": "large_scale",
+      "label": "large-scale (param_scale 12\u219213, arch@min)",
+      "params": {
+        "num_layers": 1,
+        "hidden_size": 8,
+        "num_heads": 1,
+        "intermediate_size": 8,
+        "vocab_size": 8,
+        "seq_len": 4
+      },
+      "logrows": 16,
+      "input_scale": 0,
+      "param_scale": 13,
+      "n_reps": 3,
+      "prove_time_s_rep1": 23.58,
+      "categories_pct_mean": {
+        "msm": 19.005,
+        "fft": 34.446,
+        "lookup": 3.093,
+        "permutation": 1.539,
+        "quotient": 28.503,
+        "synthesize": 0.725,
+        "other": 12.69
+      },
+      "categories_pct_std": {
+        "msm": 0.404,
+        "fft": 0.667,
+        "lookup": 0.2,
+        "permutation": 0.112,
+        "quotient": 1.366,
+        "synthesize": 0.156,
+        "other": 0.585
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+% Requires \usepackage{booktabs}
+\begin{table}[t]
+  \centering
+  \caption{Share of sampled CPU time in \texttt{create\_proof} by phase (mean \% $\pm$ std over 3 reps).}
+  \label{tab:create-proof-phase-breakdown}
+  \begin{tabular}{lccccccc}
+    \toprule
+    Config & MSM & FFT/NTT & Lookup & Perm.\ $Z$ & Quotient & Synth. & Other \\
+    \midrule
+    baseline & 19.9 $\pm$ 0.1 & 31.1 $\pm$ 0.5 & 2.5 $\pm$ 0.1 & 1.5 $\pm$ 0.1 & 26.5 $\pm$ 0.5 & 1.4 $\pm$ 0.3 & 17.0 $\pm$ 0.4 \\
+    large\_n & 15.0 $\pm$ 0.1 & 40.5 $\pm$ 0.2 & 3.6 $\pm$ 0.1 & 1.5 $\pm$ 0.0 & 24.6 $\pm$ 0.2 & 1.8 $\pm$ 0.1 & 12.9 $\pm$ 0.4 \\
+    large\_d & 15.4 $\pm$ 0.7 & 36.9 $\pm$ 1.7 & 3.1 $\pm$ 0.1 & 1.4 $\pm$ 0.0 & 27.1 $\pm$ 1.7 & 2.2 $\pm$ 0.1 & 13.9 $\pm$ 0.7 \\
+    large\_scale & 19.0 $\pm$ 0.4 & 34.4 $\pm$ 0.7 & 3.1 $\pm$ 0.2 & 1.5 $\pm$ 0.1 & 28.5 $\pm$ 1.4 & 0.7 $\pm$ 0.2 & 12.7 $\pm$ 0.6 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[t]
+  \centering
+  \caption{Configuration and calibrated settings for each scale point.}
+  \label{tab:create-proof-scale-configs}
+  \begin{tabular}{lp{4.2cm}ccc}
+    \toprule
+    Config & Varied parameter & logrows & param\_scale & prove (s, rep 1) \\
+    \midrule
+    baseline & num\_layers=1, hidden\_size=8, num\_heads=1, intermediate\_size=8, vocab\_size=8, seq\_len=4 & 15 & 12 & 13.03 \\
+    large\_n & num\_layers=1, hidden\_size=8, num\_heads=1, intermediate\_size=8, vocab\_size=8, seq\_len=64 & 20 & 12 & 307.7 \\
+    large\_d & num\_layers=1, hidden\_size=128, num\_heads=1, intermediate\_size=8, vocab\_size=8, seq\_len=4 & 18 & 13 & 89.29 \\
+    large\_scale & num\_layers=1, hidden\_size=8, num\_heads=1, intermediate\_size=8, vocab\_size=8, seq\_len=4 & 16 & 13 & 23.58 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

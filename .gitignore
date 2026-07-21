@@ -54,3 +54,14 @@ cache
 out
 !tests/assets/wasm.code
 !tests/assets/wasm.sol
+
+# create_proof flamegraph scaling experiment: raw per-run pipeline artifacts
+# live on disk under scaling_runs/<config>/ but are not tracked here --
+# pk/vk/srs/witness/compiled-circuit/logs are regenerable via
+# scripts/run_scaling_rep.sh, and the actual flamegraph data
+# (scaling_runs/<config>/pprof/repN.{folded,svg}) is kept on disk but is too
+# large for git. Only the small aggregated results (scaling_runs/results/)
+# are tracked.
+/scaling_runs/*
+!/scaling_runs/results/
+!/scaling_runs/results/*.csv
