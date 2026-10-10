@@ -9,6 +9,13 @@ use halo2curves::ff::PrimeField;
 use serde::{Deserialize, Serialize};
 // import run args from model
 
+pub(crate) static EZKL_DIV_ROUND_NEAREST: std::sync::LazyLock<bool> =
+    std::sync::LazyLock::new(|| std::env::var("EZKL_DIV_ROUND_NEAREST").as_deref() == Ok("1"));
+
+pub(crate) fn div_round_nearest_applies(denom: IntegerRep) -> bool {
+    denom > 0 && (denom & (denom - 1)) == 0
+}
+
 #[allow(missing_docs)]
 /// An enum representing the operations that consist of both lookups and arithmetic operations.
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -278,12 +285,21 @@ impl<F: PrimeField + TensorType + PartialOrd + std::hash::Hash> Op<F> for Hybrid
             )?,
             HybridOp::Div { denom, .. } => {
                 if denom.0.fract() == 0.0 {
-                    layouts::div(
-                        config,
-                        region,
-                        values[..].try_into()?,
-                        integer_rep_to_felt(denom.0 as IntegerRep),
-                    )?
+                    if *EZKL_DIV_ROUND_NEAREST && div_round_nearest_applies(denom.0 as IntegerRep) {
+                        layouts::div_round_nearest(
+                            config,
+                            region,
+                            values[..].try_into()?,
+                            integer_rep_to_felt(denom.0 as IntegerRep),
+                        )?
+                    } else {
+                        layouts::div(
+                            config,
+                            region,
+                            values[..].try_into()?,
+                            integer_rep_to_felt(denom.0 as IntegerRep),
+                        )?
+                    }
                 } else {
                     layouts::nonlinearity(
                         config,

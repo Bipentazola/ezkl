@@ -708,7 +708,7 @@ impl Model {
         let (model, symbol_values) = Self::load_onnx_using_tract(reader, &run_args.variables)?;
 
         let scales = VarScales::from_args(run_args);
-        let nodes = Self::nodes_from_graph(
+        let mut nodes = Self::nodes_from_graph(
             &model,
             run_args,
             &scales,
@@ -717,6 +717,18 @@ impl Model {
             None,
             None,
         )?;
+
+        if let Some(fusion_config) = crate::graph::rescale_fusion::FusionConfig::from_env() {
+            let outputs: Vec<(usize, usize)> =
+                model.outputs.iter().map(|o| (o.node, o.slot)).collect();
+            crate::graph::rescale_fusion::fuse_rescales(
+                &mut nodes,
+                &outputs,
+                &scales,
+                run_args,
+                &fusion_config,
+            )?;
+        }
 
         debug!("\n {}", model);
 

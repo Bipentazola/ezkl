@@ -6,6 +6,9 @@ pub mod model;
 pub mod modules;
 /// Inner elements of a computational graph that represent a single operation / constraints.
 pub mod node;
+#[cfg(all(feature = "ezkl", not(target_arch = "wasm32")))]
+#[allow(missing_docs)]
+pub mod rescale_fusion;
 /// Helper functions
 pub mod utilities;
 /// Representations of a computational graph's variables.

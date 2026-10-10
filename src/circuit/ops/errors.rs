@@ -61,6 +61,13 @@ pub enum CircuitError {
     /// Invalid min/max lookup range
     #[error("invalid min/max lookup range: min: {0}, max: {1}")]
     InvalidMinMaxRange(IntegerRep, IntegerRep),
+    #[allow(missing_docs)]
+    #[error(
+        "div_round_nearest requires a positive, even divisor (got {0}); \
+         an odd divisor makes `divisor / 2` inexact, which breaks the \
+         tie-breaking window and lets the constraints pin the wrong quotient"
+    )]
+    InvalidDivisor(IntegerRep),
     /// Missing product in einsum
     #[error("missing product in einsum")]
     MissingEinsumProduct,

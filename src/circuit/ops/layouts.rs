@@ -266,6 +266,261 @@ pub(crate) fn div<F: PrimeField + TensorType + PartialOrd + std::hash::Hash>(
     Ok(claimed_output)
 }
 
+#[allow(missing_docs)]
+pub fn round_half_away_from_zero_divmod(
+    input: &Tensor<IntegerRep>,
+    divisor: IntegerRep,
+) -> (Tensor<IntegerRep>, Tensor<IntegerRep>) {
+    let half_divisor = divisor / 2;
+
+    let q = input
+        .par_enum_map(|_, x| {
+            let trunc_q = x / divisor;
+            let trunc_r = x % divisor;
+            let adjust = if trunc_r >= half_divisor {
+                1
+            } else if trunc_r <= -half_divisor {
+                -1
+            } else {
+                0
+            };
+            Ok::<_, TensorError>(trunc_q + adjust)
+        })
+        .unwrap();
+
+    let r = input
+        .enum_map(|i, x| {
+            let product = q[i].checked_mul(divisor).expect(
+                "round_half_away_from_zero_divmod: q*divisor overflowed i128 -- \
+                 input was within divisor/2 of i128::MAX/MIN, a value whose \
+                 correctly-rounded reconstruction genuinely doesn't fit in i128",
+            );
+            Ok::<_, TensorError>(x - product)
+        })
+        .unwrap();
+
+    (q, r)
+}
+
+pub(crate) fn limbs_for_bound(bound: IntegerRep, base: IntegerRep) -> Result<usize, CircuitError> {
+    let mut n: usize = 1;
+    let mut cap = base;
+    while cap - 1 < bound {
+        n += 1;
+        cap = cap
+            .checked_mul(base)
+            .ok_or(CircuitError::DecompositionBaseOverflow)?;
+    }
+    Ok(n)
+}
+
+pub(crate) fn range_check_unsigned_decomp<
+    F: PrimeField + TensorType + PartialOrd + std::hash::Hash,
+>(
+    config: &BaseConfig<F>,
+    region: &mut RegionCtx<F>,
+    value: &ValTensor<F>,
+    base: usize,
+    n: usize,
+) -> Result<(), CircuitError> {
+    let mut input = value.clone();
+
+    if !input.all_prev_assigned() {
+        input = region.assign(&config.custom_gates.inputs[0], &input)?;
+    }
+
+    if input.is_singleton() {
+        input.reshape(&[1])?;
+    }
+
+    let mut bases: ValTensor<F> = Tensor::from({
+        (0..input.len())
+            .flat_map(|_| {
+                (0..n).rev().map(|x| {
+                    let base = (base as IntegerRep).checked_pow(x as u32);
+                    if let Some(base) = base {
+                        Ok(ValType::Constant(integer_rep_to_felt(base)))
+                    } else {
+                        Err(CircuitError::DecompositionBaseOverflow)
+                    }
+                })
+            })
+            .collect::<Result<Vec<_>, CircuitError>>()?
+            .into_iter()
+    })
+    .into();
+
+    let mut limb_dims = input.dims().to_vec();
+    limb_dims.push(n);
+    bases.reshape(&limb_dims)?;
+
+    let claimed_limbs: ValTensor<F> = if region.witness_gen() {
+        let full = input.decompose(base, n)?;
+        let mut rest_slice = input.dims().iter().map(|x| 0..*x).collect::<Vec<_>>();
+        rest_slice.push(1..n + 1);
+        full.get_slice(&rest_slice)?
+    } else {
+        let limb_len: usize = limb_dims.iter().product();
+        Tensor::new(
+            Some(&vec![ValType::Value(Value::<F>::unknown()); limb_len]),
+            &limb_dims,
+        )?
+        .into()
+    };
+    let claimed_limbs = region.assign(&config.custom_gates.output, &claimed_limbs)?;
+    region.increment(claimed_limbs.len());
+
+    let limbs = range_check(
+        config,
+        region,
+        &[&claimed_limbs],
+        &(0, (base - 1) as IntegerRep),
+    )?;
+
+    let lhs = ASCII_ALPHABET.chars().take(limbs.dims().len()).join("");
+    let rhs = ASCII_ALPHABET.chars().take(limbs.dims().len() - 1).join("");
+    let equation = format!("{},{}->{}", lhs, lhs, rhs);
+
+    let reconstructed = einsum(config, region, &[&limbs, &bases], &equation)?;
+
+    enforce_equality(config, region, &[&input, &reconstructed])?;
+
+    Ok(())
+}
+
+pub(crate) fn div_round_nearest<F: PrimeField + TensorType + PartialOrd + std::hash::Hash>(
+    config: &BaseConfig<F>,
+    region: &mut RegionCtx<F>,
+    value: &[&ValTensor<F>; 1],
+    div: F,
+) -> Result<ValTensor<F>, CircuitError> {
+    if div == F::ONE {
+        return Ok(value[0].clone());
+    }
+
+    let input = value[0];
+    let input_dims = input.dims();
+
+    let divisor_int = felt_to_integer_rep(div);
+    if divisor_int <= 0 || divisor_int % 2 != 0 {
+        return Err(CircuitError::InvalidDivisor(divisor_int));
+    }
+    let half_divisor_int = divisor_int / 2;
+
+    let decomp_base_usize = region.base();
+    let decomp_base_int = decomp_base_usize as IntegerRep;
+    let shared_range: crate::circuit::table::Range = (0, decomp_base_int);
+
+    let wide_limbs: Option<usize> = if divisor_int <= decomp_base_int {
+        None
+    } else {
+        Some(limbs_for_bound(divisor_int, decomp_base_int)?)
+    };
+
+    log::debug!(
+        target: "divisor_census",
+        "divisor={} path={} limbs={} elems={}",
+        divisor_int,
+        if wide_limbs.is_some() { "wide" } else { "narrow" },
+        wide_limbs.unwrap_or(1),
+        input.len()
+    );
+
+    let divisor_tensor = create_constant_tensor(div, 1);
+    let half_divisor_tensor = create_constant_tensor(integer_rep_to_felt::<F>(half_divisor_int), 1);
+
+    let is_assigned = !input.any_unknowns()? && !divisor_tensor.any_unknowns()?;
+
+    let (mut claimed_q, mut claimed_r): (ValTensor<F>, ValTensor<F>) = if is_assigned {
+        let input_evals = input.int_evals()?;
+        let (q_evals, r_evals) = round_half_away_from_zero_divmod(&input_evals, divisor_int);
+        let q: ValTensor<F> = q_evals
+            .par_iter()
+            .map(|x| Value::known(integer_rep_to_felt(*x)))
+            .collect::<Tensor<Value<F>>>()
+            .into();
+        let r: ValTensor<F> = r_evals
+            .par_iter()
+            .map(|x| Value::known(integer_rep_to_felt(*x)))
+            .collect::<Tensor<Value<F>>>()
+            .into();
+        (q, r)
+    } else {
+        let unknown = || -> Result<ValTensor<F>, CircuitError> {
+            Ok(Tensor::new(
+                Some(&vec![Value::<F>::unknown(); input.len()]),
+                &[input.len()],
+            )?
+            .into())
+        };
+        (unknown()?, unknown()?)
+    };
+    claimed_q.reshape(input_dims)?;
+    claimed_r.reshape(input_dims)?;
+
+    let (q_digits, claimed_q) = decompose(
+        config,
+        region,
+        &[&claimed_q],
+        &region.base(),
+        &region.legs(),
+        true,
+    )?;
+
+    let product = pairwise(config, region, &[&claimed_q, &divisor_tensor], BaseOp::Mult)?;
+    let reconstructed = pairwise(config, region, &[&product, &claimed_r], BaseOp::Add)?;
+    enforce_equality(config, region, &[input, &reconstructed])?;
+
+    let shifted_r = pairwise(
+        config,
+        region,
+        &[&claimed_r, &half_divisor_tensor],
+        BaseOp::Add,
+    )?;
+    match wide_limbs {
+        None => {
+            range_check(config, region, &[&shifted_r], &shared_range)?;
+
+            if divisor_int != decomp_base_int {
+                let gap = pairwise(config, region, &[&divisor_tensor, &shifted_r], BaseOp::Sub)?;
+                range_check(config, region, &[&gap], &shared_range)?;
+            }
+        }
+        Some(n) => {
+            range_check_unsigned_decomp(config, region, &shifted_r, decomp_base_usize, n)?;
+
+            let gap = pairwise(config, region, &[&divisor_tensor, &shifted_r], BaseOp::Sub)?;
+            range_check_unsigned_decomp(config, region, &gap, decomp_base_usize, n)?;
+        }
+    }
+
+    let mut sign_q = q_digits;
+    sign_q.get_every_n(region.legs() + 1)?;
+    sign_q.reshape(input_dims)?;
+
+    let zero_tensor = create_zero_tensor(1);
+    let at_bottom = equals(config, region, &[&shifted_r, &zero_tensor])?;
+    let at_top = equals(config, region, &[&shifted_r, &divisor_tensor])?;
+
+    let one_tensor = create_constant_tensor(F::ONE, 1);
+    let zero_check_tensor = create_constant_tensor(F::ZERO, sign_q.len());
+
+    let one_minus_sign_q = pairwise(config, region, &[&one_tensor, &sign_q], BaseOp::Sub)?;
+    let bottom_violation = pairwise(
+        config,
+        region,
+        &[&at_bottom, &one_minus_sign_q],
+        BaseOp::Mult,
+    )?;
+    enforce_equality(config, region, &[&bottom_violation, &zero_check_tensor])?;
+
+    let one_plus_sign_q = pairwise(config, region, &[&one_tensor, &sign_q], BaseOp::Add)?;
+    let top_violation = pairwise(config, region, &[&at_top, &one_plus_sign_q], BaseOp::Mult)?;
+    enforce_equality(config, region, &[&top_violation, &zero_check_tensor])?;
+
+    Ok(claimed_q)
+}
+
 /// Computes the reciprocal (1/x) of a tensor with scaling factors.
 ///
 /// This function calculates the reciprocal of each element in the input tensor,
