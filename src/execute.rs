@@ -66,6 +66,81 @@ use thiserror::Error;
 use tract_onnx::prelude::IntoTensor;
 use tract_onnx::prelude::Tensor as TractTensor;
 
+#[cfg(feature = "pprof-profiling")]
+fn maybe_start_pprof_guard() -> Option<pprof::ProfilerGuard<'static>> {
+    if std::env::var_os("EZKL_PPROF_OUT").is_none() {
+        return None;
+    }
+    let hz: i32 = std::env::var("EZKL_PPROF_HZ")
+        .ok()
+        .and_then(|v| v.parse().ok())
+        .unwrap_or(997);
+    match pprof::ProfilerGuardBuilder::default().frequency(hz).build() {
+        Ok(guard) => Some(guard),
+        Err(e) => {
+            log::error!("failed to start pprof profiler: {}", e);
+            None
+        }
+    }
+}
+
+#[cfg(feature = "pprof-profiling")]
+fn maybe_finish_pprof_guard(guard: Option<pprof::ProfilerGuard<'static>>) {
+    let Some(guard) = guard else {
+        return;
+    };
+    let Ok(out_prefix) = std::env::var("EZKL_PPROF_OUT") else {
+        return;
+    };
+    let report = match guard.report().build() {
+        Ok(report) => report,
+        Err(e) => {
+            log::error!("failed to build pprof report: {}", e);
+            return;
+        }
+    };
+
+    let mut folded = String::new();
+    for (key, count) in report.data.iter() {
+        let mut frame_names: Vec<String> = Vec::new();
+        for frame in key.frames.iter().rev() {
+            for symbol in frame.iter().rev() {
+                frame_names.push(symbol.name());
+            }
+        }
+        folded.push_str(&frame_names.join(";"));
+        folded.push(' ');
+        folded.push_str(&count.to_string());
+        folded.push('\n');
+    }
+    let folded_path = format!("{}.folded", out_prefix);
+    if let Err(e) = std::fs::write(&folded_path, &folded) {
+        log::error!(
+            "failed to write pprof folded output to {}: {}",
+            folded_path,
+            e
+        );
+    } else {
+        log::info!("wrote pprof folded stacks to {}", folded_path);
+    }
+
+    let svg_path = format!("{}.svg", out_prefix);
+    match std::fs::File::create(&svg_path) {
+        Ok(file) => {
+            if let Err(e) = report.flamegraph(file) {
+                log::error!(
+                    "failed to write pprof flamegraph svg to {}: {}",
+                    svg_path,
+                    e
+                );
+            } else {
+                log::info!("wrote pprof flamegraph svg to {}", svg_path);
+            }
+        }
+        Err(e) => log::error!("failed to create {}: {}", svg_path, e),
+    }
+}
+
 lazy_static! {
     #[derive(Debug)]
     /// The path to the ezkl related data.
@@ -1598,6 +1673,10 @@ pub(crate) fn prove(
     let pk = load_pk::<KZGCommitmentScheme<Bn256>, GraphCircuit>(pk_path, circuit.params())?;
 
     let params = load_params_prover::<KZGCommitmentScheme<Bn256>>(srs_path, logrows)?;
+
+    #[cfg(feature = "pprof-profiling")]
+    let _pprof_guard = maybe_start_pprof_guard();
+
     let mut snark = create_proof_circuit::<
         KZGCommitmentScheme<Bn256>,
         _,
@@ -1616,6 +1695,9 @@ pub(crate) fn prove(
         proof_split_commits,
         None,
     )?;
+
+    #[cfg(feature = "pprof-profiling")]
+    maybe_finish_pprof_guard(_pprof_guard);
 
     snark.pretty_public_inputs = pretty_public_inputs;
 

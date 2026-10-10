@@ -104,6 +104,7 @@ colored = { version = "2.0.0", default-features = false, optional = true }
 env_logger = { version = "0.10.0", default-features = false, optional = true }
 chrono = { version = "0.4.31", optional = true }
 sha256 = { version = "1.4.0", optional = true }
+pprof = { version = "0.13", features = ["flamegraph", "frame-pointer"], optional = true }
 
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
@@ -265,14 +266,15 @@ ios-metal = ["halo2_proofs/ios"]
 jemalloc = ["dep:jemallocator"]
 mimalloc = ["dep:mimalloc"]
 reusable-verifier = []
+pprof-profiling = ["dep:pprof"]
 
 
 [patch.crates-io]
 uniffi_testing = { git = "https://github.com/ElusAegis/uniffi-rs", branch = "feat/testing-feature-build-fix" }
 
 [profile.release]
-# debug = true
-rustflags = ["-C", "relocation-model=pic"]
+debug = true
+rustflags = ["-C", "relocation-model=pic", "-C", "force-frame-pointers=yes"]
 lto = "fat"
 codegen-units = 1
 # panic = "abort"
